@@ -1,0 +1,174 @@
+@charset "utf-8";
+/* CSS Document */
+html, body{height: 100%; margin: 0; padding: 0;}
+    body {
+        color: #566787;
+		background: #f5f5f5;
+		font-family: 'Varela Round', sans-serif;
+		font-size: 13px;
+	}
+#bodyindex {  
+  justify-content: center;
+  align-items: center;
+  background-color: #3bb2b8;
+  background: linear-gradient(
+    20deg,
+    rgba(66, 230, 149, 1),
+    rgba(66, 32, 149, 1)
+  );
+  background-repeat:;
+  height: 100vh;
+  weidth:100wh;
+  background-size:128% 128%;
+  font-family: "Open Sans", sans-serif;
+}
+/*.container {
+  max-width: 800px;
+  margin: 5% auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-sizing: border-box;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
+}*/
+label {
+  font-family: 'Staatliches', cursive;
+}
+.logo-anexxa{border-radius:5px; padding-bottom:2px;}
+
+.msg-erro{font-size:14px;}
+.btn-entrar
+{	
+	height:45px;
+	padding-top:1px;
+	font-size:20px;
+}
+/* header e footer */
+.container-superior-user{font-color:black; font-weight: 500;}
+.container-rodape{height: 60px;}
+.wrapper{ min-height: calc(100vh - 80px)}
+@media (min-width: 320px) and (max-width: 480px) {
+	
+	.container-rodape {font-size:12px; display:;}
+}
+.sair{font-color:#FC2F2C !important;}
+.btn-voltar:link{text-decoration:none; color:;}
+
+.form{border-bottom:5px solid #E3E6EA; border-right:5px solid #E3E6EA;}
+#nome_logado{/*text-decoration: underline*/ color: #3bb2b8;}
+#erros{font-size:15px;}
+#email_senha{background:#FFF;
+			cursor:not-allowed;
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-khtml-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			}
+h2
+{
+	/*font-size:50px;*/ 
+	color:#B9B8B8;
+	font-size:2.5em;
+}
+/*h2:after, h2:before{
+	content:'';
+	display:block;
+	width:85px;
+	height:3px;
+	background:#B9B8B8;
+	margin:0 auto;
+}*/
+input::placeholder {
+  color: #CCC !important;
+}
+#senha, #email, #email_senha, #senha2{
+	border:1px solid #cccccc;
+    box-shadow: none;
+	 -webkit-box-shadow: 0 0 0px 1000px white inset;
+	 -moz-box-shadow: 0 0 0px 1000px white inset;
+} 
+.icon-login{
+	background-color:#FFF; border-radius:3px 0px 0px 3px; border:1px solid #cccccc ; border-right:0px; color:#CCCCCC; font-size:25px;
+}
+.icon-login2{
+	background-color:#FFF; border-left:0px !important; color:#CCC !important; height:45px;
+}
+.largura-input{width:100%;}
+.font{font-family: 'Roboto', sans-serif;}
+@media (min-width: 320px) and (max-width: 480px) {
+  
+ .espaco-badge{display:none;}
+  
+}
+.cor-backaground
+{
+	background-color:#EEEDED;
+	/*border-radius:5px;*/
+}
+/*#EFEFEF*/
+.menu-site{
+	background:#FFFFFF;
+	border-radius:3px;
+}
+.container-body{
+	background:#EFEFEF;
+	
+}
+
+.container-body {
+	margin: 5% auto;
+	border-radius: 15px;
+	box-sizing: border-box;
+	padding: 20px;
+	overflow: hidden;
+	background-color: #ffffff;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
+		}
+.text-center {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.opcao_sair{
+	background-color:#FF7777;
+	color:#FFF !important;
+	border-radius:5px;
+	padding:5px;
+}
+.opcao_sair:hover{
+	background-color:#FFF;
+	color:#FFF !important;
+}
+
+.visivel{
+	visibility:hidden;
+}
+.letra{
+	color:red;
+}
+#txtbapatrimonio, #txtbaplacapatrimonio, #txtbanome, #txtbavalor, #txtbavalor, #txtbanotafiscal, #txtbaresponsavel, #txtbaimgfiscal, #txtbadata{
+	border:none;
+}
+#dashboard-espaco{display:none;}
+		@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  
+		     #dashboard-espaco{display:block;}
+			.div-table{border-radius:0px ;}
+		}
+		@media (min-width: 768px) and (max-width: 1024px) {
+
+			 #dashboard-espaco{display:block;}
+			.div-table{border-radius:0px ;}
+		}
+/*#loading_spinner2 {
+    position: fixed;
+	width:100%;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background-color:rgba(0,0,0,0.4);
+    z-index: 3;
+}*/
+.tabela-hover:hover{background-color:#dee2e6; color:#FFF;}
+.clicar{cursor:pointer;}

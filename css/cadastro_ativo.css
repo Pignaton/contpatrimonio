@@ -1,0 +1,114 @@
+/* CSS Document */
+/*Modal cadastrar*/ 
+.btn-tertiary {
+  color: #555;
+  padding: 0;
+  line-height: 40px;
+  width: 300px;
+  margin: auto;
+  display: block;
+  border: 2px solid #555;
+}
+.btn-tertiary:hover, .btn-tertiary:focus {
+  color: #888888;
+  border-color: #888888;
+}
+
+#txtimgfiscal {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+#txtimgfiscal + .js-labelFile {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 10px;
+  cursor: pointer;
+}
+#txtimgfiscal + .js-labelFile .icon:before {
+  content: "\f093";
+}
+#txtimgfiscal + .js-labelFile.has-file .icon:before {
+  content: "\f00c";
+  color: #5AAC7B;
+}
+
+/*Modal editar*/  
+.btn-tertiary2 {
+  color: #555;
+  padding: 0;
+  line-height: 40px;
+  width: 300px;
+  margin: auto;
+  display: block;
+  border: 2px solid #555;
+}
+.btn-tertiary2:hover, .btn-tertiary2:focus {
+  color: #888888;
+  border-color: #888888;
+}
+
+.input-file2 {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+.input-file2 + .js-labelFile2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 10px;
+  cursor: pointer;
+}
+.input-file2 + .js-labelFile2 .icon:before {
+  content: "\f093";
+}
+.input-file2 + .js-labelFile2.has-file2 .icon:before {
+  content: "\f00c";
+  color: #5AAC7B;
+}
+
+/*Modal manutenção*/  
+.btn-tertiary3 {
+  color: #555;
+  padding: 0;
+  line-height: 40px;
+  width: 300px;
+  margin: auto;
+  display: block;
+  border: 2px solid #555;
+}
+.btn-tertiary3:hover, .btn-tertiary3:focus {
+  color: #888888;
+  border-color: #888888;
+}
+
+.input-file3 {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+.input-file3 + .js-labelFile3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 10px;
+  cursor: pointer;
+}
+.input-file3 + .js-labelFile3 .icon:before {
+  content: "\f093";
+}
+.input-file3 + .js-labelFile3.has-file3 .icon:before {
+  content: "\f00c";
+  color: #5AAC7B;
+}

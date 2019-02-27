@@ -1,0 +1,13 @@
+/* CSS Document */
+:before, :after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.desc{font-size:15px; }
+.number{font-size:15px;}
+.detalhes{text-align:right; }
+.dashboard-stat{}
+.alertcss{
+	height:20px !important;
+}
