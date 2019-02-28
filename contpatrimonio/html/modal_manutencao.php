@@ -31,17 +31,15 @@
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-sm-5">
+								<div class="col-sm-4">
 									<div class="form-group">
 										<label for="departamento" class="col-form-label">Departamento:</label>
 										<input class="form-control" name="txtdepartamento" id="txtdepartamento" readonly="readonly">
 									</div>
 								</div>
-							</div>
-							<div class="row">
-								<div class="col-sm-12">
+								<div class="col-sm-8">
 									<div class="form-group">
-										<label for="departamento" class="col-form-label">descrição:</label>
+										<label for="departamento" class="col-form-label">Motivo:</label>
 										<textarea class="form-control" name="txtdescricao" id="txtdescricao" rows="3" style="resize:none;" required="required">Desktop umtracompacto com diversas soluçoes de montagem e apenas 18,2 cm de altura e 3,6 cm de largura.</textarea>
 									</div>
 								</div>
