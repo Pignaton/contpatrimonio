@@ -55,7 +55,7 @@ if ( isset( $_SESSION[ 'id_funcionario' ] ) ) {
 						  {
 						  	$("#loading").hide();
 						  	$("#btn-entrar").show();
-							window.location.href=" Dashboard.php";
+							window.location.href=" dashboard.php";
 						  }
 					if(data=="trocasenha"){
 					 window.location.href="includes/trocasenha.php";

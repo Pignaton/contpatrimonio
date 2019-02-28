@@ -30,7 +30,7 @@ include( '../../includes/post-get.php' );
 
 $limitar_ext = "sim";
 $tipo_foto = array( ".pdf");
-$caminho_arquivo = "../img_nota_fiscal/";
+$caminho_arquivo = "../../img_nota_fiscal";
 $caminho_arquivo2 = "../img_nota_fiscal/img_fora/";
 $sobreescrever = "nao";
 set_time_limit( 0 );

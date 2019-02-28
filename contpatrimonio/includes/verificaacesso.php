@@ -42,7 +42,7 @@ else if($nome_arquivo == 'manutencao_ativo.php' && $manutencao_ativo != 1){
 else if($nome_arquivo == 'backup.php' && $backup != 1){
 	header("Location:sempermissao.php");
 }
-if($usuario_nivel != 0){	
+if($usuario_nivel != 1){	
 	$disabled="readonly='readonly' style='cursor:not-allowed;'"; 
  	$permi="Edição não permitida ";
 }else{

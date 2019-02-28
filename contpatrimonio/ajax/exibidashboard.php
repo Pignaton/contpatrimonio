@@ -20,7 +20,7 @@ if($acao == 'ajax'){
 	$adjacente = 4; // lacuna entre as páginas após o número de adjacentes
 	$offset = ($pagina -  1) * $por_pagina;
 	
-	$count_query  = "SELECT count(*) AS numrows FROM $tabela $condicao ";
+	$count_query  = "SELECT count(*) AS numrows FROM $tabela WHERE data_aquisicao BETWEEN '$data_final' AND '$data_inicial' $condicao ";
 	$count_query_user = $patrimonio->prepare($count_query);
 	$count_query_user->execute();
 	$qnt_linhas = $count_query_user->rowCount();

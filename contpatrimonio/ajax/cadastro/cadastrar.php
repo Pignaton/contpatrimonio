@@ -23,7 +23,7 @@ $nf_registro = $_POST[ 'txtnotafiscal' ];
 
 $limitar_ext = "sim";
 $tipo_foto = array( ".pdf" );
-$caminho_arquivo = "../img_nota_fiscal/";
+$caminho_arquivo = "../../img_nota_fiscal/";
 $sobreescrever = "nao";
 set_time_limit( 0 );
 

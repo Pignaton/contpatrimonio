@@ -131,12 +131,19 @@
 					$("#resultados").html(dados);
 					window.setTimeout(function() {$(".alert").fadeTo(500, 0).slideUp(500, function(){$(".alert").remove();});}, 6000);
 					load(1);
-					$("#btnloading3").html("");
+					$("#btnloading3").hide();
 					$(".btncadastrar").show();
 					$('#adicionar_ativo').modal('hide');
+					$(':input','#add_ativo')
+			          .not(':button, :submit, :reset, :hidden')
+			          .val('')
+			          .removeAttr('checked')
+			          .removeAttr('selected');
+					  document.getElementById("txtimgfiscal").value = "";
 				  }
+
 			});
-		  event.preventDefault();
+			 event.preventDefault();
 		});
 
 		$( "#deleta_ativo" ).submit(function( event ) {
@@ -154,9 +161,12 @@
 					window.setTimeout(function() {$(".alert").fadeTo(500, 0).slideUp(500, function(){$(".alert").remove();});}, 4000);	
 					load(1);
 					$('#deletar_ativo').modal('hide');
+					$(':input','#deleta_ativo')
+			          .not(':button, :submit, :reset, :hidden')
+			          .val('')
 				  }
 			});
-		  event.preventDefault();
+		  	event.preventDefault();
 		});
 
 		/*$('#edita_perfil').on( function (event) {
@@ -193,3 +203,5 @@
 			});
 		  event.preventDefault();
 		});
+
+		 

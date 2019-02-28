@@ -44,21 +44,36 @@ include('includes/verificaacesso.php');
 	<link rel="stylesheet" type="text/css" href="css/dashboard.css"/>
 	<link rel="stylesheet" href="css/custom.css">
 	<link rel="stylesheet" type="text/css" href="css/cadastro_ativo.css"/>
-	<script type="text/javascript" src="log4javascript/log4javascript.js"></script>
 	<script type="text/javascript">
+window.onerror = function(msg, src, lineNo, colNo, error){
+//document.getElementById("msg").innerHTML = //"msg: "+msg+"\n"//+"src: "+src+"\n"//+"lineNo: "+lineNo+"\n";//+"colNo: "+colNo+"\n"//+"stack: "+err.stack+"\n";
 
-	var log = log4javascript.getDefaultLogger();
-	window.onerror = function(msg, url, line)
-		{
-		  var req = new XMLHttpRequest();
-		  var params = "msg=" + encodeURIComponent(msg) + '&amp;url=' + encodeURIComponent('http://localhost/kaleb/Patrimonio_ativo/patrimonio2.0/cadastro_ativo.php') + "&amp;line=" + line;
-		  req.open("POST", "logerror.php");
-		  req.send(params);
-		};
-	//var ajaxAppender = new log4javascript.AjaxAppender('logerror.txt');
-	//log.addAppender(ajaxAppender);
-    log.debug("Hello world");
+$(document).ready(function () {
 
+var txtsrc = src;			
+var txtlineNo = lineNo;
+var txtmsg = msg;
+var txterror = error;
+
+	$.ajax({
+		url: 'onerror.php',
+		type:'POST',
+		data: {'txtmsg': txtmsg,
+			  'txtsrc': txtsrc,
+			  'txtlineNo': txtlineNo,
+			  'txterror': txterror
+		},
+		cache : false,
+		//processData: false,
+		success:function(data){
+			//alert(data);
+		},
+		error:function(data){
+			//alert("não foi");
+		}
+	});
+});
+}
 	</script>
 </head>
 <body>

@@ -1,41 +1,43 @@
 <?php include_once( 'includes/header.php' ); ?>
-<?php include("includes/valortabela.php"); ?>
+<?php 
+include("includes/valortabela.php"); 
+include("includes/grafico/quantidade.php"); 
+?>
 <br>
 <br>
 <div class="container-fluid">
 	<div class="row pt-5">
 		<div class="col-md-3 col-sm-4 col-xs-6">
-			<div class="card card-small">
-				<div class="text-center"><i class="fa fa-archive fa-icon-medium pt-1" style=" color: #50B7D8;"></i> Número de Ativos &nbsp;</div>
-				<div class=" text-center"><?= $quant_ativo ?></div>
+			<div class="card card-small pt-3">
+				<p class="text-center" style="line-height: 1.5em"><i class="fa fa-archive fa-icon-medium"></i> Número de Ativos &nbsp;<br>
+				<?= $quant_ativo ?></p>
 			</div>
 		</div>
 		<div class="col-md-3 col-sm-4 col-xs-6">
-			<div class="card card-small">
-				<div class="text-center"><i class="fas fa-dollar-sign pt-1" style=" color: #469BA0; "></i> Total em Ativos</div>
-				<div class=" text-center">R$ <?= number_format($soma_ativo, 2, ',', '.') ?></div>
+			<div class="card card-small pt-3">
+				<p class="text-center" style="line-height: 1.5em"><i class="fas fa-dollar-sign pt-1"></i> Total em Ativos<br>
+				R$ <?= number_format($soma_ativo, 2, ',', '.') ?></p>
 			</div>
 		</div>
 		<div class="col-md-3 col-sm-4 col-xs-6 ">
-			<div class="card card-small">
-				<div class="text-center"><i class="fas fa-dollar-sign pt-1"></i> Total em Baixa</div>
-				<div class=" text-center"><?= number_format($soma_baixa, 2, ',', '.') ?></div>
+			<div class="card card-small pt-3">
+				<p class="text-center" style="line-height: 1.5em"><i class="fas fa-dollar-sign pt-1"></i> Total em Baixa<br>
+				<?= number_format($soma_baixa, 2, ',', '.') ?></p>
 			</div>
 		</div>
 		<div class="col-md-3 col-sm-4 col-xs-6 ">
-			<div class="card card-small">
-				<div class=" text-center"><i class="fas fa-dollar-sign pt-1" style=" color: #469BA0;"></i> Total em Manutenção</div>
-				<div class=" text-center">R$ <?= number_format($soma_manutencao, 2, ',', '.') ?></div>
+			<div class="card card-small pt-3">
+				<p class=" text-center" style="line-height: 1.5em"><i class="fas fa-dollar-sign pt-1"></i> Total em Manutenção</br>
+				R$ <?= number_format($soma_manutencao, 2, ',', '.') ?></p>
 			</div>
 		</div>
 	</div>
 </div>
 	<div class="container-fluid">
 	<br>
-	<div class="">
 	<div class="row">
-		<div class="col-sm-1"></div>
-	<div class="col-sm-4 modal-dashboard div-table">
+	<div style="padding-left:15px;"></div>
+	<div class="col-sm modal-dashboard div-table">
 	<div id="loader"></div>
 	</div>
 	<div>&nbsp;</div>
@@ -49,7 +51,7 @@
 				}
 			?>
 		 
-			<div class="col-sm-3 modal-dashboard">
+			<div class="col-sm modal-dashboard">
 				&nbsp;
 				<div>
 					<p class="font-titulo"><i class="fas fa-chart-bar"></i>&nbsp; Gráfico - Quantidade de ativos por setor</p>
@@ -98,7 +100,7 @@
 						type: 'pie',
 						data: {
 							datasets: [ {
-								data: [ '23', '10', '16', '4', '29', '40', '35' ],
+								data: [<?=$quant2?>],
 								backgroundColor: [
 									'#73a6c9',
 									'#00acff',
@@ -110,7 +112,7 @@
 								],
 								label: 'Quantidade de potes'
 							} ],
-							labels: [ 'Desenvolvimento', 'sac', 'operacional', 'RH', 'desenvolvimento app', 'criação e midia', 'Financeiro' ]
+							labels: [ 'Desenvolvimento', 'Desenvolvimento web', 'operacional', 'Suporte', 'Infraestrutura', 'RH', 'Limpeza', 'Copa' ]
 						},
 						options: {
 							responsive: true,
@@ -138,7 +140,7 @@
 				</script>
 			</div>
 			<div>&nbsp;</div>
-			<div class="col-sm-3 modal-dashboard">
+			<div class="col-sm modal-dashboard">
 				&nbsp;
 				<div>
 				<p class="font-titulo"><i class="fas fa-chart-bar"></i>&nbsp; Gráfico - Total por patrimônio</p>
@@ -150,7 +152,7 @@
 					</div>
 				</section>
 			</div>
-		</div>
+			<div style="padding-right:15px;"></div>
 		</div>
 	</div>
 
