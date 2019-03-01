@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: 28-Fev-2019 às 20:16
+-- Generation Time: 01-Mar-2019 às 20:16
 -- Versão do servidor: 5.7.21
 -- PHP Version: 7.2.4
 
@@ -206,56 +206,34 @@ CREATE TABLE IF NOT EXISTS `nota_fiscal` (
   `img_nf_ativo` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id_nota_fiscal`),
   KEY `fk_id_patrimonio` (`id_patrimonio`)
-) ENGINE=MyISAM AUTO_INCREMENT=110 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `nota_fiscal`
 --
 
 INSERT INTO `nota_fiscal` (`id_nota_fiscal`, `id_patrimonio`, `nf_manutencao`, `img_nf_manutencao`, `nf_baixa`, `img_nf_baixa`, `nf_ativo`, `img_nf_ativo`) VALUES
-(64, 71, NULL, NULL, NULL, NULL, '000.000.456', 'danfe23.png'),
-(65, 72, NULL, NULL, NULL, NULL, '7867', 'nota_devolucao.png'),
-(66, 73, NULL, NULL, NULL, NULL, '546547567567567', 'download.jpg'),
-(67, 74, NULL, NULL, NULL, NULL, '67567567', 'danfe2.png'),
-(68, 75, NULL, NULL, NULL, NULL, '2353657678', 'danfe23we.png'),
-(69, 76, NULL, NULL, NULL, NULL, '678978089-', 'danfe.png'),
-(70, 77, NULL, NULL, NULL, NULL, '78679', 'notafiscal.png'),
-(71, 78, NULL, NULL, NULL, NULL, '8789089-90-', 'nota_devolucao.png'),
-(72, 79, NULL, NULL, NULL, NULL, '67978089-90', 'danfe23we.png'),
-(73, 80, NULL, NULL, NULL, NULL, '6786787689', 'danfe.png'),
-(74, 81, NULL, NULL, NULL, NULL, '6547568678', 'danfe23.png'),
-(75, 82, NULL, NULL, NULL, NULL, '65467576', 'danfe2.png'),
-(76, 83, NULL, NULL, NULL, NULL, '78679789', 'download.jpg'),
-(77, 84, NULL, NULL, NULL, NULL, '56457567', 'danfe23we.png'),
-(78, 85, NULL, NULL, NULL, NULL, '45756768', 'danfe2.png'),
-(79, 88, NULL, NULL, NULL, NULL, '000.000.460', 'download.jpg'),
-(80, 89, NULL, NULL, NULL, NULL, '000.000.461', 'download.jpg'),
-(81, 90, NULL, NULL, NULL, NULL, '000.000.462', 'nota_devolucao.png'),
-(82, 87, NULL, NULL, '000.000.459', 'danfe.png', NULL, NULL),
-(63, 86, NULL, NULL, NULL, NULL, '000.000.452', 'teste.pdf'),
-(87, 73, '000.000.456', 'danfe23we.pdf', NULL, NULL, '546547567567567', NULL),
-(88, 73, '000.000.456', 'danfe23we.pdf', NULL, NULL, '546547567567567', NULL),
-(89, 73, '000.000.456', 'danfe23we.pdf', NULL, NULL, '546547567567567', NULL),
-(90, 73, '000.000.456', 'danfe23we.pdf', NULL, NULL, '546547567567567', NULL),
-(91, 73, '000.000.456', 'danfe23we.pdf', NULL, NULL, '546547567567567', NULL),
-(92, 73, '000.000.456', 'danfe23we.pdf', NULL, NULL, '546547567567567', NULL),
-(93, 73, '000.000.456', 'danfe23we.pdf', NULL, NULL, '546547567567567', NULL),
-(94, 73, '000.000.456', 'danfe23we.pdf', NULL, NULL, '546547567567567', NULL),
-(95, 73, '000.000.456', 'danfe23we.pdf', NULL, NULL, '546547567567567', NULL),
-(96, 73, '000.000.456', 'danfe23we.pdf', NULL, NULL, '546547567567567', NULL),
-(97, 73, '000.000.456', 'danfe23we.pdf', NULL, NULL, '546547567567567', NULL),
-(98, 73, '000.000.456', 'danfe23we.pdf', NULL, NULL, '546547567567567', NULL),
-(99, 90, '988.025.453', 'teste.pdf', NULL, NULL, '000.000.462', NULL),
-(100, 91, NULL, NULL, NULL, NULL, '9875.253.458', 'download.pdf'),
-(101, 92, NULL, NULL, NULL, NULL, '9875.253.458', 'download.pdf'),
-(102, 93, NULL, NULL, NULL, NULL, '9875.253.458', 'download.pdf'),
-(103, 94, NULL, NULL, NULL, NULL, '9875.253.458', 'download.pdf'),
-(104, 95, NULL, NULL, NULL, NULL, '9875.253.458', 'download.pdf'),
-(105, 96, NULL, NULL, NULL, NULL, '9875.253.458', 'download.pdf'),
-(106, 97, NULL, NULL, NULL, NULL, '652.124.478', 'download.pdf'),
-(107, 98, NULL, NULL, NULL, NULL, '654.750.745', 'download.pdf'),
-(108, 99, NULL, NULL, NULL, NULL, '000.000.456', 'download.pdf'),
-(109, 100, NULL, NULL, NULL, NULL, '020.254.897', 'download.pdf');
+(1, 1, NULL, NULL, NULL, NULL, '000.000.452', 'teste.pdf'),
+(2, 2, NULL, NULL, NULL, NULL, '546547567567567', 'download.pdf'),
+(3, 3, NULL, NULL, NULL, NULL, '67567567', 'download.pdf'),
+(4, 4, NULL, NULL, NULL, NULL, '000.000.460', 'nota_devolucao.pdf'),
+(5, 5, NULL, NULL, NULL, NULL, '000.000.461', 'danfe.pdf'),
+(6, 6, NULL, NULL, NULL, NULL, '000.000.462', 'danfe.pdf'),
+(7, 7, NULL, NULL, NULL, NULL, '45756768', 'nota_devolucao.pdf'),
+(8, 8, NULL, NULL, NULL, NULL, '65467576', 'teste2.pdf'),
+(9, 9, NULL, NULL, NULL, NULL, '78679789', 'teste2.pdf'),
+(10, 10, NULL, NULL, NULL, NULL, '020.254.897', 'teste.pdf'),
+(11, 11, NULL, NULL, NULL, NULL, '234.676.765', 'nota_devolucao2.pdf'),
+(12, 53, NULL, NULL, '000.000.456', 'danfe23.pdf', NULL, NULL),
+(13, 53, NULL, NULL, '7867', 'nota_devolucao.pdf', NULL, NULL),
+(14, 87, '', '', '000.000.459', 'danfe.pdf', NULL, NULL),
+(15, 2, '201.847.456', 'danfe23we.pdf', NULL, NULL, NULL, NULL),
+(16, 2, '025.874.402', 'danfe23we.pdf', NULL, NULL, NULL, NULL),
+(17, 1, '000.898.456', 'danfe23we.pdf', NULL, NULL, NULL, NULL),
+(18, 1, '250.890.450', 'danfe23we.pdf', NULL, NULL, NULL, NULL),
+(19, 3, '780.012.658', 'danfe23we.pdf', NULL, NULL, NULL, NULL),
+(20, 1, '936.000.896', 'danfe23we.pdf', NULL, NULL, NULL, NULL),
+(21, 6, '988.025.453', 'teste.pdf', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -313,7 +291,7 @@ CREATE TABLE IF NOT EXISTS `quantidade_por_ativo` (
   `departamento_nome` varchar(30) DEFAULT NULL,
   `departamento` int(11) NOT NULL,
   PRIMARY KEY (`id_quantidade`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `quantidade_por_ativo`
@@ -329,7 +307,8 @@ INSERT INTO `quantidade_por_ativo` (`id_quantidade`, `id_patrimonio`, `departame
 (7, 7, 'Copa', 1),
 (8, 8, 'Limpeza', 2),
 (9, 9, 'Recuros Humano', 4),
-(10, 10, 'Setor Operecional', 8);
+(10, 10, 'Desenvolvimento Web', 5),
+(11, 104, 'Desenvolvimento Web', 5);
 
 -- --------------------------------------------------------
 
@@ -381,23 +360,24 @@ CREATE TABLE IF NOT EXISTS `registro_ativo` (
   KEY `fk_status_ativo` (`id_status_ativo`),
   KEY `fk_categoria` (`id_categoria`),
   KEY `fk_condicao_ativo` (`id_condicao_ativo`)
-) ENGINE=MyISAM AUTO_INCREMENT=101 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=105 DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `registro_ativo`
 --
 
 INSERT INTO `registro_ativo` (`id_patrimonio`, `id_funcionario`, `id_descricao_padrao`, `id_departamento`, `id_status_ativo`, `id_categoria`, `id_condicao_ativo`, `placa_patrimonio`, `responsavel`, `nome_produto`, `departamento`, `descricao_padrao`, `descricao`, `condicao_ativo`, `valor`, `data_aquisicao`, `hora_aquisicao`, `categoria`, `status`, `nf_registro`, `img_nf_ativo`) VALUES
-(1, 1, 2, 3, 1, 2, 1, '000222', 'Kaleb Pignaton', 'Optiplex 3060 Micro', 'Suporte', 'Monitor de Vídeo', 'Desktop ultra compacto com diversas solucoes de montagem e apenas 18,2 cm de altura e 3,6 cm de largura.', 'Excelente', '8.98', '2019-05-04', '11:59:12', 'Equipamentos de Informática', 'E', '000.000.452', 'teste.pdf'),
-(2, 1, 4, 6, 3, 3, 3, '000444', 'Kaleb Pignaton', 'teste 12', 'Desenvolvimento App', 'Geladeira', 'Desktop ultra compacto com diversas soluções de montagem e apenas 18,2 cm de altura e 3,6 cm de largura.', 'Regular', '12.00', '2019-01-12', '10:59:53', 'Eletrotomésticos', 'M', '546547567567567', 'Nubank_2018-12-06.pdf'),
-(3, 2, 3, 5, 3, 1, 2, '000111', 'André Santos', 'Optiplex 3060 Micro', 'Desenvolvimento Web', 'Armario', 'blá blá', 'Normal', '77.88', '2019-01-11', '16:21:54', 'Móvies e Utensílios', 'M', '67567567', 'Nubank_2018-12-06.pdf'),
-(4, 1, 9, 8, 2, 1, 2, '000999', 'Kaleb Pignaton', 'Teste 13', 'Setor Operecional', 'Teclado', 'blá blá blá blá blá', 'Normal', '92.71', '2019-02-08', '11:11:24', 'Móvies e Utensílios', 'B', '000.000.460', 'Nubank_2018-12-06.pdf'),
-(5, 2, 12, 13, 1, 3, 2, '001222', 'André Santos', 'Teste 14', 'Infraestrutura de TI', 'Notebook', ' 18,2 cm de altura e 3,6 cm de largura.', 'Normal', '694.00', '2019-02-16', '15:30:08', 'Eletrotomésticos', 'E', '000.000.461', 'Nubank_2018-12-06.pdf'),
-(6, 1, 1, 4, 3, 2, 2, '0001333', 'Kaleb Pignaton', 'Teste 15', 'Recuros Humano', 'Telefone', 'blá blá blá blá', 'Normal', '332.16', '2019-02-07', '10:43:33', 'Equipamentos de Informática', 'M', '000.000.462', 'Nubank_2018-12-06.pdf'),
-(7, 1, 3, 1, 2, 1, 3, '000333', 'Kaleb Pignaton', 'teste 4', 'Copa', 'Armario', 'blá blá blá', 'Regular', '77.88', '2019-01-04', '16:15:34', 'Móvies e Utensílios', 'B', '45756768', 'Nubank_2018-12-06.pdf'),
-(8, 1, 2, 2, 1, 1, 2, '000000', 'Kaleb Pignaton', 'teste7', 'Limpeza', 'Monitor de Vídeo', 'Desktop ultra compacto com diversas soluções de montagem e apenas 18,2 cm de altura e 3,6 cm de largura.', 'Normal', '77.88', '2019-01-05', '16:07:39', 'Móvies e Utensílios', 'E', '65467576', 'Nubank_2018-12-06.pdf'),
-(9, 1, 2, 4, 2, 1, 2, '3546457', 'Kaleb Pignaton', 'teste8', 'Recuros Humano', 'Monitor de Vídeo', 'Desktop umtracompacto com diversas soluções de montagem e apenas 18,2 cm de altura e 3,6 cm de largura.', 'Normal', '77.88', '2019-01-02', '16:37:39', 'Móvies e Utensílios', 'B', '78679789', 'Nubank_2018-12-06.pdf'),
-(10, 1, 8, 8, 1, 1, 1, '0001444', 'Kaleb Pignaton', 'Kappesberg', 'Setor Operecional', 'Mesa', 'Call Center Teca Itália De Madeira Móveis Kappesberg', 'Excelente', '260.99', '2019-02-26', '14:41:23', 'Móvies e Utensílios', 'E', '020.254.897', 'download.pdf');
+(1, 1, 2, 3, 3, 2, 1, '000222', 'Kaleb Pignaton', 'Optiplex 3060 Micro', 'Suporte', 'Monitor de Vídeo', 'Desktop ultra compacto com diversas solucoes de montagem e apenas 18,2 cm de altura e 3,6 cm de largura.', 'Excelente', '8.98', '2019-05-04', '11:59:12', 'Equipamentos de Informática', 'M', '000.000.452', 'teste.pdf'),
+(2, 1, 4, 6, 3, 3, 3, '000444', 'Kaleb Pignaton', 'teste 12', 'Desenvolvimento App', 'Geladeira', 'Desktop ultra compacto com diversas soluções de montagem e apenas 18,2 cm de altura e 3,6 cm de largura.', 'Regular', '12.00', '2019-01-12', '10:59:53', 'Eletrotomésticos', 'M', '546547567567567', 'download.pdf'),
+(3, 2, 3, 5, 3, 1, 2, '000111', 'André Santos', 'Optiplex 3060 Micro', 'Desenvolvimento Web', 'Armario', 'blá blá', 'Normal', '77.88', '2019-01-11', '16:21:54', 'Móvies e Utensílios', 'M', '67567567', 'download.pdf'),
+(4, 1, 9, 8, 2, 1, 2, '000999', 'Kaleb Pignaton', 'Teste 13', 'Setor Operecional', 'Teclado', 'blá blá blá blá blá', 'Normal', '92.71', '2019-02-08', '11:11:24', 'Móvies e Utensílios', 'B', '000.000.460', 'nota_devolucao.pdf'),
+(5, 2, 12, 13, 1, 3, 2, '001222', 'André Santos', 'Teste 14', 'Infraestrutura de TI', 'Notebook', ' 18,2 cm de altura e 3,6 cm de largura.', 'Normal', '694.00', '2019-02-16', '15:30:08', 'Eletrotomésticos', 'E', '000.000.461', 'danfe.pdf'),
+(6, 1, 1, 4, 3, 2, 2, '0001333', 'Kaleb Pignaton', 'Teste 15', 'Recuros Humano', 'Telefone', 'blá blá blá blá', 'Normal', '332.16', '2019-02-07', '10:43:33', 'Equipamentos de Informática', 'M', '000.000.462', 'danfe.pdf'),
+(7, 1, 3, 1, 2, 1, 3, '000333', 'Kaleb Pignaton', 'teste 4', 'Copa', 'Armario', 'blá blá blá', 'Regular', '77.88', '2019-01-04', '16:15:34', 'Móvies e Utensílios', 'B', '45756768', 'nota_devolucao.pdf'),
+(8, 1, 2, 2, 1, 1, 2, '000000', 'Kaleb Pignaton', 'teste7', 'Limpeza', 'Monitor de Vídeo', 'Desktop ultra compacto com diversas soluções de montagem e apenas 18,2 cm de altura e 3,6 cm de largura.', 'Normal', '77.88', '2019-01-05', '16:07:39', 'Móvies e Utensílios', 'E', '65467576', 'teste2.pdf'),
+(9, 1, 2, 4, 2, 1, 2, '3546457', 'Kaleb Pignaton', 'teste8', 'Recuros Humano', 'Monitor de Vídeo', 'Desktop umtracompacto com diversas soluções de montagem e apenas 18,2 cm de altura e 3,6 cm de largura.', 'Normal', '77.88', '2019-01-02', '16:37:39', 'Móvies e Utensílios', 'B', '78679789', 'teste2.pdf'),
+(10, 1, 8, 5, 1, 1, 1, '0001444', 'Kaleb Pignaton', 'Kappesberg', 'Desenvolvimento Web', 'Mesa', 'Call Center Teca Itália De Madeira Móveis Kappesberg', 'Excelente', '260.99', '2019-02-26', '16:08:56', 'Móvies e Utensílios', 'E', '020.254.897', 'teste.pdf'),
+(104, 1, 12, 5, 1, 2, 1, '0001555', 'Kaleb Pignaton', 'Samsung Notebook Essentials E20 ', 'Desenvolvimento Web', 'Notebook', 'blá blá blá blá e mais blá blá', 'Excelente', '1604.99', '2019-03-01', '16:36:28', 'Equipamentos de Informática', 'E', '234.676.765', 'nota_devolucao2.pdf');
 
 -- --------------------------------------------------------
 
@@ -466,13 +446,13 @@ CREATE TABLE IF NOT EXISTS `registro_manutencao` (
 --
 
 INSERT INTO `registro_manutencao` (`id_manutencao`, `id_patrimonio`, `placa_patrimonio`, `nome_produto`, `responsavel`, `departamento`, `descricao`, `data_manutencao`, `data_conclusao`, `hora_manutencao`, `valor_manutencao`, `nf_manutencao`, `img_nf_manutencao`, `devolvido`) VALUES
-(14, 73, '000444', 'teste 12', '1', 'Desenvolvimento App', 'Tela trincada', '2017-06-12', NULL, '17:36:17', '100.00', '201.847.456', 'danfe23we.pdf', '1'),
+(14, 73, '000444', 'teste 12', '1', 'Desenvolvimento App', 'Tela trincada', '2017-06-12', '2019-03-01', '17:36:17', '100.00', '201.847.456', 'danfe23we.pdf', '0'),
 (15, 73, '000444', 'teste 12', '1', 'Desenvolvimento App', 'Tela trincada', '2019-01-26', NULL, '17:45:22', '78.20', '025.874.402', 'danfe23we.pdf', '1'),
-(16, 86, '000222', 'Optiplex 3060 Micro', '1', 'Suporte', 'Tela trincada', '2018-11-02', NULL, '09:09:25', '150.00', '000.898.456', 'danfe23we.pdf', '1'),
+(16, 86, '000222', 'Optiplex 3060 Micro', '1', 'Suporte', 'Tela trincada', '2018-11-02', '2019-03-01', '09:09:25', '150.00', '000.898.456', 'danfe23we.pdf', '0'),
 (17, 86, '000222', 'Optiplex 3060 Micro', '1', 'Suporte', 'Tela trincada', '2019-01-25', '2019-02-26', '13:50:13', '895.23', '250.890.450', 'danfe23we.pdf', '0'),
 (18, 74, '000111', 'Optiplex 3060 Micro', '1', 'Desenvolvimento App', 'Tela trincada', '2019-02-03', NULL, '11:16:34', '500.00', '780.012.658', 'danfe23we.pdf', '1'),
 (19, 86, '000222', 'Optiplex 3060 Micro', '1', 'Suporte', 'Tela trincada', '2018-04-29', NULL, '13:17:29', '55.00', '936.000.896', 'danfe23we.pdf', '1'),
-(20, 90, '0001333', 'Teste 15', '1', 'Recuros Humano', 'Não sei o que quebrou', '2019-05-02', '2019-02-26', '09:08:41', '5555.00', '988.025.453', 'teste.pdf', '1');
+(20, 90, '0001333', 'Teste 15', '1', 'Recuros Humano', 'Não sei o que quebrou', '2019-05-02', NULL, '09:08:41', '5555.00', '988.025.453', 'teste.pdf', '1');
 
 -- --------------------------------------------------------
 
@@ -524,22 +504,22 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 --
 
 INSERT INTO `usuario` (`id_funcionario`, `nome`, `login`, `senha`, `email`, `departamento`, `ativo`, `trocasenha`, `nivel`) VALUES
-(1, 'Kaleb Pignaton', 'kaleb.pignaton', 'd28d48075d9ddcdea76e791a719e099ebe667089', 'kaleb.pignaton@teste.com.br', 'Desenvolvimento Web', '1', '0', '1'),
-(2, 'André Sousa', 'andre.sousa', 'd28d48075d9ddcdea76e791a719e099ebe667089', 'andre.sousa@teste.com.br', 'Desenvolvimento Web', '0', '0', '1'),
-(3, 'Sabrina Elias', 'sabrina.elias', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', 'sabrina.elias@teste.com.br', 'Desenvolvimento Web', '0', '1', '0'),
-(4, 'Daniela Olive', 'daniela.olive', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', 'daniela.olive@teste.com.br', 'Setor Operacional', '0', '1', '0'),
-(5, 'Adriano Sousa', 'adriano.sousa', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', 'adriano.sousa@teste.com.br', 'Presidente', '1', '1', '1'),
-(6, 'André Porta', 'andrei.porta', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', 'portella@teste.com.br', 'Diretoria', '0', '1', '0'),
-(7, 'Glaucia Velha', 'glaucia.velha', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', 'financeiro@teste.com.br', 'Financeiro', '0', '1', '0'),
-(8, 'Ricardo Cesar', 'ricardo.cesar', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', 'cesar@teste.com.br', 'Infraestrutura de TI', '0', '1', '0'),
-(9, 'Tainan Pave', 'tainan.pave', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', '', 'Recepção', '0', '1', '0'),
-(10, 'Stefany Frente', 'stefany.frente', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', 'recepcao@teste.com.br', 'SAC', '0', '1', '0'),
-(11, 'Cleid Sousa', 'cleid.sousa', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', 'cleid.sousa@teste.com.br', 'Expedição', '0', '1', '0'),
-(12, 'Daniela Xavi', 'daniela.xavi', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', 'daniela.xavi@teste.com.br', '', '0', '1', '0'),
-(13, 'Luciana Goias', 'luciana.goias', '01d15653039418f39223925b54f9f1aabf4efb37', 'faturamento@teste.com.br', 'Setor Operacional', '0', '1', '0'),
-(14, 'Matheus Assunção', 'matheus.assuncao', '01d15653039418f39223925b54f9f1aabf4efb37', 'devolucao2@teste.com.br', 'Setor Operacional', '0', '1', '0'),
-(15, 'Paulo Baier', 'paulo.baier', '01d15653039418f39223925b54f9f1aabf4efb37', 'devolucao@teste.com.br', 'Setor Operacional', '0', '1', '0'),
-(16, 'Edivan Luz', 'edivan.luz', '01d15653039418f39223925b54f9f1aabf4efb37', 'ediluz@teste.com.br', 'Desenvolvimento App', '0', '1', '0');
+(1, 'Kaleb Pignaton', 'kaleb.pignaton', 'd28d48075d9ddcdea76e791a719e099ebe667089', 'kaleb.pignaton@anexxa.com.br', 'Desenvolvimento Web', '1', '0', '1'),
+(2, 'André Santos', 'andre.santos', 'd28d48075d9ddcdea76e791a719e099ebe667089', 'andre.santos@anexxa.com.br', 'Desenvolvimento Web', '0', '0', '1'),
+(3, 'Sabrina Elias', 'sabrina.elias', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', 'sabrina.elias@anexxa.com.br', 'Desenvolvimento Web', '0', '1', '0'),
+(4, 'Daniela Oliveira', 'daniela.oliveira', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', 'daniela.oliveira@goodshoptv.com.br', 'Setor Operacional', '0', '1', '0'),
+(5, 'Adriano Lopes', 'adriano.lopes', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', 'adriano.lopes@anexxa.com.br', 'Presidente', '1', '1', '1'),
+(6, 'André Portella', 'andre.portella', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', 'portella@tisoftware.com.br', 'Diretoria', '0', '1', '0'),
+(7, 'Glaucia Villa', 'glaucia.villa', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', 'financeiro@anexxa.com.br', 'Financeiro', '0', '1', '0'),
+(8, 'Rodrigo Cesar', 'rodrigo.cesar', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', 'cesar@anexxa.com.br', 'Infraestrutura de TI', '0', '1', '0'),
+(9, 'Tainan Paiva', 'tainan.paiva', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', '', 'Recepção', '0', '1', '0'),
+(10, 'Stefany Costa', 'stefany.costa', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', 'recepcao@goodshoptv.com.br', 'SAC', '0', '1', '0'),
+(11, 'Cleidson Sousa', 'cleidson.sousa', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', 'cleidson.sousa@anexxa.com.br', 'Expedição', '0', '1', '0'),
+(12, 'Daniela Xavier', 'daniela.xavier', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', 'daniela.xavier@goodshoptv.com.br', '', '0', '1', '0'),
+(13, 'Luciana de Góes', 'luciana.goes', '01d15653039418f39223925b54f9f1aabf4efb37', 'faturamento@goodshoptv.com.br', 'Setor Operacional', '0', '1', '0'),
+(14, 'Matheus Wesley', 'matheus.wesley', '01d15653039418f39223925b54f9f1aabf4efb37', 'devolucao2@goodshoptv.com.br', 'Setor Operacional', '0', '1', '0'),
+(15, 'Paulo Ricardo', 'paulo.ricardo', '01d15653039418f39223925b54f9f1aabf4efb37', 'devolução@goodshoptv.com.br', 'Setor Operacional', '0', '1', '0'),
+(16, 'Edivan Fontes', 'edivan.fontes', '01d15653039418f39223925b54f9f1aabf4efb37', 'edifontes@tisoftware.com.br', 'Desenvolvimento App', '0', '1', '0');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
