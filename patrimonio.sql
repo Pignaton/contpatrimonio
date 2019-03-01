@@ -524,22 +524,22 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 --
 
 INSERT INTO `usuario` (`id_funcionario`, `nome`, `login`, `senha`, `email`, `departamento`, `ativo`, `trocasenha`, `nivel`) VALUES
-(1, 'Kaleb Pignaton', 'kaleb.pignaton', 'd28d48075d9ddcdea76e791a719e099ebe667089', 'kaleb.pignaton@anexxa.com.br', 'Desenvolvimento Web', '1', '0', '1'),
-(2, 'André Santos', 'andre.santos', 'd28d48075d9ddcdea76e791a719e099ebe667089', 'andre.santos@anexxa.com.br', 'Desenvolvimento Web', '0', '0', '1'),
-(3, 'Sabrina Elias', 'sabrina.elias', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', 'sabrina.elias@anexxa.com.br', 'Desenvolvimento Web', '0', '1', '0'),
-(4, 'Daniela Oliveira', 'daniela.oliveira', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', 'daniela.oliveira@goodshoptv.com.br', 'Setor Operacional', '0', '1', '0'),
-(5, 'Adriano Lopes', 'adriano.lopes', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', 'adriano.lopes@anexxa.com.br', 'Presidente', '1', '1', '1'),
-(6, 'André Portella', 'andre.portella', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', 'portella@tisoftware.com.br', 'Diretoria', '0', '1', '0'),
-(7, 'Glaucia Villa', 'glaucia.villa', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', 'financeiro@anexxa.com.br', 'Financeiro', '0', '1', '0'),
-(8, 'Rodrigo Cesar', 'rodrigo.cesar', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', 'cesar@anexxa.com.br', 'Infraestrutura de TI', '0', '1', '0'),
-(9, 'Tainan Paiva', 'tainan.paiva', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', '', 'Recepção', '0', '1', '0'),
-(10, 'Stefany Costa', 'stefany.costa', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', 'recepcao@goodshoptv.com.br', 'SAC', '0', '1', '0'),
-(11, 'Cleidson Sousa', 'cleidson.sousa', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', 'cleidson.sousa@anexxa.com.br', 'Expedição', '0', '1', '0'),
-(12, 'Daniela Xavier', 'daniela.xavier', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', 'daniela.xavier@goodshoptv.com.br', '', '0', '1', '0'),
-(13, 'Luciana de Góes', 'luciana.goes', '01d15653039418f39223925b54f9f1aabf4efb37', 'faturamento@goodshoptv.com.br', 'Setor Operacional', '0', '1', '0'),
-(14, 'Matheus Wesley', 'matheus.wesley', '01d15653039418f39223925b54f9f1aabf4efb37', 'devolucao2@goodshoptv.com.br', 'Setor Operacional', '0', '1', '0'),
-(15, 'Paulo Ricardo', 'paulo.ricardo', '01d15653039418f39223925b54f9f1aabf4efb37', 'devolução@goodshoptv.com.br', 'Setor Operacional', '0', '1', '0'),
-(16, 'Edivan Fontes', 'edivan.fontes', '01d15653039418f39223925b54f9f1aabf4efb37', 'edifontes@tisoftware.com.br', 'Desenvolvimento App', '0', '1', '0');
+(1, 'Kaleb Pignaton', 'kaleb.pignaton', 'd28d48075d9ddcdea76e791a719e099ebe667089', 'kaleb.pignaton@teste.com.br', 'Desenvolvimento Web', '1', '0', '1'),
+(2, 'André Sousa', 'andre.sousa', 'd28d48075d9ddcdea76e791a719e099ebe667089', 'andre.sousa@teste.com.br', 'Desenvolvimento Web', '0', '0', '1'),
+(3, 'Sabrina Elias', 'sabrina.elias', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', 'sabrina.elias@teste.com.br', 'Desenvolvimento Web', '0', '1', '0'),
+(4, 'Daniela Olive', 'daniela.olive', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', 'daniela.olive@teste.com.br', 'Setor Operacional', '0', '1', '0'),
+(5, 'Adriano Sousa', 'adriano.sousa', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', 'adriano.sousa@teste.com.br', 'Presidente', '1', '1', '1'),
+(6, 'André Porta', 'andrei.porta', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', 'portella@teste.com.br', 'Diretoria', '0', '1', '0'),
+(7, 'Glaucia Velha', 'glaucia.velha', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', 'financeiro@teste.com.br', 'Financeiro', '0', '1', '0'),
+(8, 'Ricardo Cesar', 'ricardo.cesar', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', 'cesar@teste.com.br', 'Infraestrutura de TI', '0', '1', '0'),
+(9, 'Tainan Pave', 'tainan.pave', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', '', 'Recepção', '0', '1', '0'),
+(10, 'Stefany Frente', 'stefany.frente', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', 'recepcao@teste.com.br', 'SAC', '0', '1', '0'),
+(11, 'Cleid Sousa', 'cleid.sousa', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', 'cleid.sousa@teste.com.br', 'Expedição', '0', '1', '0'),
+(12, 'Daniela Xavi', 'daniela.xavi', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', 'daniela.xavi@teste.com.br', '', '0', '1', '0'),
+(13, 'Luciana Goias', 'luciana.goias', '01d15653039418f39223925b54f9f1aabf4efb37', 'faturamento@teste.com.br', 'Setor Operacional', '0', '1', '0'),
+(14, 'Matheus Assunção', 'matheus.assuncao', '01d15653039418f39223925b54f9f1aabf4efb37', 'devolucao2@teste.com.br', 'Setor Operacional', '0', '1', '0'),
+(15, 'Paulo Baier', 'paulo.baier', '01d15653039418f39223925b54f9f1aabf4efb37', 'devolucao@teste.com.br', 'Setor Operacional', '0', '1', '0'),
+(16, 'Edivan Luz', 'edivan.luz', '01d15653039418f39223925b54f9f1aabf4efb37', 'ediluz@teste.com.br', 'Desenvolvimento App', '0', '1', '0');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
