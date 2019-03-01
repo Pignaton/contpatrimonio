@@ -60,6 +60,10 @@ $('#manutencao_ativo').on('show.bs.modal', function (event) {
 					$("#btnloading4").hide();
 					$(".btndespachar").show();
 					$('#manutencao_ativo').modal('hide');
+					$(':input','#manu_ativo')
+					   .not(':button, :submit, :reset, :hidden')
+					   .val('')
+					   document.getElementById("txtimgfiscal").value = "";
 				  }
 			});
 		  event.preventDefault();

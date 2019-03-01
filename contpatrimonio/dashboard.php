@@ -8,25 +8,25 @@ include("includes/grafico/quantidade.php");
 <div class="container-fluid">
 	<div class="row pt-5">
 		<div class="col-md-3 col-sm-4 col-xs-6">
-			<div class="card card-small pt-3">
+			<div class="modal-dashboard pt-2">
 				<p class="text-center" style="line-height: 1.5em"><i class="fa fa-archive fa-icon-medium"></i> Número de Ativos &nbsp;<br>
 				<?= $quant_ativo ?></p>
 			</div>
 		</div>
 		<div class="col-md-3 col-sm-4 col-xs-6">
-			<div class="card card-small pt-3">
+			<div class="modal-dashboard pt-2">
 				<p class="text-center" style="line-height: 1.5em"><i class="fas fa-dollar-sign pt-1"></i> Total em Ativos<br>
 				R$ <?= number_format($soma_ativo, 2, ',', '.') ?></p>
 			</div>
 		</div>
 		<div class="col-md-3 col-sm-4 col-xs-6 ">
-			<div class="card card-small pt-3">
+			<div class="modal-dashboard pt-2">
 				<p class="text-center" style="line-height: 1.5em"><i class="fas fa-dollar-sign pt-1"></i> Total em Baixa<br>
-				<?= number_format($soma_baixa, 2, ',', '.') ?></p>
+				R$ <?= number_format($soma_baixa, 2, ',', '.') ?></p>
 			</div>
 		</div>
 		<div class="col-md-3 col-sm-4 col-xs-6 ">
-			<div class="card card-small pt-3">
+			<div class="modal-dashboard pt-2">
 				<p class=" text-center" style="line-height: 1.5em"><i class="fas fa-dollar-sign pt-1"></i> Total em Manutenção</br>
 				R$ <?= number_format($soma_manutencao, 2, ',', '.') ?></p>
 			</div>
@@ -126,7 +126,7 @@ include("includes/grafico/quantidade.php");
 						window.myPie = new Chart( ctx, config );
 					};
 
-					var colorNames = Object.keys( window.chartColors );
+					//var colorNames = Object.keys( window.chartColors );
 					document.getElementById( 'addDataset' ).addEventListener( 'click', function () {
 						var newDataset = {
 							backgroundColor: [],
@@ -156,9 +156,13 @@ include("includes/grafico/quantidade.php");
 		</div>
 	</div>
 
-<?php include_once('includes/footer.php'); ?>
+<?php 
+include('html/modal_dashboard.php');
+include_once('includes/footer.php'); 
+?>
+<script src="js/script.js"></script>
 <script src="js/dashboard.js"></script>
-	<script>
+<script>
 var ctx = document.getElementById('myChart').getContext("2d");
 
 var barStroke = ctx.createLinearGradient(700, 0, 120, 0);

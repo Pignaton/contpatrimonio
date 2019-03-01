@@ -164,6 +164,13 @@ if ( !$erro )
 
 			//$id = $patrimonio->lastInsertId();
 
+			$query_atuailiza_grafico = $patrimonio->prepare("UPDATE quantidade_por_ativo SET departemanto_nome = :departamento_nome, departamento = :departamento WHERE id_patrimonio = :id_patrimonio");
+			$query_atuailiza_grafico->execute(array(
+				':departemanto_nome' => $departamento_novo,
+				':departamento' => $departamento,
+				':id_patrimonio' => $id_patrimonio
+			));
+
 			$query_nota = "UPDATE nota_fiscal SET  nf_ativo = :nf_ativo, img_nf_ativo = :img_nf_ativo WHERE id_patrimonio = $id_patrimonio";
 
 			$query_nota_fiscal = $patrimonio->prepare( $query_nota );
@@ -245,6 +252,13 @@ if ( !$erro )
 			$query_atualiza->bindValue( ':nf_registro', $nf_registro );
 			//$query_atualiza->bindValue( ':img_nf_ativo', $img_nota_fiscal );
 			$query_atualiza->execute();
+
+			$query_atuailiza_grafico = $patrimonio->prepare('UPDATE quantidade_por_ativo SET departamento_nome = :departamento_nome, departamento = :departamento WHERE id_patrimonio = :id_patrimonio');
+			$query_atuailiza_grafico->execute(array(
+				':departamento_nome' => $departamento_novo,
+				':departamento' => $departamento,
+				':id_patrimonio' => $id_patrimonio
+			));
 
 			$query_nota = "UPDATE nota_fiscal SET id_patrimonio = :id_patrimonio, nf_ativo = :nf_ativo WHERE id_patrimonio = :id_patrimonio";
 

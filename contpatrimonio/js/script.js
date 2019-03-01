@@ -81,6 +81,36 @@
 		  $('#txtbavalorantigo').val(valoran)
 		})
 
+		$('#dashboard_ativo').on('show.bs.modal', function (event) {
+		  var button = $(event.relatedTarget) // Button that triggered the modal
+		  var code = button.data('code') 
+		  $('#txtdspatrimonio').val(code)
+		  var nome = button.data('nome') 
+		  $('#txtdsnome').val(nome)
+		  var codigo = button.data('codigo') 
+		  $('#txtdscodigo').val(codigo)
+		  var responsavel = button.data('responsavel') 
+		  $('#txtdsresponsavel').val(responsavel)
+		  var valor = button.data('valor') 
+		  $('#txtdsvalor').val(valor)
+		  var condicao = button.data('condicao') 
+		  $('#txtdscondicao').val(condicao)
+		  var departamento = button.data('departamento') 
+		  $('#txtdsdepartamento').val(departamento)	
+		  var descricaopa = button.data('descricaopa') 
+		  $('#txtdsdescricaopadrao').val(descricaopa)
+		  var categoria = button.data('categoria') 
+		  $('#txtdscategoria').val(categoria)
+		  var status = button.data('status')
+		  $("#txtdsstatus").val(status)
+		  var descricao = button.data('descricao')
+		  $("#txtdsdescricao").val(descricao)
+		  var data1 = button.data('data')
+		  $("#txtdsdata").val(data1)
+		  var notafiscal = button.data('nf') 
+		  $('#txtdsnotafiscal').val(notafiscal)
+		})
+
 		$( "#edita_ativo" ).submit(function( event ) {
 		  $("#btnAtualizar").hide();
 		  var formcada = document.getElementById('edita_ativo');

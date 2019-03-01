@@ -87,7 +87,7 @@ if(!$erro){
 		$valor_novo = str_replace( ",", ".", $valor2 );
 
 		$query_inserir = "INSERT INTO registro_ativo ( id_funcionario, id_descricao_padrao, id_departamento, id_status_ativo, id_condicao_ativo, id_categoria, placa_patrimonio, nome_produto, responsavel, departamento, descricao_padrao, descricao, condicao_ativo, data_aquisicao, hora_aquisicao, valor, categoria, status, nf_registro, img_nf_ativo) 
-						  VALUE 
+						  VALUES 
 						  ( :id_funcionario, :id_descricao_padrao, :id_departamento, :id_status_ativo, :id_condicao_ativo, :id_categoria, :placa_patrimonio, :nome_produto, :responsavel, :departamento, :descricao_padrao, :descricao, :condicao_ativo, :data_aquisicao, :hora_aquisicao, :valor, :categoria, :status, :nf_registro, :img_nf_ativo)";
 		$query_inseri = $patrimonio->prepare( $query_inserir );
 		$query_inseri->bindValue( ':id_funcionario', $responsavel );
@@ -100,7 +100,7 @@ if(!$erro){
 		$query_inseri->bindValue( ':placa_patrimonio', $placa_patrimonio );
 		$query_inseri->bindValue( ':nome_produto', $nome_produto );
 		$query_inseri->bindValue( ':responsavel', $responsavel_novo);
-		$query_inseri->bindValue( ':departamento', $departamento );
+		$query_inseri->bindValue( ':departamento', $departamento_novo );
 		$query_inseri->bindValue( ':descricao_padrao', $descricao_padrao_novo );
 		$query_inseri->bindValue( ':descricao', $descricao );
 		$query_inseri->bindValue( ':condicao_ativo', $condicao_ativo_novo );
@@ -115,7 +115,7 @@ if(!$erro){
 
 		$id = $patrimonio->lastInsertId();
 
-		$query_nota = "INSERT INTO nota_fiscal ( id_patrimonio, nf_ativo, img_nf_ativo) VALUE ( :id_patrimonio, :nf_ativo, :img_nf_ativo)";
+		$query_nota = "INSERT INTO nota_fiscal ( id_patrimonio, nf_ativo, img_nf_ativo) VALUES ( :id_patrimonio, :nf_ativo, :img_nf_ativo)";
 
 		$query_nota_fiscal = $patrimonio->prepare( $query_nota );
 		$query_nota_fiscal->bindValue( ':id_patrimonio', $id );
@@ -123,6 +123,13 @@ if(!$erro){
 		$query_nota_fiscal->bindValue( ':img_nf_ativo', $img_nota_fiscal );
 		$query_nota_fiscal->execute();
 
+		$query_quantidade_grafico = $patrimonio->prepare('INSERT INTO quantidade_por_ativo (id_patrimonio, departamento_nome, departamento) VALUES (:id_patrimonio, :departamento_nome, :departamento)');
+		$query_quantidade_grafico->execute(array(
+			':id_patrimonio' => $id,
+			':departamento_nome' => $departamento_novo,
+			':departamento' => $departamento
+		));
+		
 		echo "<div class='alert alert-success text-center'>Ativo cadastrado com sucesso!</div>";
 		return true;
 	
