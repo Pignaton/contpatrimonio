@@ -198,21 +198,10 @@
 			});
 		  	event.preventDefault();
 		});
-
-		/*$('#edita_perfil').on( function (event) {
-		  var button = $(event.relatedTarget) // Button that triggered the modal
-		  var id = button.data('id') 
-		  $('#id_funcionario').val(id)
-		  var codigo = button.data('codigo') 
-		  $('#txtbaplacapatrimonio').val(codigo)
-	      var idpatrimonio = button.data('txtpatrimonio') 
-		  $('#txtbapatrimonio').val(idpatrimonio)
-		  var nome = button.data('nome') 
-		  $('#txtbanome').val(nome)
-		})*/
 			
 		$( "#edita_perfil" ).submit(function( event ) {
 		  $(".btnatualiza").hide();
+
 		  var parametros = $(this).serialize();
 			$.ajax({
 					type: "POST",
@@ -228,6 +217,8 @@
 					$("#btnloading").hide();
 				    $(".btnatualiza").show();
 					window.setTimeout(function() {$(".alert").fadeTo(500, 0).slideUp(500, function(){$(".alert").remove();});}, 6000);
+					$("#txtsenha").val("");
+					$("#txtconfirma").val("");
 					load(1);
 				  }
 			});

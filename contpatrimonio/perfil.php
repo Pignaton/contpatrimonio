@@ -1,3 +1,10 @@
+<style>
+.atualizasenha {
+    font-family: 'Staatliches', cursive;
+    color: #566787;
+    font-size: 15px;
+}
+</style>
 <?php 
 include("includes/header.php"); ?>
 <br>
@@ -29,14 +36,14 @@ include("includes/header.php"); ?>
                                         <div class="row">
                                             <div class="col-md-5">
                                                 <div class="form-group">
-                                                    <label><font>Empresa (desativada)</font></label>
+                                                    <label><font>Empresa <font class="text-danger">(desativada)</font></font></label>
                                                     <input type="text" class="form-control" disabled="" placeholder="Company" value="Anexxa Group">
                                                 </div>
                                             </div>
 											<div class="col-md-7">
                                                 <div class="form-group">
                                                     <label><font>Nome</font></label>
-                                                    <input type="text" class="form-control" placeholder="Company" id="txtnome" name="txtnome">
+                                                    <input type="text" class="form-control" placeholder="Company" id="txtnome" name="txtnome" value="<?=$usuario_login?>">
                                                 </div>
                                             </div>
                                         </div>
@@ -44,35 +51,42 @@ include("includes/header.php"); ?>
                                             <div class="col-md-4 ">
                                                 <div class="form-group">
                                                     <label><font>Nome de usuário</font></label>
-                                                    <input type="text" class="form-control" placeholder="Username" id="txtusuario" name="txtusuario">
+                                                    <input type="text" class="form-control" placeholder="Username" id="txtusuario" value="<?=$usuario_nome?>" name="txtusuario">
                                                 </div>
                                             </div>
                                             <div class="col-md-4 ">
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1"><font>Endereço de e-mail</font></label>
-                                                    <input type="email" class="form-control" placeholder="Email" id="txtemail" name="txtemail">
+                                                    <input type="email" class="form-control" placeholder="Email" id="txtemail" name="txtemail" value="<?=$usuario_email?>">
                                                 </div>
                                             </div>
                                             <div class="col-md-4 ">
                                                 <div class="form-group">
                                                     <label><font>Departamento</font></label>
-                                                    <input type="text" class="form-control" placeholder="" id="txtdepartamento" name="txtdepartamento">
+                                                    <input type="text" class="form-control" placeholder="" id="txtdepartamento" name="txtdepartamento" value="<?=$usuario_departamento?>">
                                                 </div>
                                             </div>
                                         </div>
+                                        <hr>
+                                        <div>
+                                            <p class="text-center atualizasenha">Atualizar Senha</p>
+                                        </div>
                                         <div class="row">
-                                            <div class="col-md-4 ">
+                                            <div class="col-md">
                                                 <div class="form-group">
                                                     <label><font>Senha</font></label>
                                                     <input type="text" class="form-control" placeholder="senha" id="txtsenha" name="txtsenha">
                                                 </div>
                                             </div>
-                                            <div class="col-md-4 ">
+                                            <div class="col-md">
                                                 <div class="form-group">
                                                     <label><font>Confirmar Senha</font></label>
-                                                    <input type="text" class="form-control" placeholder="confirma senha" name="txtconfirma" name="txtconfirma">
+                                                    <input type="text" class="form-control" placeholder="confirma senha" id="txtconfirma" name="txtconfirma">
                                                 </div>
                                             </div>
+                                        </div>
+                                        <div class="alert alert-info text-center" role="alert" >
+                                            Caracteres aceitaveis:  ! @ # $ % * () _
                                         </div>
 										<div id="btnloading" ></div>
                                         <button type="submit"  class="btn btn-info btn-fill pull-right btnatualiza"><font>Atualizar perfil</font></button>

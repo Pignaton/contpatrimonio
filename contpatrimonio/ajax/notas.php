@@ -5,16 +5,27 @@ require_once ("../../_conn/conn.php");
 	
 	$acao = (isset($_REQUEST['acao']) && $_REQUEST['acao'] != NULL)?$_REQUEST['acao']:'';
 if($acao == 'ajax'){
+
 	$query =$_REQUEST['query'];
+	$calendario =$_REQUEST['calendario'];
 
 	$tabela="img_fora";
 	$campos="*";
-	$condicao=" ( img_fora.id_img LIKE '%".$query."%' OR";
-	//$condicao.=" img_fora.data LIKE '%".$query."%' OR";
-	$condicao.=" img_fora.responsavel LIKE '%".$query."%')";
-	$condicao.=" order by img_fora.data";
-	
-	
+	/*Pesquisa pela data ou id e nome*/
+	if($calendario != ""){
+		$query = $calendario;
+
+		$condicao=" ( img_fora.id_img LIKE '%".$query."%' OR ";
+		$condicao.=" img_fora.data LIKE '%".$calendario."%' OR ";
+		$condicao.=" img_fora.responsavel LIKE '%".$query."%') ";
+		$condicao.=" ORDER BY img_fora.data";
+	}else{
+
+		$condicao=" ( img_fora.id_img LIKE '%".$query."%' OR ";
+		$condicao.=" img_fora.responsavel LIKE '%".$query."%') ";
+		$condicao.=" ORDER BY img_fora.data";
+	}
+
 	include 'paginacao.php'; //include pagination arquivo
 	//pagination variaveis
 	$pagina = (isset($_REQUEST['pagina']) && !empty($_REQUEST['pagina']))?$_REQUEST['pagina']:1;
@@ -32,7 +43,7 @@ if($acao == 'ajax'){
 	else {/*echo mysqli_error($patrimonio);*/}
 	$total_paginas = ceil($numrows/$por_pagina);
 	// consulta principal para buscar os dados
-	$query = "SELECT $campos FROM  $tabela where $condicao LIMIT $offset,$por_pagina";
+	$query = "SELECT $campos FROM $tabela where $condicao LIMIT $offset,$por_pagina";
 	$query_user = $patrimonio->prepare($query);
 	$query_user->execute();
 	$qnt_linhas = $query_user->rowCount();
@@ -97,6 +108,8 @@ if($acao == 'ajax'){
 			</table>
 		</div>		
 	<?php	
+	}else{
+		echo "<p class='text-center'>Nenhum Resultado Encontrado</p>";
 	}	
 }
 ?>

@@ -3,8 +3,9 @@
 		});
 		function load(pagina){
 			var query=$("#q").val();
+			var calendario=$("#calendario").val();
 			var por_pagina=10;
-			var parametros = {"acao":"ajax","pagina":pagina,'query':query,'por_pagina':por_pagina};
+			var parametros = {"acao":"ajax","pagina":pagina,'query':query,'calendario':calendario,'por_pagina':por_pagina};
 			$("#loader").fadeIn('slow');
 			$.ajax({
 				url:'ajax/notas.php',
@@ -18,3 +19,6 @@
 				}
 			})
 		}
+		
+		
+		

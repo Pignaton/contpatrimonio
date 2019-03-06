@@ -118,6 +118,8 @@ if($acao == 'ajax'){
 			</table>
 		</div>	
 	<?php	
+	}else{
+		echo "<p class='text-center'>Nenhum Resultado Encontrado</p>";
 	}	
 }
 ?>          
