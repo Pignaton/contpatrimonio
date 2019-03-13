@@ -54,8 +54,8 @@ $acao = (isset($_REQUEST['acao']) && $_REQUEST['acao'] != NULL)?$_REQUEST['acao'
 						<thead class="thead-dark">
 							<tr>
 								<th>#</th>
-								<th >Nome Produto</th>
-								<th>Placa Patrim&ocirc;nio</th>
+								<th >Nome</th>
+								<th>Placa </th>
 								<th>Data</th>
 								<th>Valor</th>
 								<th>PDF</th>

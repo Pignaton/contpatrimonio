@@ -1,5 +1,5 @@
 <?php	
-header('Content-Type: text/html; charset=utf8mb4');
+header('Content-Type: text/html; charset=latin1');
 session_start();
 require_once("../../../_conn/conn.php");
 	$acao = (isset($_REQUEST['acao']) && $_REQUEST['acao'] != NULL)?$_REQUEST['acao']:'';
@@ -36,7 +36,6 @@ require_once("../../../_conn/conn.php");
 		$rows = $query_exibir->rowCount();
 if($numrows >0){
 ?>
-
 <div class="table-responsive">
 	<table class="table table-striped ">
 		<thead>
@@ -96,17 +95,20 @@ if($numrows >0){
 						<tbody>
 							<?php foreach($total_patrimonio as $s){
 								$devolucao = $s['data_conclusao'];
+								$responsavel = $s['responsavel'];
 
-								if($devolucao != ""){$devolucao = date('d/m/Y', strtotime($devolucao)); }else{ $devolucao = "Em manutenção";}
+								if($devolucao != ""){$devolucao = date('d/m/Y', strtotime($devolucao)); }else{ $devolucao = "<span class='text-danger'>Em manutenção</span>";}
 
 								if($s['devolvido'] != '1')
 									$disabled="class='some' style='display:none;'";
 								else
 									$disabled="";
+
+								include("../../includes/post-get.php");
 							?>
 							<tr>
 								<td><?= $s['id_manutencao']?></td>
-								<td><?= $s['responsavel'] ?></td>
+								<td><?= $responsavel_novo ?></td>
 								<td><?= 'R$'.number_format($s['valor_manutencao'], 2, '.', ',');?></td>
 								<td><?= date('d/m/Y', strtotime($s['data_manutencao'])).' - '. $s['hora_manutencao'];?></td>
 								<td><?= $devolucao ?></td>

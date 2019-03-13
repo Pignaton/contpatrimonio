@@ -1,6 +1,6 @@
 <?php
 /*Converte as id em seus respectivos significados*/
-if(isset($categoria)){
+error_reporting(0);
 
 $categoria_novo = $categoria;
 	 //$categoria_novo = '';
@@ -56,8 +56,5 @@ $departamento_novo = $departamento;
 $responsavel_novo = $responsavel;
 	if($responsavel_novo == '1'){ $responsavel_novo = "Kaleb Pignaton"; }
 	else if($responsavel_novo  == '2'){ $responsavel_novo = "André Santos"; }
-	
-
-}
 
 ?>

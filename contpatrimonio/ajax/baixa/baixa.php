@@ -1,5 +1,5 @@
 <?php
-header('Content-Type: text/html; charset=utf8mb4');
+header('Content-Type: text/html; charset=latin1');
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 

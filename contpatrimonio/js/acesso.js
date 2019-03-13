@@ -26,13 +26,33 @@ $(function() {
 		  var nome = button.data('nome') 
 		  $('#txtnome').val(nome)
 		  var dashboard = button.data('dashboard') 
-		  $('#txtdashboard').val(dashboard)
+		  if(dashboard  == '1'){
+		  $("#txtdashboard").prop('checked', true); 	
+		  	$('#txtdashboard').val(dashboard)
+		  }else{
+		  	$("#txtdashboard").prop('checked', false); 
+		  }
 		  var cadastro_ativo = button.data('cadastro_ativo') 
-		  $('#txtcadastro').val(cadastro_ativo)
+		  if(cadastro_ativo  == '1'){
+		  $("#txtcadastro").attr('checked', true);
+		  	$('#txtcadastro').val(cadastro_ativo)
+		   }else{
+		  	$("#txtcadastro").prop('checked', false); 
+		  }
 		  var tabela_manutencao = button.data('tabela_manutencao') 
-		  $('#txttabela_manutencao').val(tabela_manutencao)
+		  if(tabela_manutencao  == '1'){
+		 	 $("#txttabela_manutencao").attr('checked', true);
+		  	 $('#txttabela_manutencao').val(tabela_manutencao)
+		  }else{
+		  	$("#txttabela_manutencao").prop('checked', false); 
+		  }
 		  var tabela_baixa = button.data('tabela_baixa') 
-		  $('#txttabela_baixa').val(tabela_baixa)
+		  if(tabela_baixa == '1'){
+		  	$("#txttabela_baixa").attr('checked', true);
+		  	$('#txttabela_baixa').val(tabela_baixa)
+		  }else{
+		  	$("#txtdashboard").prop('checked', false); 
+		  }
 		  var registramanutencao = button.data('registramanutencao') 
 		  $('#txtregistramanutencao').val(registramanutencao)
 		  var backup = button.data('backup') 

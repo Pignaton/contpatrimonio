@@ -13,7 +13,7 @@ include('includes/verificaacesso.php');
 
 ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" ><head>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
 	<noscript><meta http-equiv="refresh" content="1; url=htacess/noscript.html"></noscript>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
@@ -57,6 +57,11 @@ include('includes/verificaacesso.php');
     $caminho_diretorio = $_SERVER['PHP_SELF']; 
 	$caminho_diretorio_array = explode('/',$caminho_diretorio);
 	$nome_arquivo2 = $caminho_diretorio_array[5];	
+
+	$nome_usuario = $_SESSION['nome'];
+	$nome_usuario_remove = explode('.',$nome_usuario);
+	$nome_usuario_separa =  implode(" ",$nome_usuario_remove);
+
    /*!= $nome_arquivo && 'trocasenha.php'*/						 
   // Certifique-se de que o usuário esteja logado antes de prosseguir.
   if (!isset($_SESSION['id_funcionario']) && 'index.php' != $nome_arquivo && 'recupera_senha.php' != $nome_arquivo && 'logout.php' != $nome_arquivo2 && 'noscript.php' != $nome_arquivo2) {
@@ -69,7 +74,7 @@ else if('index.php' != $nome_arquivo && 'recupera_senha.php' != $nome_arquivo &&
 ?>
 <header class="header">
 		<label href="javascript:;" class="menu-icon open" for="menu-btn" data-toggle="dropdown" aria-expanded="true" title="menu" >
-			<?=$_SESSION['nome']?>&nbsp; &nbsp;<span class=" fa fa-angle-down"></span>
+			<?=$nome_usuario_separa?>&nbsp; &nbsp;<span class=" fa fa-angle-down"></span>
 		</label>
 		<ul class="dropdown-menu dropdown-usermenu pull-right">
 			<li>

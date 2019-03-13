@@ -125,6 +125,7 @@ if($acao == 'ajax'){
 	<?php	
 	}	
 }
+/*<button data-target="#liberar_acesso" data-tooltip="tooltip" title="Editar acesso" class="edit btn btn-sm btn-warning" data-toggle="modal" data-code="<?=$funcionario_id?>" data-nome="<?=$nome?>" data-dashboard="<?=$dashboard?>" data-cadastro_ativo="<?=$cadastro_ativo?>" data-tabela_manutencao="<?=$tabela_manutencao?>" data-tabela_baixa="<?=$tabela_baixa?>" data-ativo="<?=$ativo?>" data-registramanutencao="<?=$manutencao_ativo?>" data-backup="<?=$backup?>" data-acesso="<?=$acesso?>">Editar</button>*/
 ?>
 <script>
 $(document).ready(function(){

@@ -1,34 +1,60 @@
-<?php include_once( 'includes/header.php' ); ?>
 <?php 
+include_once('includes/header.php'); 
 include("includes/valortabela.php"); 
 include("includes/grafico/quantidade.php"); 
+
+
 ?>
 <br>
 <br>
 <div class="container-fluid">
+
 	<div class="row pt-5">
 		<div class="col-md-3 col-sm-4 col-xs-6">
 			<div class="modal-dashboard pt-2">
 				<p class="text-center" style="line-height: 1.5em"><i class="fa fa-archive fa-icon-medium"></i> Número de Ativos &nbsp;<br>
-				<?= $quant_ativo ?></p>
+				<?= $quant_ativo ?><br>
+				<span <?=$color?>>
+				 	&nbsp;
+				</span>
 			</div>
 		</div>
 		<div class="col-md-3 col-sm-4 col-xs-6">
 			<div class="modal-dashboard pt-2">
-				<p class="text-center" style="line-height: 1.5em"><i class="fas fa-dollar-sign pt-1"></i> Total em Ativos<br>
-				R$ <?= number_format($soma_ativo, 2, ',', '.') ?></p>
+				<p class="text-center" style="line-height: 1.5em">
+					<i class="fas fa-dollar-sign pt-1"></i> 
+					 Total em Ativos<br>
+					 R$ <?= number_format($soma_ativo, 2, ',', '.') ?><br>
+				  <span <?=$color?>>
+					 <?=$icon?>&nbsp;
+					 <?= round($valor_ativo, 2) . " % "; ?>
+				  </span>
+				</p>
 			</div>
 		</div>
-		<div class="col-md-3 col-sm-4 col-xs-6 ">
+		<div class="col-md-3 col-sm-4 col-xs-6">
 			<div class="modal-dashboard pt-2">
-				<p class="text-center" style="line-height: 1.5em"><i class="fas fa-dollar-sign pt-1"></i> Total em Baixa<br>
-				R$ <?= number_format($soma_baixa, 2, ',', '.') ?></p>
+				<p class="text-center" style="line-height: 1.5em">
+					<i class="fas fa-dollar-sign pt-1"></i> 
+					 Total em Baixa<br>
+					R$ <?= number_format($soma_baixa, 2, ',', '.') ?><br>
+					<span  <?=$color2?>>
+					   <?=$icon2?>&nbsp;
+					   <?= round($valor_baixa, 2) . " % "; ?>
+					</span>
+				</p>
 			</div>
 		</div>
-		<div class="col-md-3 col-sm-4 col-xs-6 ">
+		<div class="col-md-3 col-sm-4 col-xs-6">
 			<div class="modal-dashboard pt-2">
-				<p class=" text-center" style="line-height: 1.5em"><i class="fas fa-dollar-sign pt-1"></i> Total em Manutenção</br>
-				R$ <?= number_format($soma_manutencao, 2, ',', '.') ?></p>
+				<p class=" text-center" style="line-height: 1.5em">
+					<i class="fas fa-dollar-sign pt-1"></i> Total em Manutenção</br>
+					R$ <?= number_format($soma_manutencao, 2, ',', '.') ?><br>
+					<span  <?=$color3?>>
+					   <?=$icon3?>&nbsp;
+					   <?= round($valor_manu, 2) . " % "; ?>
+					</span>
+				</p>
 			</div>
 		</div>
 	</div>

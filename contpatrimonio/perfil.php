@@ -8,7 +8,7 @@
 <?php 
 include("includes/header.php"); ?>
 <br>
-<div class="container-fluid">
+<div class="container">
 	<div class="row">
 	   <div class="col-sm">
         <div class="table-wrapper">
@@ -23,10 +23,7 @@ include("includes/header.php"); ?>
 			<hr>
 			<!--<div id="loader"></div>-->
 			<div id="perfilexibi"></div>
-			<div class="content">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-8">
+                <div class="container-fluid">
                             <div class="card">
                                 <div class="card-header">
                                     <h4 class="card-title"><font>Editar Perfil</font></h4>
@@ -63,7 +60,7 @@ include("includes/header.php"); ?>
                                             <div class="col-md-4 ">
                                                 <div class="form-group">
                                                     <label><font>Departamento</font></label>
-                                                    <input type="text" class="form-control" placeholder="" id="txtdepartamento" name="txtdepartamento" value="<?=$usuario_departamento?>">
+                                                    <input type="text" class="form-control" placeholder="" id="txtdepartamento" name="txtdepartamento" value="<?=$usuario_departamento?>" disabled="">
                                                 </div>
                                             </div>
                                         </div>
@@ -75,26 +72,25 @@ include("includes/header.php"); ?>
                                             <div class="col-md">
                                                 <div class="form-group">
                                                     <label><font>Senha</font></label>
-                                                    <input type="text" class="form-control" placeholder="senha" id="txtsenha" name="txtsenha">
+                                                    <input type="password" class="form-control" placeholder="senha" id="txtsenha" name="txtsenha">
                                                 </div>
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-group">
                                                     <label><font>Confirmar Senha</font></label>
-                                                    <input type="text" class="form-control" placeholder="confirma senha" id="txtconfirma" name="txtconfirma">
+                                                    <input type="password" class="form-control" placeholder="confirma senha" id="txtconfirma" name="txtconfirma">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="alert alert-info text-center" role="alert" >
-                                            Caracteres aceitaveis:  ! @ # $ % * () _
+                                            Caracteres aceitáveis:  ! @ # $ % * () _
                                         </div>
 										<div id="btnloading" ></div>
                                         <button type="submit"  class="btn btn-info btn-fill pull-right btnatualiza"><font>Atualizar perfil</font></button>
                                     </form>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
+                     
+                    
                 </div>
             </div>
 		   </div>

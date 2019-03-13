@@ -39,3 +39,23 @@ include("includes/header.php"); ?>
 <script>window.setTimeout(function() {$(".some").fadeTo(500, 0).slideUp(500, function(){$(".some").remove();});}, 6000);</script>
 <script src="js/acesso.js"></script>
 <?php include("includes/footer.php");?>
+  <script type="text/javascript">
+
+   /* $('#liberar_acesso').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget)
+      var codigo = button.data('code')
+      var nome = button.data('nome')
+      var dashboard = button.data('dashboard')
+
+      var modal = $(this)
+      modal.find('.modal-title').text('ID ' + codigo)
+      modal.find('#txtcodigo').val(codigo)
+      modal.find('#txtnome').val(nome)
+      if(dashboard  == '1'){
+         $("#txtdashboard").attr('checked', true); 
+         modal.find('#txtdashboard').val(dashboard)
+      }
+     
+      
+    })*/
+  </script>

@@ -22,7 +22,7 @@
 	/*background-color:#FF613B;*/
 }
 </style>
-<div id="liberar_acesso" class="modal fade">
+<div id="liberar_acesso" class="modal fade" >
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
 			   <form action="javascript:void(0);" name="libera_acesso" id="libera_acesso">
@@ -52,10 +52,7 @@
 								<div class="row">
 									<div class="form-group">
 										<label for="codigo" class="col-form-label"> Dashboard: </label>
-										<select class="form-control txtdashboard" name="txtdashboard" id="txtdashboard" required>
-											<option value="0" <?=( $dashboard=='0' )? 'selected': ''; ?>>NÃO</option>
-											<option value="1" <?=( $dashboard=='1' )? 'selected': ''; ?>>SIM</option>
-										</select>
+										<input type="checkbox" class="form-control txtdashboard" name="txtdashboard" id="txtdashboard" >
 									</div>
 									<div class="form-group pl-1">
 										<label for="cadastro" class="col-form-label"> Cadastro de Ativo: &nbsp;</label>

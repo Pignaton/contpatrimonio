@@ -1,5 +1,5 @@
 <?php 
-header("Content-Type: text/html; charset=utf8mb4");
+header("Content-Type: text/html; charset=latin1");
 include('../../../_conn/conn.php');
 	$acao = (isset($_REQUEST['acao']) && $_REQUEST['acao'] != NULL)?$_REQUEST['acao']:'';
 if($acao == 'ajax')
