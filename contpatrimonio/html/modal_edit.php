@@ -33,8 +33,7 @@ header('http-equiv="Content-Type" content="text/html; charset=utf8mb4');
 													<div class="form-group">
 														<label for="responsavel" class="col-form-label">Responsavel:</label>
 														<select class="form-control txtvsresponsavel" name="txtvsresponsavel" id="txtvsresponsavel" required>
-															<option value="1" <?=( $resposanvel_id=='1' )? 'selected': ''; ?>>kaleb Pignaton</option>
-															<option value="2" <?=( $resposanvel_id=='2' )? 'selected': ''; ?>>André Santos</option>
+															<?= include("ajax/select/funcionario.php"); ?>
 														</select>
 													</div>
 												</div>
@@ -44,20 +43,7 @@ header('http-equiv="Content-Type" content="text/html; charset=utf8mb4');
 													<div class="form-group">
 														<label for="txtvsdepartamento" class="col-form-label">Departamento:</label>
 														<select class="form-control txtvsdepartamento" id="txtvsdepartamento" name="txtvsdepartamento" required>
-															<option value="1" <?=( $departamento_id=='1' )? 'selected': ''; ?>>Copa</option>
-															<option value="2" <?=( $departamento_id=='2' )? 'selected': ''; ?>>Limpeza</option>
-															<option value="3" <?=( $departamento_id=='3' )? 'selected': ''; ?>>Suporte</option>
-															<option value="4" <?=( $departamento_id=='4' )? 'selected': ''; ?>>Recurso Humano</option>
-															<option value="5" <?=( $departamento_id=='5' )? 'selected': ''; ?>>Desenvolvimento Web</option>
-															<option value="6" <?=( $departamento_id=='6' )? 'selected': ''; ?>>Desenvolvimento App</option>
-															<option value="7" <?=( $departamento_id=='7' )? 'selected': ''; ?>>Fina nceiro</option>
-															<option value="8" <?=( $departamento_id=='8' )? 'selected': ''; ?>>Setor Operacional</option>
-															<option value="9" <?=( $departamento_id=='9' )? 'selected': ''; ?>>SAC</option>
-															<option value="10" <?=( $departamento_id=='10' )? 'selected': ''; ?>>Criaçao e Mídia</option>
-															<option value="11" <?=( $departamento_id=='11' )? 'selected': ''; ?>>Diretoria</option>
-															<option value="12" <?=( $departamento_id=='12' )? 'selected': ''; ?>>Recepçao</option>
-															<option value="13" <?=( $departamento_id=='13' )? 'selected': ''; ?>>Infraestrutura de TI</option>
-															<option value="14" <?=( $departamento_id=='14' )? 'selected': ''; ?>>Espediçao</option>
+															<?= include("ajax/select/departamento.php"); ?>
 														</select>
 													</div>
 												</div>
@@ -65,23 +51,7 @@ header('http-equiv="Content-Type" content="text/html; charset=utf8mb4');
 													<div class="form-group">
 														<label for="descricao_padrao" class="col-form-label">descrição Padrão:</label>
 														<select class="form-control txtvsdescricaopadrao" id="txtvsdescricaopadrao" name="txtvsdescricaopadrao" required>
-															<option value="1" <?=( $descricao_padrao_id=='1' )? 'selected': ''; ?>>Telefone</option>
-															<option value="2" <?=( $descricao_padrao_id=='2' )? 'selected': ''; ?>>Monitor de Vídeo</option>
-															<option value="3" <?=( $descricao_padrao_id=='3' )? 'selected': ''; ?>>Armario</option>
-															<option value="4" <?=( $descricao_padrao_id=='4' )? 'selected': ''; ?>>Geladeira</option>
-															<option value="5" <?=( $descricao_padrao_id=='5' )? 'selected': ''; ?>>Ar condicionado</option>
-															<option value="6" <?=( $descricao_padrao_id=='6' )? 'selected': ''; ?>>ventilador</option>
-															<option value="7" <?=( $descricao_padrao_id=='7' )? 'selected': ''; ?>>Cadeira</option>
-															<option value="8" <?=( $descricao_padrao_id=='8' )? 'selected': ''; ?>>Mesa</option>
-															<option value="9" <?=( $descricao_padrao_id=='9' )? 'selected': ''; ?>>Teclado</option>
-															<option value="10" <?=( $descricao_padrao_id=='10' )? 'selected': ''; ?>>CPU</option>
-															<option value="11" <?=( $descricao_padrao_id=='11' )? 'selected': ''; ?>>Mouse</option>
-															<option value="12" <?=( $descricao_padrao_id=='12' )? 'selected': ''; ?>>Notebook</option>
-															<option value="13" <?=( $descricao_padrao_id=='13' )? 'selected': ''; ?>>Impressora</option>
-															<option value="14" <?=( $descricao_padrao_id=='14' )? 'selected': ''; ?>>Microondas</option>
-															<option value="15" <?=( $descricao_padrao_id=='15' )? 'selected': ''; ?>>TV</option>
-															<option value="16" <?=( $descricao_padrao_id=='16' )? 'selected': ''; ?>>Cafeteira Industrial</option>
-															<option value="17" <?=( $descricao_padrao_id=='17' )? 'selected': ''; ?>>Roteador Wirelles</option>
+																<?= include("ajax/select/departamento.php"); ?>
 														</select>
 													</div>
 												</div>
@@ -89,10 +59,7 @@ header('http-equiv="Content-Type" content="text/html; charset=utf8mb4');
 													<div class="form-group">
 														<label for="condicao" class="col-form-label">Condição:</label>
 														<select class="form-control txtvscondicao" name="txtvscondicao" id="txtvscondicao" required>
-															<option value="1" <?=( $condicao_id=='1' )? 'selected': ''; ?>>Excelente</option>
-															<option value="2" <?=( $condicao_id=='2' )? 'selected': ''; ?>>Normal</option>
-															<option value="3" <?=( $condicao_id=='3' )? 'selected': ''; ?>>Regular</option>
-															<option value="4" <?=( $condicao_id=='4' )? 'selected': ''; ?>>Péssima</option>
+															<?= include("ajax/select/condicao.php"); ?>
 														</select>
 													</div>
 												</div>
@@ -122,9 +89,7 @@ header('http-equiv="Content-Type" content="text/html; charset=utf8mb4');
 													<div class="form-group">
 														<label for="categoria" class="col-form-label">Categoria:</label>
 														<select class="form-control txtvscategoria" name="txtvscategoria" id="txtvscategoria" required>
-															<option value="1" <?=( $categoria_id=='1' )? 'selected': ''; ?>>Móvies e Utensílios</option>
-															<option value="2" <?=( $categoria_id=='2' )? 'selected': ''; ?>>Equipamentos de Informática</option>
-															<option value="3" <?=( $categoria_id=='3' )? 'selected': ''; ?>>Eletrotomésticos</option>
+															<?= include("ajax/select/categoria.php"); ?>
 														</select>
 													</div>
 												</div>
@@ -134,10 +99,7 @@ header('http-equiv="Content-Type" content="text/html; charset=utf8mb4');
 													<div class="form-group">
 														<label for="status" class="col-form-label">Status:</label>
 														<select class="form-control txtvsstatus" name="txtvsstatus"  id="txtvsstatus" required>
-															<option value="1" <?=( $status_id=='1' )? 'selected': ''; ?>>Em uso</option>
-															<option value="2" <?=( $status_id=='2' )? 'selected': ''; ?>>Baixa</option>
-															<option value="3" <?=( $status_id=='3' )? 'selected': ''; ?>>Manutençao</option>
-															<option value="4" <?=( $status_id=='4' )? 'selected': ''; ?>>Parado</option>
+															<?= include("ajax/select/status.php"); ?>
 														</select>
 													</div>
 												</div>

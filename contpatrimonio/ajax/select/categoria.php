@@ -14,7 +14,7 @@ $categoria = '<option value=""></option>';
 while ( $tbl = $query_condicao->fetch(PDO::FETCH_OBJ)){
 	$categoria1 = $tbl->categoria;
 
-$categoria .= "<option value='$tbl->id_categoria'>$tbl->categoria</option>";
+$categoria .= "<option value='$tbl->id_categoria' ($tbl->id_categoria == $tbl->id_categoria)? 'selected': ''; >$tbl->categoria</option>";
 }
 
 echo $categoria;

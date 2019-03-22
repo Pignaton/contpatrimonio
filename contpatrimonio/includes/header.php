@@ -44,6 +44,7 @@ include('includes/verificaacesso.php');
 	<link rel="stylesheet" type="text/css" href="css/dashboard.css"/>
 	<link rel="stylesheet" href="css/custom.css">
 	<link rel="stylesheet" type="text/css" href="css/cadastro_ativo.css"/>
+	<link rel="stylesheet" type="text/css" href="css/modal_acesso.css">
 </head>
 <body>
 <div class="wrapper">

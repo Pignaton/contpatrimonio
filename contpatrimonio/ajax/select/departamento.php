@@ -9,7 +9,7 @@ $rows = $query_departamento->rowCount();
 $departamento = "<option value=''></option>";
 while ( $tbl = $query_departamento->fetch(PDO::FETCH_OBJ)){
 
-$departamento .= "<option value=".$tbl->id_departamento.">$tbl->departamento</option>";
+$departamento .= "<option value=".$tbl->id_departamento." ($tbl->id_departamento == $tbl->id_departamento)? 'selected':''; >$tbl->departamento</option>";
 }
 
 echo $departamento;

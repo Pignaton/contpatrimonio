@@ -22,14 +22,14 @@ $status_novo = $status;
 
 $descricao_padrao_novo = $descricao_padrao;
     if($descricao_padrao_novo  == '1'){ $descricao_padrao_novo = "Telefone"; }
-	else if($descricao_padrao_novo  == '2'){ $descricao_padrao_novo = "Monitor de Vídeo"; }
-	else if($descricao_padrao_novo  == '3'){ $descricao_padrao_novo = "Armario"; }
-	else if($descricao_padrao_novo  == '4'){ $descricao_padrao_novo = "Geladeira"; }
-	else if($descricao_padrao_novo  == '5'){ $descricao_padrao_novo = "Ar condicionado"; }
-	else if($descricao_padrao_novo  == '6'){ $descricao_padrao_novo = "ventilador"; }
-	else if($descricao_padrao_novo  == '7'){ $descricao_padrao_novo = "Cadeira"; }
-	else if($descricao_padrao_novo  == '8'){ $descricao_padrao_novo = "Mesa"; }
-	else if($descricao_padrao_novo  == '9'){ $descricao_padrao_novo = "Teclado"; }
+	else if($descricao_padrao_novo  == '2'){ $descricao_padrao_novo  = "Monitor de Vídeo"; }
+	else if($descricao_padrao_novo  == '3'){ $descricao_padrao_novo  = "Armario"; }
+	else if($descricao_padrao_novo  == '4'){ $descricao_padrao_novo  = "Geladeira"; }
+	else if($descricao_padrao_novo  == '5'){ $descricao_padrao_novo  = "Ar condicionado"; }
+	else if($descricao_padrao_novo  == '6'){ $descricao_padrao_novo  = "ventilador"; }
+	else if($descricao_padrao_novo  == '7'){ $descricao_padrao_novo  = "Cadeira"; }
+	else if($descricao_padrao_novo  == '8'){ $descricao_padrao_novo  = "Mesa"; }
+	else if($descricao_padrao_novo  == '9'){ $descricao_padrao_novo  = "Teclado"; }
 	else if($descricao_padrao_novo  == '10'){ $descricao_padrao_novo = "CPU"; }
 	else if($descricao_padrao_novo  == '11'){ $descricao_padrao_novo = "Mouse"; }
 	else if($descricao_padrao_novo  == '12'){ $descricao_padrao_novo = "Notebook"; }
@@ -39,13 +39,13 @@ $descricao_padrao_novo = $descricao_padrao;
 
 $departamento_novo = $departamento;
 	if($departamento_novo == '1'){ $departamento_novo = "Copa"; }
-	else if($departamento_novo  == '2'){ $departamento_novo = "Limpeza"; }
-	else if($departamento_novo  == '3'){ $departamento_novo = "Suporte"; }
-	else if($departamento_novo  == '4'){ $departamento_novo = "Recuros Humano"; }
-	else if($departamento_novo  == '5'){ $departamento_novo = "Desenvolvimento Web"; }
-	else if($departamento_novo  == '6'){ $departamento_novo = "Desenvolvimento App"; }
-	else if($departamento_novo  == '7'){ $departamento_novo = "Financeiro"; }
-	else if($departamento_novo  == '8'){ $departamento_novo = "Setor Operecional"; }
+	else if($departamento_novo  == '2'){ $departamento_novo  = "Limpeza"; }
+	else if($departamento_novo  == '3'){ $departamento_novo  = "Suporte"; }
+	else if($departamento_novo  == '4'){ $departamento_novo  = "Recuros Humano"; }
+	else if($departamento_novo  == '5'){ $departamento_novo  = "Desenvolvimento Web"; }
+	else if($departamento_novo  == '6'){ $departamento_novo  = "Desenvolvimento App"; }
+	else if($departamento_novo  == '7'){ $departamento_novo  = "Financeiro"; }
+	else if($departamento_novo  == '8'){ $departamento_novo  = "Setor Operecional"; }
 	else if($departamento_novo  == '9'){  $departamento_novo = "SAC"; }
 	else if($departamento_novo  == '10'){ $departamento_novo = "Criação e Mídia"; }
 	else if($departamento_novo  == '11'){ $departamento_novo = "Diretoria"; }
@@ -55,6 +55,19 @@ $departamento_novo = $departamento;
 
 $responsavel_novo = $responsavel;
 	if($responsavel_novo == '1'){ $responsavel_novo = "Kaleb Pignaton"; }
-	else if($responsavel_novo  == '2'){ $responsavel_novo = "André Santos"; }
-
+	else if($responsavel_novo  == '2'){ $responsavel_novo  = "André Santos"; }
+	else if($responsavel_novo  == '3'){ $responsavel_novo  = "Sabrina Elias"; }
+	else if($responsavel_novo  == '4'){ $responsavel_novo  = "Daniela Oliveira"; }
+	else if($responsavel_novo  == '5'){ $responsavel_novo  = "Adriano Lopez"; }
+	else if($responsavel_novo  == '6'){ $responsavel_novo  = "André Portella"; }
+	else if($responsavel_novo  == '7'){ $responsavel_novo  = "Glaucia Villa"; }
+	else if($responsavel_novo  == '8'){ $responsavel_novo  = "Rodrigo Cesar"; }
+	else if($responsavel_novo  == '9'){ $responsavel_novo  = "Tainan Paiva"; }
+	else if($responsavel_novo  == '10'){ $responsavel_novo = "Stefany Costa"; }
+	else if($responsavel_novo  == '11'){ $responsavel_novo = "Cleidson Sousa"; }
+	else if($responsavel_novo  == '12'){ $responsavel_novo = "Daniela Xavier"; }
+	else if($responsavel_novo  == '13'){ $responsavel_novo = "Luciana de Góes"; }
+	else if($responsavel_novo  == '14'){ $responsavel_novo = "Matheus Wesley"; }
+	else if($responsavel_novo  == '15'){ $responsavel_novo = "Paulo Ricardo"; }
+	else if($responsavel_novo  == '16'){ $responsavel_novo = "Edivan Fontes"; }
 ?>

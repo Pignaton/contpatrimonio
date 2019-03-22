@@ -167,8 +167,8 @@ if ( !$erro )
 			$query_atuailiza_grafico = $patrimonio->prepare("UPDATE quantidade_por_ativo SET departemanto_nome = :departamento_nome, departamento = :departamento WHERE id_patrimonio = :id_patrimonio");
 			$query_atuailiza_grafico->execute(array(
 				':departemanto_nome' => $departamento_novo,
-				':departamento' => $departamento,
-				':id_patrimonio' => $id_patrimonio
+				':departamento' 	 => $departamento,
+				':id_patrimonio' 	 => $id_patrimonio
 			));
 
 			$query_nota = "UPDATE nota_fiscal SET  nf_ativo = :nf_ativo, img_nf_ativo = :img_nf_ativo WHERE id_patrimonio = $id_patrimonio";

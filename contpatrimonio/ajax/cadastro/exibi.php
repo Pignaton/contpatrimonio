@@ -103,7 +103,7 @@ if($acao == 'ajax'){
                     		</td>
 							<td></td>
 						</tr>
-						<?php }?>
+						<?php } ?>
 						<tr>
 							<td colspan='8'> 
 								<?php 

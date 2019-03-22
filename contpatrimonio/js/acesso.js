@@ -19,12 +19,50 @@ $(function() {
 				}
 			})
 		}
+
+		$('#liberar_acesso').on('show.bs.modal', function (event) {
+		  var button = $(event.relatedTarget) // Button that triggered the modal
+		  var codigo = button.data('codigo') 
+		  $('#txtcodigo').val(codigo)
+
+		  var tabela_manutencao1 = button.data('tabela_manutencao')
+		  var registramanutencao1 = button.data('registramanutencao') 
+		  if(registramanutencao1  == '1' || tabela_manutencao1 == '1'){
+		  $("#checkmanutencao").prop('checked', true); 	
+		  }else{
+		  	$("#checkmanutencao").prop('checked', false); 
+		  }
+
+		  var dashboard1 = button.data('dashboard') 
+		  if(dashboard1  == '1'){
+		  $("#checkdashboard").prop('checked', true); 	
+		  }else{
+		  	$("#checkdashboard").prop('checked', false); 
+		  }
+
+		  var cadastro_ativo1 = button.data('cadastro_ativo') 
+		  if(cadastro_ativo1  == '1'){
+		  $("#checkativo").prop('checked', true); 	
+		  }else{
+		  	$("#checkativo").prop('checked', false); 
+		  }
+
+		  var tabela_baixa1 = button.data('tabela_baixa') 
+		  if(tabela_baixa1  == '1'){
+		  $("#checkbaixa").prop('checked', true); 	
+		  }else{
+		  	$("#checkbaixa").prop('checked', false); 
+		  }
+		}) 
+
+
 		$('#liberar_acesso').on('show.bs.modal', function (event) {
 		  var button = $(event.relatedTarget) // Button that triggered the modal
 		  var code = button.data('code') 
 		  $('#txtcodigo').val(code)
 		  var nome = button.data('nome') 
 		  $('#txtnome').val(nome)
+
 		  var dashboard = button.data('dashboard') 
 		  if(dashboard  == '1'){
 		  $("#txtdashboard").prop('checked', true); 	
@@ -32,35 +70,61 @@ $(function() {
 		  }else{
 		  	$("#txtdashboard").prop('checked', false); 
 		  }
+
 		  var cadastro_ativo = button.data('cadastro_ativo') 
 		  if(cadastro_ativo  == '1'){
-		  $("#txtcadastro").attr('checked', true);
+		  $("#txtcadastro").prop('checked', true);
 		  	$('#txtcadastro').val(cadastro_ativo)
 		   }else{
 		  	$("#txtcadastro").prop('checked', false); 
 		  }
+
+		  var tabela_baixa = button.data('tabela_baixa') 
+		  if(tabela_baixa == '1'){
+		  	$("#txttabela_baixa").prop('checked', true);
+		  	$('#txttabela_baixa').val(tabela_baixa)
+		  }else{
+		  	$("#txttabela_baixa").prop('checked', false); 
+		  }
+
 		  var tabela_manutencao = button.data('tabela_manutencao') 
 		  if(tabela_manutencao  == '1'){
-		 	 $("#txttabela_manutencao").attr('checked', true);
+		 	 $("#txttabela_manutencao").prop('checked', true);
 		  	 $('#txttabela_manutencao').val(tabela_manutencao)
 		  }else{
 		  	$("#txttabela_manutencao").prop('checked', false); 
 		  }
-		  var tabela_baixa = button.data('tabela_baixa') 
-		  if(tabela_baixa == '1'){
-		  	$("#txttabela_baixa").attr('checked', true);
-		  	$('#txttabela_baixa').val(tabela_baixa)
+
+  		  var registramanutencao = button.data('registramanutencao')
+		  if(registramanutencao == '1'){
+			$("#txtregistramanutencao").prop('checked', true);
+		  	$('#txtregistramanutencao').val(registramanutencao)
 		  }else{
-		  	$("#txtdashboard").prop('checked', false); 
+		  	$("#txtregistramanutencao").prop('checked', false); 
 		  }
-		  var registramanutencao = button.data('registramanutencao') 
-		  $('#txtregistramanutencao').val(registramanutencao)
 		  var backup = button.data('backup') 
-		  $('#txtbackup').val(backup)
+		  if(backup == '1'){
+			$("#txtbackup").prop('checked', true);
+		  	$('#txtbackup').val(backup)
+		  }else{
+		  	$("#txtbackup").prop('checked', false); 
+		  }
 		  var ativo = button.data('ativo') 
-		  $('#txtativo').val(ativo)
+		  if(ativo == '1'){
+		  	$("#txtativo").prop('checked', true);
+		 	$('#txtativo').val(ativo)
+		  }else{
+		  	$("#txtativo").prop('checked', false); 
+		  }
+
 		  var acesso = button.data('acesso') 
-		  $('#txtacesso').val(acesso)	
+		  if(acesso == '1'){
+			$("#txtacesso").prop('checked', true);
+		 	$('#txtacesso').val(acesso)
+		  }else{
+		  	$("#txtacesso").prop('checked', false);
+		  }	
+
 		})
 
 		$("#libera_acesso").submit(function( event ) {
@@ -68,12 +132,14 @@ $(function() {
 		  var parametros = $(this).serialize();
 			$.ajax({
 					type: "POST",
+					dataType:"html",
+					cache:false,
 					url: "ajax/acesso/atualizaacesso.php",
 					data: parametros,
 					 beforeSend: function(objeto){
 						//$("#resultados").html("Enviando...");
 						$("#btnloading").html('<button class="btn btn-primary btn-fill pull-right" type="button" disabled><span class="spinner-border spinner-border-md" role="status" aria-hidden="true"></span> Atualizando...</button>');
-						$("#resultados").html('<div><img src="ajax/img/processando.gif" height="40px">Enviando...</div>');
+						$("#resultados").html('<div><img src="ajax/img/processando.gif" height="40px">Atualizando...</div>');
 						//$('#liberar_acesso').modal('hide');
 					  },
 					success: function(dados){

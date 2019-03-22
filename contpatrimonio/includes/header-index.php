@@ -1,4 +1,5 @@
-<?php error_reporting(0); 
+<?php 
+error_reporting(0); 
 include('../_conn/conn.php');
 ?>
 <!DOCTYPE html>
@@ -22,7 +23,8 @@ include('../_conn/conn.php');
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet">
 	<!--<link rel="stylesheet" type="text/css" href="../css/style.css"/> <script type="text/javascript" src="../js/trocasenha.js"></script>-->
-	<link rel="stylesheet" type="text/css" href="../css/custom.css"/>
+	<!--<link rel="stylesheet" type="text/css" href="../css/custom.css"/>-->
 	<link rel="stylesheet" type="text/css" href="css/custom.css"/>
+	<script type="text/javascript" src="js/logar.js"></script>
 	</head>
 	<body id="bodyindex">

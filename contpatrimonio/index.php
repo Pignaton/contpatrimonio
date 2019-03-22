@@ -24,57 +24,6 @@ if ( isset( $_SESSION[ 'id_funcionario' ] ) ) {
 	width: 100%;
 }
 </style>
-<script>
-    $(document).ready(function () {
-
-		    $(".msg-erro1").hide();
-
-            $("#btn-entrar").click(function () {
-				$(".btn-entrar").hide();
-				$(".msg-erro").hide();
-				if($("#email").val() == ""){
-     				$("#erros").html("<span class='alert alert-danger text-center form-control pt-2'>Preencha o campo o email</span>");
-                    return;
-                }
-
-                if ($("#senha").val() == "") {
-                    $("#erros").html("<span class='alert alert-danger text-center form-control pt-2'>Preencha o campo o senha</span>");
-                    return;
-                }
-			
-				$("#loading").html('<button class="btn   btn-entrar" type="button" disabled>&nbsp;<span class="spinner-border " role="status" aria-hidden="true"></span> &nbsp; Entrando...</button>');
-                $.ajax({
-                    type: "POST",
-                    url: "ajax/logar.php",
-                    data: {
-                        email: $("#email").val(),
-                        senha: $("#senha").val()
-                    },
-                    success: function (data) {
-                    if(data=="success")
-						  {
-						  	$("#loading").hide();
-						  	$("#btn-entrar").show();
-							window.location.href=" dashboard.php";
-						  }
-					if(data=="trocasenha"){
-					 window.location.href="includes/trocasenha.php";
-							}
-					if(data=="erro")
-						  {
-							$(".msg-erro1").show();
-							$("#btn-entrar").show();
-						    $("#loading").hide();
-						  }
-					if(data=="permissao"){
-						$("#erros").html('<p class="alert alert-danger text-center">Usuário sem permissao - contate o adiministrador</p>');
-						}
-                    }
-                });
-				return false;
-            });
- });
-</script>
 <br><br><br><br><br>
 <div class="container">
 	<div class="row">
@@ -88,7 +37,6 @@ if ( isset( $_SESSION[ 'id_funcionario' ] ) ) {
 		<div class="col-sm-6 text-center pt-5 ">
 			<div class="jumbotron pt-5 form">
 				<form method="post">
-					<p class="msg-erro1 alert alert-danger text-danger form-control pt-2">Usuário ou senha estão incorreto</p>
 					<div id="erros"></div>
 					<div class="container">
 						<?php
@@ -96,7 +44,7 @@ if ( isset( $_SESSION[ 'id_funcionario' ] ) ) {
 						if ( empty( $_SESSION[ 'id_funcionario' ] ) ) {
 
 							if ( isset( $msg ) )
-								echo "<p class='alert alert-success msg-erro form-control pt-2'>$msg_logout</p>";
+								echo "<p class='alert alert-success'>$msg_logout</p>";
 							unset( $msg );
 
 							if (isset($_SESSION['msg']))

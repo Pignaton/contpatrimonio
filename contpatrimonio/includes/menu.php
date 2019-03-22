@@ -3,6 +3,14 @@
 //session_start();
 include('includes/post-get.php');
 include('includes/verificaacesso.php');
+
+include("../../_conn/conn.php");
+$query_menu = $patrimonio->prepare("SELECT * FROM pagina");
+$query_menu->execute();
+while($tbl = $query_menu->fetch(PDO::FETCH_ASSOC)){
+  $manutencao_menu = $tbl['manute'];
+  $categoria = $tbl['categoria'];
+}
 ?>
 <link rel="stylesheet" type="text/css" href="css/menu.css"/>
 

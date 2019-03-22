@@ -9,7 +9,7 @@ $rows = $query_condicao->rowCount();
 $condicao = "<option value=''></option>";
 while ( $tbl = $query_condicao->fetch(PDO::FETCH_OBJ)){
 //$array_ativo[] = $tbl->condicao_ativo;
-$condicao .= "<option value=".$tbl->id_condicao_ativo.">$tbl->condicao_ativo</option>";
+$condicao .= "<option value=".$tbl->id_condicao_ativo." ($tbl->id_condicao_ativo == $tbl->id_condicao_ativo)? 'selected': ''; '>$tbl->condicao_ativo</option>";
 }
 echo $condicao;
 

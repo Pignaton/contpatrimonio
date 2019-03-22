@@ -172,3 +172,11 @@ input::placeholder {
 }*/
 .tabela-hover:hover{background-color:#dee2e6; color:#FFF;}
 .clicar{cursor:pointer;}
+.link:active{
+	text-decoration:none;
+	color:#337ab7;
+}
+.link:hover{
+	text-decoration:none;
+	color:#007bff;
+}
