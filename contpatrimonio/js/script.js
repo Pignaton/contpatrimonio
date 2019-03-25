@@ -199,7 +199,7 @@
 		  	event.preventDefault();
 		});
 			
-		$( "#edita_perfil" ).submit(function( event ) {
+		$( "#edita_perfil" ).submit(function(event) {
 		  $(".btnatualiza").hide();
 
 		  var parametros = $(this).serialize();

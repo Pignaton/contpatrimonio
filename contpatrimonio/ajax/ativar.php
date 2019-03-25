@@ -1,5 +1,53 @@
 <?php
-include("../../_conn/conn.php");
+ini_set ( 'display_errors' , 1 ); 
+ini_set ( 'display_startup_errors' , 1 ); 
+error_reporting ( E_ALL );  
+
+	include_once("../../_conn/conn.php");
+
+$id_funcionario = $_POST['txtcode'];
+$ativa 			= @$_POST['checkbox'];
+
+if($ativa == "on")
+	$ativa ="1";
+if($ativa == "")
+	$ativa ="0";
+
+	try {
+		
+		$libera_acesso = $patrimonio->prepare("UPDATE usuario SET ativo = :ativa WHERE id_funcionario = :id_funcionario");
+		$libera_acesso->execute(array(
+			':ativa' => $ativa,
+			':id_funcionario' => $id_funcionario
+		));
+
+		$libero_acesso = $patrimonio->prepare("SELECT ativo FROM usuario WHERE id_funcionario = :id_funcionario");
+		$libero_acesso->execute(array(
+			':id_funcionario' => $id_funcionario
+		));
+		while($tbl = $libero_acesso->fetch(PDO::FETCH_ASSOC)){
+		$ativo = $tbl['ativo'];
+
+		if($ativo == '1'){
+			echo "<div class='alert alert-success text-center acesso'>Conta ativada</div>";
+			return true;
+			exit();
+		}
+		else{
+			echo "<div class='alert alert-danger text-center acesso'>Conta desativada</div>";
+			return true;
+			exit();
+		}
+	}
+		//var_dump($_POST);
+		//var_dump($libera_acesso);
+
+		
+	} catch ( PDOExcepiton $e ) {
+		//echo 'Error: ' . $e->getMessage();
+		echo "<div class='alert alert-info text-center'>Desculpa, o sistema caiu. Por favor, volte e tente novamente.</div>";
+	}
+/*include("../../_conn/conn.php");
 
 $id_pagina = $_POST['txtcodigo'];
 $dashboard = $_POST['txtdashboard'];
@@ -27,5 +75,5 @@ $ativo = isset($_POST['txtativo']);
 	} catch ( PDOExcepiton $e ) {
 		echo 'Error: ' . $e->getMessage();
 	}
-
+*/
 ?>

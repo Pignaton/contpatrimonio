@@ -180,3 +180,7 @@ input::placeholder {
 	text-decoration:none;
 	color:#007bff;
 }
+.acesso{
+	z-index:4;
+	position:absolute;
+}

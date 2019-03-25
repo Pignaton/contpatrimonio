@@ -2,7 +2,7 @@
 //error_reporting(0);
 include("../../../_conn/conn.php");
 
-$id_pagina           = array_key_exists($_POST['txtcodigo']);
+$id_pagina           = $_POST['txtcodigo'];
 $dashboard           = isset($_POST['txtdashboard'])		  ?: $dashboard = '0';
 $cadastro            = isset($_POST['txtcadastro'])           ?: $cadastro  = '0';
 $tabela_manutencao   = isset($_POST['txttabela_manutencao'])  ?: $tabela_manutencao = '0';

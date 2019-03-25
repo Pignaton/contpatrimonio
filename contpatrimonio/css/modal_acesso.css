@@ -5,6 +5,12 @@
 #txtnome{
   border:none;
 }
+.link{
+  color:#566787;
+}
+.link:hover{
+  color:#337ab7;
+}
 textarea:focus, input:focus, select:focus {
     box-shadow: 0 0 0 0;
     border: 0 none;

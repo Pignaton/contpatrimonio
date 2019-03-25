@@ -45,7 +45,7 @@
 														<label>
 														  <input type="checkbox" id="checkdashboard" class="checkdashboard" />
 													      <span class="fa fa-check"></span>
-														 <i data-toggle="collapse">&nbsp; Dashboard</i><i class="seta fas">&nbsp;</i>
+														 <i data-toggle="collapse" class="link">&nbsp; Dashboard</i><i class="seta fas">&nbsp;</i>
 														</label>
 													</div>
 												</a>
@@ -71,7 +71,7 @@
 														<label>
 														  <input type="checkbox" id="checkativo" class="checkativo" />
 													      <span class="fa fa-check"></span>
-														 <i data-toggle="collapse">&nbsp; Ativos</i><i class="seta fas">&nbsp;</i> 
+														 <i data-toggle="collapse" class="link">&nbsp; Ativos</i><i class="seta fas">&nbsp;</i> 
 														</label>
 													</div>
 												</a>
@@ -108,7 +108,7 @@
 													<label>
 													  <input type="checkbox" id="checkbaixa" class="checkbaixa" />
 												      <span class="fa fa-check"></span>
-													 <i data-toggle="collapse" >&nbsp; Baixa</i><i class="seta fas">&nbsp;</i>
+													 <i data-toggle="collapse" class="link">&nbsp; Baixa</i><i class="seta fas">&nbsp;</i>
 													</label>
 												</div>
 											 </a>
@@ -134,7 +134,7 @@
 														<label>
 														  <input type="checkbox" id="checkmanutencao" class="checkmanutencao" />
 														  <span class="fa fa-check"></span>
-														  <i data-toggle="collapse">&nbsp; Manutenção</i><i class="seta fas">&nbsp;</i>
+														  <i data-toggle="collapse" class="link">&nbsp; Manutenção</i><i class="seta fas">&nbsp;</i>
 														</label>
 													</div>
 												</a>

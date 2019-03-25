@@ -34,8 +34,10 @@ include("includes/header.php"); ?>
    	   </div>
 	</div>
 </div>
+
 	<!-- Edit Modal HTML -->
 	<?php include("html/modal_acesso.php");?>
+
 <script>window.setTimeout(function() {$(".some").fadeTo(500, 0).slideUp(500, function(){$(".some").remove();});}, 6000);</script>
 <script src="js/acesso.js"></script>
 <?php include("includes/footer.php");?>
@@ -57,5 +59,4 @@ include("includes/header.php"); ?>
       }
      
       
-    })*/
   </script>
