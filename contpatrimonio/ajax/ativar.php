@@ -1,8 +1,4 @@
-<?php
-ini_set ( 'display_errors' , 1 ); 
-ini_set ( 'display_startup_errors' , 1 ); 
-error_reporting ( E_ALL );  
-
+<?php 
 	include_once("../../_conn/conn.php");
 
 $id_funcionario = $_POST['txtcode'];
@@ -21,27 +17,27 @@ if($ativa == "")
 			':id_funcionario' => $id_funcionario
 		));
 
-		$libero_acesso = $patrimonio->prepare("SELECT ativo FROM usuario WHERE id_funcionario = :id_funcionario");
+		$libero_acesso = $patrimonio->prepare("SELECT ativo, nome FROM usuario WHERE id_funcionario = :id_funcionario");
 		$libero_acesso->execute(array(
 			':id_funcionario' => $id_funcionario
 		));
 		while($tbl = $libero_acesso->fetch(PDO::FETCH_ASSOC)){
 		$ativo = $tbl['ativo'];
+		$nome = $tbl['nome'];
 
 		if($ativo == '1'){
-			echo "<div class='alert alert-success text-center acesso'>Conta ativada</div>";
+			echo "<div class='alert alert-success text-center acesso msgconta'>Conta ativada ($nome)</div>";
 			return true;
 			exit();
 		}
 		else{
-			echo "<div class='alert alert-danger text-center acesso'>Conta desativada</div>";
+			echo "<div class='alert alert-danger text-center acesso msgconta'>Conta desativada ($nome)</div>";
 			return true;
 			exit();
 		}
 	}
 		//var_dump($_POST);
 		//var_dump($libera_acesso);
-
 		
 	} catch ( PDOExcepiton $e ) {
 		//echo 'Error: ' . $e->getMessage();

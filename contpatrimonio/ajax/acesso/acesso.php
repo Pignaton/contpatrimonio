@@ -57,7 +57,7 @@ if($acao == 'ajax'){
 						<th class='text-center'>email</th>
 						<th class='text-center'>Departamento</th>
 						<th></th>
-						<th colspan="1" class="">Ação</th>
+						<th colspan="1" class="">Conta/Ação</th>
 					</tr>
 				</thead>
 				<tbody>	
@@ -102,13 +102,16 @@ if($acao == 'ajax'){
 							<td class='text-center'><?= $email?></td>
 							<td class='text-center' ><?= $departamento?></td>
 							<td colspan="3" class="text-right">
-							<div class="btn-group">
-							<form id="ativaconta" method="post" action="ajax/ativar.php" role="form" name="ativaconta">
-								<input type="checkbox" id="checkbox" name="checkbox" class="checkboxativo" data-size="small" <?=$checked?>>
-								<input type="hidden" name="txtcode" id="txtcode" value="<?=$funcionario_id?>">
-							</form>
-							</div>
-							<button data-target="#liberar_acesso" data-tooltip="tooltip" title="Editar acesso" class="edit btn btn-sm btn-warning" data-toggle="modal" data-code="<?=$funcionario_id?>" data-nome="<?=$nome?>" data-dashboard="<?=$dashboard?>" data-cadastro_ativo="<?=$cadastro_ativo?>" data-tabela_manutencao="<?=$tabela_manutencao?>" data-tabela_baixa="<?=$tabela_baixa?>" data-ativo="<?=$ativo?>" data-registramanutencao="<?=$manutencao_ativo?>" data-backup="<?=$backup?>" data-acesso="<?=$acesso?>">Editar</button>
+								<div class="btn-group" role="group">
+								<form id="ativaconta" method="post" action="ajax/ativar.php" role="form" name="ativaconta">
+									<input type="checkbox" id="checkbox" name="checkbox" class="checkboxativo " data-size="small" <?=$checked?>>
+									<input type="hidden" name="txtcode" id="txtcode" value="<?=$funcionario_id?>">
+								</form>
+								</div>
+								<div class="btn-group">
+									<button data-target="#liberar_acesso" data-tooltip="tooltip" title="Editar acesso" class="edit btn btn-sm btn-warning" data-toggle="modal" data-code="<?=$funcionario_id?>" data-nome="<?=$nome?>" data-dashboard="<?=$dashboard?>" data-cadastro_ativo="<?=$cadastro_ativo?>" data-tabela_manutencao="<?=$tabela_manutencao?>" data-tabela_baixa="<?=$tabela_baixa?>" data-ativo="<?=$ativo?>" data-registramanutencao="<?=$manutencao_ativo?>" data-backup="<?=$backup?>" data-acesso="<?=$acesso?>">Editar
+									</button>
+								</div>
                     		</td>
 						</tr>
 						<?php } ?>
@@ -132,7 +135,7 @@ if($acao == 'ajax'){
 <script type="text/javascript" src="js/conta.js"></script>
 <script>
 $(document).ready(function(){
-    $('.checkboxativo').bootstrapToggle();
+    $('.checkboxativo').bootstrapToggle({});
   });
 $(document).ready(function(){
   $('[data-tooltip="tooltip"]').tooltip();   

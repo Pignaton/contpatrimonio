@@ -91,11 +91,16 @@ else if('index.php' != $nome_arquivo && 'recupera_senha.php' != $nome_arquivo &&
 			</li>
 			<?php if($acesso == 1){ ?>
 			<li>
-				<a href="acesso.php">&nbsp;<i class="fas fa-door-open pull-left pt-1" style="font-size:10px;"></i>
+				<a href="acesso.php">&nbsp; <i class="fas fa-door-open pull-left pt-1" style="font-size:10px;"></i>
 					<font>Acesso</font>
 				</a>
 			</li>
 			<?php } ?>
+			<li>
+				<a href="admin_conta.php"> <i class="fas fa-plus-circle pr-1" style="font-size:12px;"></i>
+					<font class="">Criar Conta</font>
+				</a>
+			</li>
 			<div class="dropdown-divider"></div>
 			<li>
 				<a class="text-danger" href="includes/logout.php"><i class="fa fa-sign-out pull-right"></i>

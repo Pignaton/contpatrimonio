@@ -19,8 +19,8 @@ $('form[name=ativaconta]').on('change', function () {
         // Se enviado com sucesso
         success: function (resposta) {
             // Exibindo resposta do servidor
-            $("#resultados").html(resposta);
-            window.setTimeout(function() {$(".acesso").fadeTo(500, 0).slideUp(500, function(){$(".acesso").remove();});}, 2000)
+            $("#msg_conta").html(resposta);
+            window.setTimeout(function() {$(".acesso").fadeTo(500, 0).slideUp(500, function(){$(".acesso").remove();});}, 3000)
         },
         // Se acontecer algum erro
         error: function () {

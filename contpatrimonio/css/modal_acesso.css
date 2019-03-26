@@ -3,7 +3,7 @@
 .checkno{cursor:not-allowed !important;}
 
 #txtnome{
-  border:none;
+  /*border:none;*/
 }
 .link{
   color:#566787;
@@ -12,9 +12,9 @@
   color:#337ab7;
 }
 textarea:focus, input:focus, select:focus {
-    box-shadow: 0 0 0 0;
+    /*box-shadow: 0 0 0 0;
     border: 0 none;
-    outline: 0;
+    outline: 0;*/
 } 
 .seta::after{
   content: "\f0dd";

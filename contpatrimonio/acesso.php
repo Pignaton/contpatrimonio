@@ -1,6 +1,16 @@
 <?php 
 include("includes/header.php"); ?>
-
+<style>
+.msgconta{
+  right:2%;
+  top:16%;
+  margin-left:-110px;
+  margin-top:-40px;
+  z-index:3;
+  position:fixed; 
+  width:;
+}
+</style>
 <br>
 <div class="container-fluid">
 	<div class="row">
@@ -9,29 +19,30 @@ include("includes/header.php"); ?>
             <div class="table-title">
                 <div class="row">
                     <div class="col-sm-6">
-						<h2>Adiministrar <b>Acesso</b></h2>
-					</div>
-                </div>
-            </div>
-			<div class='col-sm-4 pull-right'>
-				<div id="custom-search-input">
+        						  <h2>Adiministrar <b>Acesso</b></h2>
+        					   </div>
+                  </div>
+              </div>
+        			<div class='col-sm-4 pull-right'>
+        				<div id="custom-search-input">
                     <div class="input-group col-md-12">
-                      <input type="text" class="form-control" placeholder="Buscar"  id="q" onkeyup="load(1);" />
-                         <span class="input-group-btn">
-                             <button class="btn btn-info" type="button" onclick="load(1);">
-                                 <span class="glyphicon glyphicon-search"></span>
-                             </button>
+                        <input type="text" class="form-control" placeholder="Buscar"  id="q" onkeyup="load(1);" />
+                        <span class="input-group-btn">
+                            <button class="btn btn-info" type="button" onclick="load(1);">
+                               <span class="glyphicon glyphicon-search"></span>
+                            </button>
                         </span>
-                   </div>
-                </div>
-			</div>
-			<div class='clearfix'></div>
-			<hr>
-			<div id="loader"></div>
-			<div id="resultados"></div>
-			<div class='outer_div'></div>
-          </div>
-   	   </div>
+                    </div>
+                 </div>
+              </div>
+              	<div class='clearfix' ></div>
+              	<hr>
+              	<div id="loader"></div>
+              	<div id="resultados"></div>
+                <div id="msg_conta"></div>
+              	<div class='outer_div'></div>
+        </div>
+   	  </div>
 	</div>
 </div>
 
@@ -57,6 +68,4 @@ include("includes/header.php"); ?>
          $("#txtdashboard").attr('checked', true); 
          modal.find('#txtdashboard').val(dashboard)
       }
-     
-      
   </script>
