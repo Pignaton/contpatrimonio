@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: 01-Mar-2019 às 20:16
--- Versão do servidor: 5.7.21
--- PHP Version: 7.2.4
+-- Generation Time: 26-Mar-2019 às 20:39
+-- Versão do servidor: 5.7.24
+-- versão do PHP: 7.2.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,35 @@ SET time_zone = "+00:00";
 --
 -- Database: `patrimonio`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `acesso_pagina`
+--
+
+DROP TABLE IF EXISTS `acesso_pagina`;
+CREATE TABLE IF NOT EXISTS `acesso_pagina` (
+  `usuario` int(11) NOT NULL,
+  `id_pagina` int(11) NOT NULL,
+  KEY `fk_ac_usuario` (`usuario`),
+  KEY `fk_ac_id_pagina` (`id_pagina`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `acesso_pagina`
+--
+
+INSERT INTO `acesso_pagina` (`usuario`, `id_pagina`) VALUES
+(1, 0),
+(1, 0),
+(1, 0),
+(1, 0),
+(1, 0),
+(1, 0),
+(1, 0),
+(1, 0),
+(1, 0);
 
 -- --------------------------------------------------------
 
@@ -238,6 +267,40 @@ INSERT INTO `nota_fiscal` (`id_nota_fiscal`, `id_patrimonio`, `nf_manutencao`, `
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `pagina`
+--
+
+DROP TABLE IF EXISTS `pagina`;
+CREATE TABLE IF NOT EXISTS `pagina` (
+  `id_pagina` int(11) NOT NULL AUTO_INCREMENT,
+  `categoria` char(1) DEFAULT NULL,
+  `checkbox` varchar(30) NOT NULL,
+  `name` varchar(20) NOT NULL,
+  `nome_pagina` varchar(30) NOT NULL,
+  `arquivo` varchar(30) NOT NULL,
+  PRIMARY KEY (`id_pagina`),
+  KEY `fk_pagina_categoria` (`categoria`)
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `pagina`
+--
+
+INSERT INTO `pagina` (`id_pagina`, `categoria`, `checkbox`, `name`, `nome_pagina`, `arquivo`) VALUES
+(1, '1', 'checkdashboard', 'txtdashboard', 'Dashboard', 'dashboard.php'),
+(2, '0', '', 'txtacesso', 'Acesso', 'acesso.php'),
+(3, '0', '', 'txtnotas', 'Cópia de notas', 'backup.php'),
+(4, '3', 'checkbaixa', 'txtbaixa', 'Tabela de baixas', 'baixa_ativo.php'),
+(5, '4', 'checkativo', 'txtativo', 'Tabela de ativos', 'cadastro_ativo.php'),
+(6, '5', 'checkmanutencao', 'txtmanutencao', 'Tabela de manutenção', 'manutencao_ativo.php'),
+(7, '5', '', 'txtregistramanu', 'registrar manutenção', 'manutencao_tabela.php'),
+(8, '0', '', 'txthome', 'Home', 'dashboard.php'),
+(9, '0', '', 'txtdocumentacao', 'documentação', 'documentacao.php'),
+(10, '0', '', 'txtcriaconta', 'Criar Usuário', 'admin_conta.php');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `pagina_acesso`
 --
 
@@ -252,31 +315,61 @@ CREATE TABLE IF NOT EXISTS `pagina_acesso` (
   `acesso` char(1) NOT NULL DEFAULT '1',
   `registra_manutencao` char(1) CHARACTER SET utf8mb4 NOT NULL DEFAULT '1',
   `backup` char(1) NOT NULL DEFAULT '1',
+  `conta` char(1) NOT NULL,
+  `documentacao` char(1) NOT NULL,
   PRIMARY KEY (`id_pagina`),
   KEY `funcionario` (`funcionario`)
-) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `pagina_acesso`
 --
 
-INSERT INTO `pagina_acesso` (`id_pagina`, `funcionario`, `dashboard`, `cadastro_ativo`, `tabela_manutencao`, `tabela_baixa`, `acesso`, `registra_manutencao`, `backup`) VALUES
-(1, 1, '1', '1', '1', '1', '1', '1', '1'),
-(2, 2, '1', '1', '1', '1', '0', '1', '0'),
-(3, 3, '1', '1', '1', '1', '0', '1', '0'),
-(4, 4, '1', '1', '1', '1', '0', '1', '0'),
-(5, 5, '1', '1', '1', '1', '1', '1', '1'),
-(6, 6, '1', '1', '1', '1', '0', '1', '0'),
-(7, 7, '1', '1', '1', '1', '0', '1', '0'),
-(8, 8, '1', '1', '1', '1', '0', '1', '0'),
-(9, 9, '1', '1', '1', '1', '0', '1', '0'),
-(10, 10, '1', '1', '1', '1', '0', '1', '0'),
-(11, 11, '1', '1', '1', '1', '0', '1', '0'),
-(12, 12, '1', '1', '1', '1', '0', '1', '0'),
-(13, 13, '1', '1', '1', '1', '0', '1', '0'),
-(14, 14, '1', '1', '1', '1', '0', '1', '0'),
-(15, 15, '1', '1', '1', '1', '0', '1', '0'),
-(16, 16, '1', '1', '1', '1', '0', '1', '0');
+INSERT INTO `pagina_acesso` (`id_pagina`, `funcionario`, `dashboard`, `cadastro_ativo`, `tabela_manutencao`, `tabela_baixa`, `acesso`, `registra_manutencao`, `backup`, `conta`, `documentacao`) VALUES
+(1, 1, '1', '1', '1', '1', '1', '1', '1', '', ''),
+(2, 2, '1', '1', '1', '1', '0', '1', '0', '', ''),
+(3, 3, '1', '1', '1', '1', '0', '1', '0', '', ''),
+(4, 4, '1', '1', '1', '1', '0', '1', '0', '', ''),
+(5, 5, '1', '1', '1', '1', '1', '1', '1', '', ''),
+(6, 6, '1', '1', '1', '1', '0', '1', '0', '', ''),
+(7, 7, '1', '1', '1', '1', '0', '1', '0', '', ''),
+(8, 8, '1', '1', '1', '1', '0', '1', '0', '', ''),
+(9, 9, '1', '1', '1', '1', '0', '1', '0', '', ''),
+(10, 10, '1', '1', '1', '1', '0', '1', '0', '', ''),
+(11, 11, '1', '1', '1', '1', '0', '1', '0', '', ''),
+(12, 12, '1', '1', '1', '1', '0', '1', '0', '', ''),
+(13, 13, '1', '1', '1', '1', '0', '1', '0', '', ''),
+(14, 14, '1', '1', '1', '1', '0', '1', '0', '', ''),
+(15, 15, '1', '1', '1', '1', '0', '1', '0', '', ''),
+(16, 16, '1', '1', '1', '1', '0', '1', '0', '', ''),
+(17, 20, '1', '0', '0', '1', '0', '1', '1', '0', '1');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `pagina_categoria`
+--
+
+DROP TABLE IF EXISTS `pagina_categoria`;
+CREATE TABLE IF NOT EXISTS `pagina_categoria` (
+  `id_categoria` int(11) NOT NULL,
+  `categoria` char(1) DEFAULT NULL,
+  `pagina` varchar(30) DEFAULT NULL,
+  `class` varchar(30) NOT NULL,
+  `checkbox` varchar(30) NOT NULL,
+  PRIMARY KEY (`id_categoria`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `pagina_categoria`
+--
+
+INSERT INTO `pagina_categoria` (`id_categoria`, `categoria`, `pagina`, `class`, `checkbox`) VALUES
+(1, '1', 'dashboard', 'txtdashboard', 'checkdashboard'),
+(3, '3', 'baixa', 'txtbaixa', 'checkbaixa'),
+(4, '4', 'ativo', 'txtativo', 'checkativo'),
+(5, '5', 'manutencao', 'txtmanutencao', 'checkmanutencao'),
+(6, '0', 'sem_categoria', '', '');
 
 -- --------------------------------------------------------
 
@@ -376,7 +469,7 @@ INSERT INTO `registro_ativo` (`id_patrimonio`, `id_funcionario`, `id_descricao_p
 (7, 1, 3, 1, 2, 1, 3, '000333', 'Kaleb Pignaton', 'teste 4', 'Copa', 'Armario', 'blá blá blá', 'Regular', '77.88', '2019-01-04', '16:15:34', 'Móvies e Utensílios', 'B', '45756768', 'nota_devolucao.pdf'),
 (8, 1, 2, 2, 1, 1, 2, '000000', 'Kaleb Pignaton', 'teste7', 'Limpeza', 'Monitor de Vídeo', 'Desktop ultra compacto com diversas soluções de montagem e apenas 18,2 cm de altura e 3,6 cm de largura.', 'Normal', '77.88', '2019-01-05', '16:07:39', 'Móvies e Utensílios', 'E', '65467576', 'teste2.pdf'),
 (9, 1, 2, 4, 2, 1, 2, '3546457', 'Kaleb Pignaton', 'teste8', 'Recuros Humano', 'Monitor de Vídeo', 'Desktop umtracompacto com diversas soluções de montagem e apenas 18,2 cm de altura e 3,6 cm de largura.', 'Normal', '77.88', '2019-01-02', '16:37:39', 'Móvies e Utensílios', 'B', '78679789', 'teste2.pdf'),
-(10, 1, 8, 5, 1, 1, 1, '0001444', 'Kaleb Pignaton', 'Kappesberg', 'Desenvolvimento Web', 'Mesa', 'Call Center Teca Itália De Madeira Móveis Kappesberg', 'Excelente', '260.99', '2019-02-26', '16:08:56', 'Móvies e Utensílios', 'E', '020.254.897', 'teste.pdf'),
+(10, 1, 8, 5, 1, 1, 1, '0001444', 'Kaleb Pignaton', 'Kappesberg', 'Desenvolvimento Web', 'Mesa', 'Call Center Teca Itália De Madeira Móveis Kappesberg', 'Excelente', '260.99', '2019-02-26', '10:34:52', 'Móvies e Utensílios', 'E', '020.254.897', 'teste.pdf'),
 (104, 1, 12, 5, 1, 2, 1, '0001555', 'Kaleb Pignaton', 'Samsung Notebook Essentials E20 ', 'Desenvolvimento Web', 'Notebook', 'blá blá blá blá e mais blá blá', 'Excelente', '1604.99', '2019-03-01', '16:36:28', 'Equipamentos de Informática', 'E', '234.676.765', 'nota_devolucao2.pdf');
 
 -- --------------------------------------------------------
@@ -497,7 +590,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   PRIMARY KEY (`id_funcionario`),
   UNIQUE KEY `email` (`email`),
   KEY `usuario_nivel_fk` (`nivel`)
-) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `usuario`
@@ -511,7 +604,7 @@ INSERT INTO `usuario` (`id_funcionario`, `nome`, `login`, `senha`, `email`, `dep
 (5, 'Adriano Lopes', 'adriano.lopes', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', 'adriano.lopes@anexxa.com.br', 'Presidente', '1', '1', '1'),
 (6, 'André Portella', 'andre.portella', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', 'portella@tisoftware.com.br', 'Diretoria', '0', '1', '0'),
 (7, 'Glaucia Villa', 'glaucia.villa', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', 'financeiro@anexxa.com.br', 'Financeiro', '0', '1', '0'),
-(8, 'Rodrigo Cesar', 'rodrigo.cesar', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', 'cesar@anexxa.com.br', 'Infraestrutura de TI', '0', '1', '0'),
+(8, 'Rodrigo Cesar', 'rodrigo.cesar', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', 'cesar@anexxa.com.br', 'Infraestrutura de TI', '0', '1', '1'),
 (9, 'Tainan Paiva', 'tainan.paiva', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', '', 'Recepção', '0', '1', '0'),
 (10, 'Stefany Costa', 'stefany.costa', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', 'recepcao@goodshoptv.com.br', 'SAC', '0', '1', '0'),
 (11, 'Cleidson Sousa', 'cleidson.sousa', '1ef47d10fedd9da0bc014f2ce7649e5f3b99408b', 'cleidson.sousa@anexxa.com.br', 'Expedição', '0', '1', '0'),
@@ -519,7 +612,8 @@ INSERT INTO `usuario` (`id_funcionario`, `nome`, `login`, `senha`, `email`, `dep
 (13, 'Luciana de Góes', 'luciana.goes', '01d15653039418f39223925b54f9f1aabf4efb37', 'faturamento@goodshoptv.com.br', 'Setor Operacional', '0', '1', '0'),
 (14, 'Matheus Wesley', 'matheus.wesley', '01d15653039418f39223925b54f9f1aabf4efb37', 'devolucao2@goodshoptv.com.br', 'Setor Operacional', '0', '1', '0'),
 (15, 'Paulo Ricardo', 'paulo.ricardo', '01d15653039418f39223925b54f9f1aabf4efb37', 'devolução@goodshoptv.com.br', 'Setor Operacional', '0', '1', '0'),
-(16, 'Edivan Fontes', 'edivan.fontes', '01d15653039418f39223925b54f9f1aabf4efb37', 'edifontes@tisoftware.com.br', 'Desenvolvimento App', '0', '1', '0');
+(16, 'Edivan Fontes', 'edivan.fontes', '01d15653039418f39223925b54f9f1aabf4efb37', 'edifontes@tisoftware.com.br', 'Desenvolvimento App', '0', '1', '0'),
+(20, 'Teste teste', 'te.steteste', '01d15653039418f39223925b54f9f1aabf4efb37', 'teste@gmail.com.br', '12', '1', '1', '0');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
