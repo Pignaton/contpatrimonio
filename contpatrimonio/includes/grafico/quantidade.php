@@ -6,25 +6,25 @@ $total_resul = ""; $quant2 = "";
 $query_grafico = $patrimonio->prepare("SELECT Count(departamento) AS operacional,
        (SELECT Count(departamento) AS suporte
         FROM   quantidade_por_ativo
-        WHERE  departamento IN( 3 ))  AS suporte,
+        WHERE  departamento IN( 3 )) AS suporte,
        (SELECT Count(departamento) AS app
         FROM   quantidade_por_ativo
-        WHERE  departamento IN( 6 ))  AS app,
+        WHERE  departamento IN( 6 )) AS app,
        (SELECT Count(departamento) AS web
         FROM   quantidade_por_ativo
-        WHERE  departamento IN( 5 ))  AS web,
+        WHERE  departamento IN( 5 )) AS web,
        (SELECT Count(departamento) AS infraestrutura
         FROM   quantidade_por_ativo
         WHERE  departamento IN( 13 )) AS infraestrutura,
        (SELECT Count(departamento) AS rh
         FROM   quantidade_por_ativo
-        WHERE  departamento IN( 4 ))  AS rh,
+        WHERE  departamento IN( 4 )) AS rh,
        (SELECT Count(departamento) AS copa
         FROM   quantidade_por_ativo
-        WHERE  departamento IN( 1 ))  AS copa,
+        WHERE  departamento IN( 1 )) AS copa,
        (SELECT Count(departamento) AS limpeza
         FROM   quantidade_por_ativo
-        WHERE  departamento IN( 2 ))  AS departamento
+        WHERE  departamento IN( 2 )) AS departamento
 FROM   quantidade_por_ativo
 WHERE  departamento IN( 8 )");
 
@@ -43,7 +43,7 @@ while($tbl = $query_grafico->fetch(PDO::FETCH_ASSOC)){
 }
 
 $quant2 .= "'$app','$web','$operacional','$suporte','$infraestrutura','$rh','$limpeza','$copa'";
-
+/*Pega a primeira dia e o último dia do mês anterior*/
 $data_incio = mktime(0, 0, 0, date('m')-1 , 1 , date('Y'));
 $data_fim = mktime(0, 0, 0, date('m')+1, -date('t'), date('Y'));
 
@@ -94,7 +94,8 @@ $data2 = date('Y-m-d',$data_fim);
 	 if($valor_ativo > 0 ){
 	 	$color ="class='text-success' title='aumento'";
 	 	$icon  = "<i class='fas fa-long-arrow-alt-up'></i>";
-	 }elseif($valor_ativo == 0 ){
+	 }elseif(is_nan($valor_ativo)){
+	 	$valor_ativo = '0';
 	 	$color = "class='text-dark' title='estagnado'";
 	 	$icon  = "<i class='fas fa-minus' ></i>";
 	 }elseif($valor_ativo < 0 ){
@@ -105,7 +106,8 @@ $data2 = date('Y-m-d',$data_fim);
 	 if($valor_baixa > 0 ){
 	 	$color2 ="class='text-success' title='aumento'";
 	 	$icon2 = "<i class='fas fa-long-arrow-alt-up'></i>";
-	 }elseif($valor_baixa == 0 ){
+	 }elseif(is_nan($valor_baixa)){
+	 	$valor_baixa = '0';
 	 	$color2 = "class='text-dark' title='estagnado'";
 	 	$icon2  = "<i class='fas fa-minus' ></i>";
 	 }elseif($valor_baixa < 0 ){
@@ -116,7 +118,8 @@ $data2 = date('Y-m-d',$data_fim);
 	 if($valor_manu > 0 ){
 	 	$color3 ="class='text-success' title='aumento'";
 	 	$icon3  = "<i class='fas fa-long-arrow-alt-up'></i>";
-	 }elseif($valor_manu == 0 ){
+	 }elseif(is_nan($valor_manu)){
+	 	$valor_manu = '0';
 	 	$color3 = "class='text-dark' title='estagnado'";
 	 	$icon3 = "<i class='fas fa-minus'></i>";
 	 }elseif($valor_manu < 0 ){

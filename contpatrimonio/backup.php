@@ -13,22 +13,24 @@ include("includes/header.php"); ?>
 						</div>
 	                </div>
 	            </div>
-				<div class='col-sm-3 pull-right'>
+				<div class=' pull-right'>
 					 <div class="row">
-					 	<div id="custom-search-input">
-					 		<div class="input-group-btn col-sm">
-		                        <input type="date" class="form-control" placeholder="Buscar por data" id="calendario" onkeyup="load(1);" />
-		                    </div>
-		                </div>
 						<div id="custom-search-input">
-		                    <div class="input-group col-sm">
-		                        <input type="text" class="form-control" placeholder="Buscar" id="q" onkeyup="load(1);" />
-		                        <span class="input-group-btn">
-		                            <button class="btn btn-info" type="button" onclick="load(1);">
-		                                <span class="glyphicon glyphicon-search"></span>
-		                            </button>
-		                        </span>
-		                    </div>
+						 	<div class="input-group-btn">
+			                    <input type="date" class="form-control" placeholder="Buscar por data" id="calendario" onkeyup="load(1);" />
+			                </div>
+			            </div>
+						<div id="custom-search-input">
+			                <div class="input-group-btn">
+			                   <input type="text" class="form-control" placeholder="Buscar" id="q" onkeyup="load(1);" />
+			                </div>
+			            </div> 
+		                <div class="custom-search-input">
+		                    <span class="input-group-btn">
+		                        <button class="btn btn-info" type="button" onclick="load(1);">
+		                            <span class="glyphicon glyphicon-search"></span>
+		                        </button>
+		                	</span>
 		                </div>
 					</div>
 				</div>

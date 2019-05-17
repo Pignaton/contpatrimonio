@@ -25,7 +25,7 @@ $( "#trocasenha" ).submit(function( event ) {
 			$("#resultados").html('<img src="../ajax/img/loading.gif" style="width:220px;">');
 			},
 			success: function(dados){
-			location.href='http://localhost/kaleb/Patrimonio_ativo/teste/dashboard.php';
+			location.href='http://localhost/kaleb/Patrimonio_ativo/patrimonio2.0/dashboard.php';
 			//$("#resultados").html(dados);
 			//window.setTimeout(function() {$(".alert").fadeTo(500, 0).slideUp(500, function(){$(".alert").remove();});}, 6000);
 			//load(1);

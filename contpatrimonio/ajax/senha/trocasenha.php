@@ -11,22 +11,22 @@ session_start();
 	$funcionario = $_SESSION['id_funcionario']; 
 	$senha = $_POST[ 'senha' ];
 
-//$query_logar = "UPDATE usuario SET email = '$email', senha = SHA('$senha'), trocasenha = 0 WHERE ativo NOT IN('0')";
+		$query_trocar = $patrimonio->prepare("UPDATE usuario SET senha = SHA(:senha), trocasenha = 0 WHERE id_funcionario = :funcionario AND ativo NOT IN('0')");
+		$query_trocar->execute(array(
+			':senha' => $senha,
+			':funcionario' => $funcionario
+		));
 
-		$query_trocar = "UPDATE usuario SET senha = SHA('$senha'), trocasenha = 0 WHERE id_funcionario = '$funcionario' AND ativo NOT IN('0') ";
-		//$query_logar = "SELECT * FROM user WHERE email = '$email' AND senha = SHA('$senha') AND ativo NOT IN ('0')";
-		$query_troca = $patrimonio->prepare( $query_trocar );
-		$query_troca->execute();
-		//$row = $query_login->rowCount();
-
-$query_logar = "SELECT * FROM usuario WHERE email = '$email' AND senha = SHA('$senha') AND ativo NOT IN ('0')";
-$query_login = $patrimonio->prepare( $query_logar );
-$query_login->execute();
-$row = $query_login->rowCount();
+$query_logar = $patrimonio->prepare("SELECT * FROM usuario WHERE email = :email AND senha = SHA(:senha) AND ativo NOT IN ('0')");
+$query_logar->execute(array(
+	':email' => $email,
+	':senha' => $senha
+));
+$row = $query_logar->rowCount();
 
 if ( $row == 1 ) {
 	
-	while ($usuario_existe = $query_login->fetch(PDO::FETCH_ASSOC)) {
+	while ($usuario_existe = $query_logar->fetch(PDO::FETCH_ASSOC)) {
 		// $usuario_ativo = $_SESSION['ativo'] = $usuario_existe['ativo'];
 		$usuario_email = $usuario_existe['email'];
 		$usuario_nome = $_SESSION['nome'] = $usuario_existe['nome'];

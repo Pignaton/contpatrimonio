@@ -41,7 +41,7 @@ $departamento_novo = $departamento;
 	if($departamento_novo == '1'){ $departamento_novo = "Copa"; }
 	else if($departamento_novo  == '2'){ $departamento_novo  = "Limpeza"; }
 	else if($departamento_novo  == '3'){ $departamento_novo  = "Suporte"; }
-	else if($departamento_novo  == '4'){ $departamento_novo  = "Recuros Humano"; }
+	else if($departamento_novo  == '4'){ $departamento_novo  = "Recursos Humano"; }
 	else if($departamento_novo  == '5'){ $departamento_novo  = "Desenvolvimento Web"; }
 	else if($departamento_novo  == '6'){ $departamento_novo  = "Desenvolvimento App"; }
 	else if($departamento_novo  == '7'){ $departamento_novo  = "Financeiro"; }
@@ -52,6 +52,7 @@ $departamento_novo = $departamento;
 	else if($departamento_novo  == '12'){ $departamento_novo = "Recepção"; }
 	else if($departamento_novo  == '13'){ $departamento_novo = "Infraestrutura de TI"; }
 	else if($departamento_novo  == '14'){ $departamento_novo = "Espedição"; }
+	else if($departamento_novo  == '15'){ $departamento_novo = "Telemarketing"; }
 
 $responsavel_novo = $responsavel;
 	if($responsavel_novo == '1'){ $responsavel_novo = "Kaleb Pignaton"; }
@@ -70,4 +71,9 @@ $responsavel_novo = $responsavel;
 	else if($responsavel_novo  == '14'){ $responsavel_novo = "Matheus Wesley"; }
 	else if($responsavel_novo  == '15'){ $responsavel_novo = "Paulo Ricardo"; }
 	else if($responsavel_novo  == '16'){ $responsavel_novo = "Edivan Fontes"; }
+	else if($responsavel_novo  == '21'){ $responsavel_novo = "Lucas Ferreira"; }
+	else if($responsavel_novo  == '20'){ $responsavel_novo = "Teste teste"; }
+	else if($responsavel_novo  == '22'){ $responsavel_novo = "Marcios Silva"; }
+	else if($responsavel_novo  == '23'){ $responsavel_novo = "Izabel Araujo"; }
+	else if($responsavel_novo  == '25'){ $responsavel_novo = "Caio Jaime"; }
 ?>

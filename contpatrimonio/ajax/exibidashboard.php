@@ -1,5 +1,5 @@
 <?php
-header('Content-Type: text/html; charset=utf-8');
+header('Content-Type: text/html; charset=mb4utf8');
 include("../../_conn/conn.php");
 $acao = (isset($_REQUEST['acao']) && $_REQUEST['acao'] != NULL)?$_REQUEST['acao']:'';
 	if($acao == 'ajax')
@@ -40,8 +40,8 @@ $acao = (isset($_REQUEST['acao']) && $_REQUEST['acao'] != NULL)?$_REQUEST['acao'
 		$sql_exibe = $patrimonio->prepare( $sql_exibi );
 		$sql_exibe->execute();
 		$rows = $sql_exibe->rowCount();*/
-	if ($numrows>0)
-		{
+	/*if ($numrows>0)
+		{*/
 				
 ?>
 		<!--#E3E3E3-->
@@ -110,11 +110,8 @@ $acao = (isset($_REQUEST['acao']) && $_REQUEST['acao'] != NULL)?$_REQUEST['acao'
 						</tr>
 						<?php 
 						} 
-							}
-							else
-							{ 
-							   echo '<p class="text-center"> Nenhum registro de ativo no último mês </p>'; 
-							}
+							//}
+
 						?>
 						<tr>
 							<td colspan='6'> 
@@ -130,11 +127,14 @@ $acao = (isset($_REQUEST['acao']) && $_REQUEST['acao'] != NULL)?$_REQUEST['acao'
 				</table>
 			</div>
 <?php
-		}
+		}else
+			{ 
+				echo '<p class="text-center"> Nenhum registro de ativo no último mês </p>'; 
+			}
 	}
 ?>
 <script>
-$(document).ready(function(){
+/*$(document).ready(function(){
   $('[data-tooltip="tooltip"]').tooltip();   
-});
+});*/
 </script>

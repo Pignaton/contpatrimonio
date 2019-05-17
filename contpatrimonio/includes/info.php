@@ -26,4 +26,30 @@ $nivel = $usuario_nivel;
 	if($nivel == '1'){ $nivel = "Adiministrador"; }
 	else if($nivel  == '0'){$nivel = "Usuário"; }
 
+    $caminho_diretorio = $_SERVER['PHP_SELF']; 
+	$caminho_diretorio_array = explode('/',$caminho_diretorio);
+	$nome_arquivo = $caminho_diretorio_array[4];
+
+if($nome_arquivo == 'dashboard.php')
+	$nome_pagina = 'Dashboard';
+else if($nome_arquivo == 'baixa-ativo.php')
+	$nome_pagina = 'Baixa';
+else if($nome_arquivo == 'cadastro-ativo.php')
+	$nome_pagina = 'Cadastro';
+else if($nome_arquivo == 'manutencao-ativo.php')
+	$nome_pagina = 'Manutenção';
+else if($nome_arquivo == 'manutencao-tabela.php')
+	$nome_pagina = 'Manutenção Relatório';
+else if($nome_arquivo == 'backup.php')
+	$nome_pagina = 'Cópia das notas';
+else if($nome_arquivo == 'Home')
+	$nome_pagina = 'Home';
+else if($nome_arquivo == 'documentacao.php')
+	$nome_pagina = 'Documentação';
+else if($nome_arquivo == 'acesso.php')
+	$nome_pagina = 'Acesso';
+else if($nome_arquivo == 'admin-conta.php')
+	$nome_pagina = 'Criar Conta';
+else if($nome_arquivo == 'perfil.php')
+	$nome_pagina = 'Perfil';
 ?>

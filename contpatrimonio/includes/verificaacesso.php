@@ -1,10 +1,11 @@
 <?php
 include("../../_conn/conn.php");
 $funcionario = $_SESSION['id_funcionario'];
-$libera_acesso = "SELECT * FROM pagina_acesso WHERE funcionario = $funcionario";
-$liberar_acesso = $patrimonio->prepare($libera_acesso);
-$liberar_acesso->execute();
-while($tbl = $liberar_acesso->fetch(PDO::FETCH_ASSOC)){
+$libera_acesso = $patrimonio->prepare("SELECT * FROM pagina_acesso WHERE funcionario = :funcionario");
+$libera_acesso->execute(array(
+	':funcionario' => $funcionario
+));
+while($tbl = $libera_acesso->fetch(PDO::FETCH_ASSOC)){
 		
 	$dashboard=$tbl['dashboard'];
 	$id_pagina=$tbl['id_pagina'];
@@ -15,6 +16,9 @@ while($tbl = $liberar_acesso->fetch(PDO::FETCH_ASSOC)){
 	$manutencao_ativo=$tbl['registra_manutencao'];
 	$backup=$tbl['backup'];
 	$acesso=$tbl['acesso'];
+	$documentacao=$tbl['documentacao'];
+	$conta=$tbl['conta'];
+	$home=$tbl['home'];
 }
 
     $caminho_diretorio = $_SERVER['PHP_SELF']; 
@@ -23,12 +27,15 @@ while($tbl = $liberar_acesso->fetch(PDO::FETCH_ASSOC)){
 
 if($nome_arquivo == 'dashboard.php' && $dashboard != 1){
 	header("Location:sempermissao.php");
+	
 }
 else if($nome_arquivo == 'cadastro_ativo.php' && $cadastro_ativo != 1){
 	header("Location:sempermissao.php");
+	$hidden = "style='visibility:hidden;'";
 }
 else if($nome_arquivo == 'manutencao_tabela.php' && $tabela_manutencao != 1){
 	header("Location:sempermissao.php");
+	
 }
 else if($nome_arquivo == 'baixa_ativo.php' && $tabela_baixa != 1){
 	header("Location:sempermissao.php");
@@ -38,10 +45,20 @@ else if($nome_arquivo == 'acesso.php' && $acesso != 1){
 }
 else if($nome_arquivo == 'manutencao_ativo.php' && $manutencao_ativo != 1){
 	header("Location:sempermissao.php");
+	
 }
 else if($nome_arquivo == 'backup.php' && $backup != 1){
 	header("Location:sempermissao.php");
 }
+else if($nome_arquivo == 'documentacao.php' && $documentacao != 1){
+	header("Location:sempermissao.php");
+	
+}
+else if($nome_arquivo == 'conta.php' && $conta != 1){
+	header("Location:sempermissao.php");
+	
+}
+
 if($usuario_nivel != 1){	
 	$disabled="readonly='readonly' style='cursor:not-allowed;'"; 
  	$permi="Edição não permitida ";

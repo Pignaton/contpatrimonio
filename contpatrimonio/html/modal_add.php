@@ -125,8 +125,7 @@
 					</div>
 					<div class="modal-footer">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
-						<div id="btnloading3"></div>
-						<input type="submit" class="btn btn-success btncadastrar" value="Cadastrar">
+						<button type="submit" class="btn btn-success btncadastrar" id="btncadastrar" value="Cadastrar"  data-loading-text="<i class='fa fa-spinner fa-spin'></i> Cadastrando">Cadastrar</button>
 						<!--<input type="submit" class="btn btn-success" name="btnCadastrar" id="btnCadastrar" value="Cadastrar">-->
 					</div>
 			</form>

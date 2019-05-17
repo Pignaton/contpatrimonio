@@ -20,6 +20,11 @@ include("includes/header.php"); ?>
                 <div class="row">
                     <div class="col-sm-6">
 						<h2>Administrar <b>Ativos</b></h2>
+						<?php 
+						/*$nome = 'Kaleb Pignaton';
+						$str = str_replace(' ', '.', $nome);
+						echo $str;*/
+						?>
 					</div>
 					<div class="col-sm-6">
 						<a href="#adicionar_ativo" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Cadastrar novo ativo</span></a>
@@ -62,8 +67,7 @@ include("includes/header.php"); ?>
 			<hr>
 			<div id="loader"></div>
 			<div id="resultados"></div>
-			<div class='outer_div'></div>
-			
+			<div class='outer_div'></div>	
    </div>
     </div>
 		</div>

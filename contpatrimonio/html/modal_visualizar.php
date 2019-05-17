@@ -28,7 +28,7 @@
 												</div>
 												<div class="col-sm-4">
 													<div class="form-group">
-														<label for="responsavel" class="col-form-label">Responsavel:</label>
+														<label for="responsavel" class="col-form-label">Responsável:</label>
 														<input type="text" class="form-control txtvsnomeusuario" name="txtbanomeusuario" id="txtvsresponsavel" disabled>
 													</div>
 												</div>

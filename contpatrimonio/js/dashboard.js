@@ -17,5 +17,5 @@
 					$(".div-table").html(data).fadeIn('slow');
 					$("#loader").html("");
 				}
-			})
+			});
 		}

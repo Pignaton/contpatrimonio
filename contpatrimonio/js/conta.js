@@ -15,7 +15,6 @@
 $('form[name=ativaconta]').on('change', function () {
     // Enviando formulário
     $(this).ajaxSubmit({
- 
         // Se enviado com sucesso
         success: function (resposta) {
             // Exibindo resposta do servidor

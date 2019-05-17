@@ -2,7 +2,7 @@
 /*ini_set ( 'display_errors' , 1 );
 ini_set ( 'display_startup_errors' , 1 );
 error_reporting ( E_ALL ); */
-include_once ('../../../_conn/conn.php');
+include('../../_conn/conn.php');
 
 $acesso = "";
 $query_pagina1 = $patrimonio->prepare("SELECT DISTINCT pagina, categoria, class, checkbox FROM pagina_categoria WHERE categoria NOT IN(0)");
@@ -25,7 +25,7 @@ foreach($query_pagina->fetchAll(PDO::FETCH_ASSOC) AS $p)
                     <section class='boxe'>
                         <div class='checkbox c-checkbox'>
                         <label class='desativa'>
-                            <input type='checkbox' name='" . $txtname . "' id='" . $txtname . "' />
+                            <input type='checkbox' name='" . $txtname . "' id='" . $txtname . "' value='1' />
                             <span class='fa fa-check'></span>
                              &nbsp; $nome
                         </label>
@@ -57,7 +57,7 @@ foreach($query_pagina->fetchAll(PDO::FETCH_ASSOC) AS $p)
                           			<label class='desativa'>
                             		<input type='checkbox' class='" . $checkbox . "' id='" . $checkbox . "' />
                             		<span class='fa fa-check'></span>
-                           			<i data-toggle='collapse' class='link'> &nbsp; $categorianome </i>
+                           			<i data-toggle='' class='link'> &nbsp; <strong>$categorianome<strong></i>
                           		</label>
                         	</div>
                         </a> ";
@@ -65,7 +65,7 @@ foreach($query_pagina->fetchAll(PDO::FETCH_ASSOC) AS $p)
 
 		if ($categoria != "0")
 			{
-			$acesso.= "<div class='collapse'>
+			$acesso.= "<div class='fundo'>
                             <div class='corfundo'>";
 			}
 		  else
@@ -81,7 +81,7 @@ foreach($query_pagina->fetchAll(PDO::FETCH_ASSOC) AS $p)
 
 			$acesso.= " <div class='checkbox c-checkbox'>
                             <label>
-                                <input type='checkbox' class='" . $class . "' name='" . $txtname2 . "' id='" . $txtname2 . "' />
+                                <input type='checkbox' class='" . $class . "' name='" . $txtname2 . "' id='" . $txtname2 . "' value='1'/>
                                   <span class='fa fa-check'></span>
                                   &nbsp; $nome_pagina 
                             </label>

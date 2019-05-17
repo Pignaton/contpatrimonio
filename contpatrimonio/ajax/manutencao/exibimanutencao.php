@@ -82,7 +82,7 @@ if($acao == 'ajax'){
 							$nf_registro = $row['nf_registro'];
 							$img_nf_fiscal = $row['img_nf_ativo'];
 							$Data_do_banco = $data;
-							$Nova_Data_do_Banco = DateTime::createFromFormat( 'Y-m-d', $Data_do_banco );
+							$Nova_Data_do_Banco = DateTime::createFromFormat('Y-m-d', $Data_do_banco);
 							$data1 = $Nova_Data_do_Banco->format( 'd/m/Y' );
 							$notafiscalantiga = $nf_registro;
 							$valor_antigo = $valor;

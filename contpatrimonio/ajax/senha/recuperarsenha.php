@@ -22,14 +22,17 @@ use PHPMailer\PHPMailer\Exception;
      $script_tz = date_default_timezone_get();
                         
                         
-    /*$data_expiracao = date('d/m/Y H:i:s', strtotime('+30 minutes'));
-    $query_recupera = "INSERT INTO recuperacao VALUES ('$user', '$chave', '$data_expiracao')";
- 	$query_recu_senha = $anexxa->prepare($query_recupera);
-	$query_recu_senha->execute();*/
-		
+    $data_expiracao = date('Y-m-d H:i:s', strtotime('+30 minutes'));
+    $query_recupera = $patrimonio->prepare("INSERT INTO recuperacao (email, confirmacao, datahora) VALUES (:email, :chave, :datahora)");
+ 	$query_recupera->execute(array(
+        ':email' => $email,
+        ':chave' => $chave,
+        ':datahora' => $data_expiracao
+    ));
       //if($row = $query_recu_senha->rowCount() == 1 ){
- 
-        $link = "http://changegames.ga/recuperar_senha.php?utilizador=$email&confirmacao=$chave";
+        $esconde1 = base64_encode($email);
+        $esconde2 = base64_encode($chave);
+        $link = "http://localhost/kaleb/Patrimonio_ativo/patrimonio2.0/includes/recuperarsenha.php?utilizador=$esconde1&confirmacao=$esconde2";
        
                         require '../../PHPMailer/PHPMailer/src/Exception.php';
                         require '../../PHPMailer/PHPMailer/src/PHPMailer.php';
@@ -49,25 +52,25 @@ use PHPMailer\PHPMailer\Exception;
 						$mail->Username = 'nao-responder@onlinemania.com.br';
 						$mail->Password = '#GoodShop611';
                                  
-						$mail->setFrom('nao-responder@onlinemania.com.br','Recuperaçao de Senha');
+						$mail->setFrom('nao-responder@onlinemania.com.br','Recuperação de Senha');
                         $mail->AddAddress($email);
                         
                         $mail->IsHTML(true);
-                        $mail->Subject = 'Recuperaçao de Senha';
+                        $mail->Subject = 'Recuperação de Senha';
                         $mail->Body = '<div style="background-color:#E6E6E6; border-radius:5px; font-size: 13px;" align="center">'. 
-                             '<h3 align="center" style="background-color:#848484; border-radius:5px; padding:25px 25px 25px 25px; color:#FFFFFF; font-size: 20px;">Anexxa Report </h3>'.
-                             '<p align="center"><b>Solicitaçao de recuperaçao de senha.</b></p>'.
+                             '<h3 align="center" style="background-color:#848484; border-radius:5px; padding:25px 25px 25px 25px; color:#FFFFFF; font-size: 20px;"><img src="http://localhost/kaleb/Patrimonio_ativo/patrimonio2.0/img/anexxa_group.png" /></h3>'.
+                             '<p align="center"><b>Solicita&ccedil;&atilde;o de recupera&ccedil;&atilde;o de senha.</b></p>'.
                              '<p></p>'.
-                             '<p>Foi solicitado a recuperaçao de senha no <a href="https://report.anexxa-network.com/" style="a:link=text-decoration:none; color:#848484;">Anexxa Report</a>.</p>'.
+                             '<p>Foi solicitado a recupera&ccedil;&atilde;o de senha no <a href="https://report.anexxa-network.com/" style="a:link=text-decoration:none; color:#848484;">Anexxa Report</a>.</p>'.
                              '<hr>'.
-                             '<p>Para efetuar a troca de senha, clique no botao abaixo:</p>'.
+                             '<p>Para efetuar a troca de senha, clique no bot&atilde;o abaixo:</p>'.
                              '<a style=" background-color: #4CAF50;border: none; border-radius:5px; color: white;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;margin: 35px 2px; cursor: pointer;" href='.$link.'>Recuperar Senha</a>'.
                          '</div>';
-                        $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+                        $mail->AltBody = 'Este é o corpo em texto sem formatação para clientes de email não HTML';
         
         if(!$mail->send()) {
-                echo 'Nao foi possível enviar a mensagem.<br>';
-                echo 'Erro: ' . $mail->ErrorInfo;
+                echo 'Não foi possível enviar a mensagem';
+                //echo 'Erro: ' . $mail->ErrorInfo;
             } else {
 				echo "success";
                 //echo '<p class="alert alert-success text-white rounded" align="center">Link de recuperaçao de senha foi enviado para seu email</p>';

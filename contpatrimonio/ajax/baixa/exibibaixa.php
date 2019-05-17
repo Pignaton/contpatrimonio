@@ -1,5 +1,5 @@
 <?php
-header('Content-Type: text/html; charset=utf8mb4');
+header('Content-Type: text/html; charset=utf-8');
 error_reporting(0);
 include("../../../_conn/conn.php");
 //Selecionar os cursos a serem apresentado na página

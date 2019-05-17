@@ -2,7 +2,7 @@
 /*ini_set ( 'display_errors' , 1 );
 ini_set ( 'display_startup_errors' , 1 );
 error_reporting ( E_ALL ); */
-include_once ('../../../_conn/conn.php');
+include('../../../_conn/conn.php');
 
 $acesso = "";
 $query_pagina1 = $patrimonio->prepare("SELECT DISTINCT pagina, categoria, class, checkbox FROM pagina_categoria WHERE categoria NOT IN(0)");

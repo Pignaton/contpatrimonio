@@ -58,7 +58,7 @@
 			<div class="modal-footer">
 				
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-				<input type="submit" class="btn btn-danger deletaUser" name="btnbaixa" id="btnbaixa" value="Dar Baixa">
+				<button type="submit" class="btn btn-danger deletaUser" name="btnbaixa" id="btnbaixa" value="Dar Baixa" data-loading-text="<i class='fa fa-spinner fa-spin'></i> Enviando">Dar baixa</button>
 			</div>
 			</form>
 		</div>

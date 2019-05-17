@@ -56,8 +56,7 @@ if($acao == 'ajax'){
 						<th class='text-center'>Nome</th>
 						<th class='text-center'>email</th>
 						<th class='text-center'>Departamento</th>
-						<th></th>
-						<th colspan="1" class="">Conta/Ação</th>
+						<th colspan="2" class="text-right">Conta / Ação &nbsp;</th>
 					</tr>
 				</thead>
 				<tbody>	
@@ -86,6 +85,9 @@ if($acao == 'ajax'){
 							$tabela_baixa=$row['tabela_baixa'];
 							$backup=$row['backup'];
 							$acesso=$row['acesso'];
+							$documentacao=$row['documentacao'];
+							$conta=$row['conta'];
+							$home=$row['home'];
 						}
 						if ($ativo == 1){
 							$checked = "checked='' ";
@@ -109,8 +111,7 @@ if($acao == 'ajax'){
 								</form>
 								</div>
 								<div class="btn-group">
-									<button data-target="#liberar_acesso" data-tooltip="tooltip" title="Editar acesso" class="edit btn btn-sm btn-warning" data-toggle="modal" data-code="<?=$funcionario_id?>" data-nome="<?=$nome?>" data-dashboard="<?=$dashboard?>" data-cadastro_ativo="<?=$cadastro_ativo?>" data-tabela_manutencao="<?=$tabela_manutencao?>" data-tabela_baixa="<?=$tabela_baixa?>" data-ativo="<?=$ativo?>" data-registramanutencao="<?=$manutencao_ativo?>" data-backup="<?=$backup?>" data-acesso="<?=$acesso?>">Editar
-									</button>
+									<button href="#" data-target="#liberar_acesso" data-toggle="modal" data-tooltip="tooltip" title="Editar acesso" class="edit btn btn-sm btn-warning" data-toggle="modal" data-code="<?=$funcionario_id?>" data-nome="<?=$nome?>" data-dashboard="<?=$dashboard?>" data-cadastro_ativo="<?=$cadastro_ativo?>" data-tabela_manutencao="<?=$tabela_manutencao?>" data-tabela_baixa="<?=$tabela_baixa?>" data-ativo="<?=$ativo?>" data-registramanutencao="<?=$manutencao_ativo?>" data-backup="<?=$backup?>" data-acesso="<?=$acesso?>" data-conta="<?=$conta?>" data-documentacao="<?=$documentacao?>" data-home="<?=$home?>">Editar</button>
 								</div>
                     		</td>
 						</tr>

@@ -3,12 +3,10 @@ include_once('includes/header.php');
 include("includes/valortabela.php"); 
 include("includes/grafico/quantidade.php"); 
 
-
 ?>
 <br>
 <br>
 <div class="container-fluid">
-
 	<div class="row pt-5">
 		<div class="col-md-3 col-sm-4 col-xs-6">
 			<div class="modal-dashboard pt-2">
@@ -38,7 +36,7 @@ include("includes/grafico/quantidade.php");
 					<i class="fas fa-dollar-sign pt-1"></i> 
 					 Total em Baixa<br>
 					R$ <?= number_format($soma_baixa, 2, ',', '.') ?><br>
-					<span  <?=$color2?>>
+					<span <?=$color2?>>
 					   <?=$icon2?>&nbsp;
 					   <?= round($valor_baixa, 2) . " % "; ?>
 					</span>

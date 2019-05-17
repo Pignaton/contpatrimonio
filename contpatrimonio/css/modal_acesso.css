@@ -29,13 +29,21 @@ textarea:focus, input:focus, select:focus {
  /*background: #484848;*/
   margin-bottom: 20px;
 }
-.collapse{
+/*.collapse{
 	margin: auto;
 	padding: 7px;
 	background: #FCFCFC;
 	border:1px solid #F2F2F2;
   z-index:4;
   position:absolute; 
+}*/
+.fundo{
+  margin: auto;
+  padding: 7px;
+  background: #FCFCFC;
+  border:1px solid #F2F2F2;
+  /*z-index:4;
+  position:absolute;*/ 
 }
 .corfundo{
 	/*margin-left: 20px !important;*/

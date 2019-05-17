@@ -103,7 +103,7 @@ header('http-equiv="Content-Type" content="text/html; charset=utf8mb4');
 														</select>
 													</div>
 												</div>
-												<div class="col-sm-9>
+												<div class="col-sm-9">
 													<div class="form-group">
 														<label for="notafiscal" class="col-form-label">Nota fiscal:</label>
 														<input type="text" class="form-control txtvsnotafiscal" name="txtvsnotafiscal" id="txtvsnotafiscal" onkeypress="return letras();" required> &nbsp;
@@ -120,8 +120,7 @@ header('http-equiv="Content-Type" content="text/html; charset=utf8mb4');
 												</div>
 											</div>
 											<div class="modal-footer">
-												<div id="btnloading2"></div>
-												<input type="submit" class="btn btn-primary " name="btnAtualizar" id="btnAtualizar"  value="Atualizar"  >
+												<button type="submit" class="btn btn-primary " name="btnAtualizar" id="btnAtualizar" data-loading-text="<i class='fa fa-spinner fa-spin'></i> Atualizando">Atualizar</button>
 											
 											</div>
 										</form>

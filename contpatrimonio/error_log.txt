@@ -1,0 +1,120 @@
+[10-Apr-2019 18:05:46 UTC] PHP Notice:  Undefined offset: 5 in C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\header.php on line 12
+[10-Apr-2019 18:05:46 UTC] PHP Stack trace:
+[10-Apr-2019 18:05:46 UTC] PHP   1. {main}() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\recupera_senha.php:0
+[10-Apr-2019 18:05:46 UTC] PHP   2. require_once() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\recupera_senha.php:6
+[10-Apr-2019 18:05:46 UTC] PHP Notice:  Undefined index: id_funcionario in C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\info.php on line 3
+[10-Apr-2019 18:05:46 UTC] PHP Stack trace:
+[10-Apr-2019 18:05:46 UTC] PHP   1. {main}() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\recupera_senha.php:0
+[10-Apr-2019 18:05:46 UTC] PHP   2. require_once() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\recupera_senha.php:6
+[10-Apr-2019 18:05:46 UTC] PHP   3. include() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\header.php:18
+[10-Apr-2019 18:05:46 UTC] PHP Notice:  Undefined variable: usuario_nivel in C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\info.php on line 25
+[10-Apr-2019 18:05:46 UTC] PHP Stack trace:
+[10-Apr-2019 18:05:46 UTC] PHP   1. {main}() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\recupera_senha.php:0
+[10-Apr-2019 18:05:46 UTC] PHP   2. require_once() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\recupera_senha.php:6
+[10-Apr-2019 18:05:46 UTC] PHP   3. include() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\header.php:18
+[10-Apr-2019 18:05:46 UTC] PHP Notice:  Undefined index: id_funcionario in C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\verificaacesso.php on line 3
+[10-Apr-2019 18:05:46 UTC] PHP Stack trace:
+[10-Apr-2019 18:05:46 UTC] PHP   1. {main}() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\recupera_senha.php:0
+[10-Apr-2019 18:05:46 UTC] PHP   2. require_once() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\recupera_senha.php:6
+[10-Apr-2019 18:05:46 UTC] PHP   3. include() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\header.php:19
+[10-Apr-2019 18:05:46 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\verificaacesso.php:6
+Stack trace:
+#0 C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\verificaacesso.php(6): PDOStatement->execute()
+#1 C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\header.php(19): include('C:\\wamp64\\www\\k...')
+#2 C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\recupera_senha.php(6): require_once('C:\\wamp64\\www\\k...')
+#3 {main}
+  thrown in C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\verificaacesso.php on line 6
+[10-Apr-2019 18:06:20 UTC] PHP Notice:  Undefined index: id_funcionario in C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\info.php on line 3
+[10-Apr-2019 18:06:20 UTC] PHP Stack trace:
+[10-Apr-2019 18:06:20 UTC] PHP   1. {main}() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\recupera_senha.php:0
+[10-Apr-2019 18:06:20 UTC] PHP   2. require_once() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\recupera_senha.php:6
+[10-Apr-2019 18:06:20 UTC] PHP   3. include() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\header.php:7
+[10-Apr-2019 18:06:20 UTC] PHP Notice:  Undefined variable: usuario_nivel in C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\info.php on line 25
+[10-Apr-2019 18:06:20 UTC] PHP Stack trace:
+[10-Apr-2019 18:06:20 UTC] PHP   1. {main}() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\recupera_senha.php:0
+[10-Apr-2019 18:06:20 UTC] PHP   2. require_once() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\recupera_senha.php:6
+[10-Apr-2019 18:06:20 UTC] PHP   3. include() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\header.php:7
+[10-Apr-2019 18:06:20 UTC] PHP Notice:  Undefined index: id_funcionario in C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\verificaacesso.php on line 3
+[10-Apr-2019 18:06:20 UTC] PHP Stack trace:
+[10-Apr-2019 18:06:20 UTC] PHP   1. {main}() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\recupera_senha.php:0
+[10-Apr-2019 18:06:20 UTC] PHP   2. require_once() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\recupera_senha.php:6
+[10-Apr-2019 18:06:20 UTC] PHP   3. include() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\header.php:8
+[10-Apr-2019 18:06:20 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\verificaacesso.php:6
+Stack trace:
+#0 C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\verificaacesso.php(6): PDOStatement->execute()
+#1 C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\header.php(8): include('C:\\wamp64\\www\\k...')
+#2 C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\recupera_senha.php(6): require_once('C:\\wamp64\\www\\k...')
+#3 {main}
+  thrown in C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\verificaacesso.php on line 6
+[10-Apr-2019 18:07:44 UTC] PHP Notice:  Undefined index: id_funcionario in C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\info.php on line 3
+[10-Apr-2019 18:07:44 UTC] PHP Stack trace:
+[10-Apr-2019 18:07:44 UTC] PHP   1. {main}() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\recupera_senha.php:0
+[10-Apr-2019 18:07:44 UTC] PHP   2. require_once() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\recupera_senha.php:6
+[10-Apr-2019 18:07:44 UTC] PHP   3. include() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\header.php:7
+[10-Apr-2019 18:07:44 UTC] PHP Notice:  Undefined variable: usuario_nivel in C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\info.php on line 25
+[10-Apr-2019 18:07:44 UTC] PHP Stack trace:
+[10-Apr-2019 18:07:44 UTC] PHP   1. {main}() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\recupera_senha.php:0
+[10-Apr-2019 18:07:44 UTC] PHP   2. require_once() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\recupera_senha.php:6
+[10-Apr-2019 18:07:44 UTC] PHP   3. include() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\header.php:7
+[10-Apr-2019 18:07:45 UTC] PHP Notice:  Undefined index: id_funcionario in C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\verificaacesso.php on line 3
+[10-Apr-2019 18:07:45 UTC] PHP Stack trace:
+[10-Apr-2019 18:07:45 UTC] PHP   1. {main}() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\recupera_senha.php:0
+[10-Apr-2019 18:07:45 UTC] PHP   2. require_once() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\recupera_senha.php:6
+[10-Apr-2019 18:07:45 UTC] PHP   3. include() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\header.php:8
+[10-Apr-2019 18:07:45 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\verificaacesso.php:6
+Stack trace:
+#0 C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\verificaacesso.php(6): PDOStatement->execute()
+#1 C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\header.php(8): include('C:\\wamp64\\www\\k...')
+#2 C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\recupera_senha.php(6): require_once('C:\\wamp64\\www\\k...')
+#3 {main}
+  thrown in C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\verificaacesso.php on line 6
+[10-Apr-2019 18:10:44 UTC] PHP Notice:  Undefined index: id_funcionario in C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\info.php on line 3
+[10-Apr-2019 18:10:44 UTC] PHP Stack trace:
+[10-Apr-2019 18:10:44 UTC] PHP   1. {main}() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\recupera_senha.php:0
+[10-Apr-2019 18:10:44 UTC] PHP   2. require_once() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\recupera_senha.php:6
+[10-Apr-2019 18:10:44 UTC] PHP   3. include() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\header.php:7
+[10-Apr-2019 18:10:44 UTC] PHP Notice:  Undefined variable: usuario_nivel in C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\info.php on line 25
+[10-Apr-2019 18:10:44 UTC] PHP Stack trace:
+[10-Apr-2019 18:10:44 UTC] PHP   1. {main}() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\recupera_senha.php:0
+[10-Apr-2019 18:10:44 UTC] PHP   2. require_once() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\recupera_senha.php:6
+[10-Apr-2019 18:10:44 UTC] PHP   3. include() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\header.php:7
+[10-Apr-2019 18:10:44 UTC] PHP Notice:  Undefined index: id_funcionario in C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\verificaacesso.php on line 3
+[10-Apr-2019 18:10:44 UTC] PHP Stack trace:
+[10-Apr-2019 18:10:44 UTC] PHP   1. {main}() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\recupera_senha.php:0
+[10-Apr-2019 18:10:44 UTC] PHP   2. require_once() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\recupera_senha.php:6
+[10-Apr-2019 18:10:44 UTC] PHP   3. include() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\header.php:8
+[10-Apr-2019 18:10:44 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: no parameters were bound in C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\verificaacesso.php:5
+Stack trace:
+#0 C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\verificaacesso.php(5): PDOStatement->execute()
+#1 C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\header.php(8): include('C:\\wamp64\\www\\k...')
+#2 C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\recupera_senha.php(6): require_once('C:\\wamp64\\www\\k...')
+#3 {main}
+  thrown in C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\verificaacesso.php on line 5
+[10-Apr-2019 18:11:37 UTC] PHP Notice:  Undefined index: id_funcionario in C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\info.php on line 3
+[10-Apr-2019 18:11:37 UTC] PHP Stack trace:
+[10-Apr-2019 18:11:37 UTC] PHP   1. {main}() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\recupera_senha.php:0
+[10-Apr-2019 18:11:37 UTC] PHP   2. require_once() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\recupera_senha.php:6
+[10-Apr-2019 18:11:37 UTC] PHP   3. include() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\header.php:7
+[10-Apr-2019 18:11:37 UTC] PHP Notice:  Undefined variable: usuario_nivel in C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\info.php on line 25
+[10-Apr-2019 18:11:37 UTC] PHP Stack trace:
+[10-Apr-2019 18:11:37 UTC] PHP   1. {main}() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\recupera_senha.php:0
+[10-Apr-2019 18:11:37 UTC] PHP   2. require_once() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\recupera_senha.php:6
+[10-Apr-2019 18:11:37 UTC] PHP   3. include() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\header.php:7
+[10-Apr-2019 18:11:37 UTC] PHP Notice:  Undefined index: id_funcionario in C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\verificaacesso.php on line 3
+[10-Apr-2019 18:11:37 UTC] PHP Stack trace:
+[10-Apr-2019 18:11:37 UTC] PHP   1. {main}() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\recupera_senha.php:0
+[10-Apr-2019 18:11:37 UTC] PHP   2. require_once() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\recupera_senha.php:6
+[10-Apr-2019 18:11:37 UTC] PHP   3. include() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\header.php:8
+[10-Apr-2019 18:11:37 UTC] PHP Notice:  Undefined variable: usuario_nivel in C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\verificaacesso.php on line 62
+[10-Apr-2019 18:11:37 UTC] PHP Stack trace:
+[10-Apr-2019 18:11:37 UTC] PHP   1. {main}() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\recupera_senha.php:0
+[10-Apr-2019 18:11:37 UTC] PHP   2. require_once() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\recupera_senha.php:6
+[10-Apr-2019 18:11:37 UTC] PHP   3. include() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\header.php:8
+[10-Apr-2019 18:11:37 UTC] PHP Notice:  Undefined offset: 5 in C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\header.php on line 16
+[10-Apr-2019 18:11:37 UTC] PHP Stack trace:
+[10-Apr-2019 18:11:37 UTC] PHP   1. {main}() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\recupera_senha.php:0
+[10-Apr-2019 18:11:37 UTC] PHP   2. require_once() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\recupera_senha.php:6
+[10-Apr-2019 18:11:37 UTC] PHP Notice:  Undefined index: nome in C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\includes\header.php on line 63
+[10-Apr-2019 18:11:37 UTC] PHP Stack trace:
+[10-Apr-2019 18:11:37 UTC] PHP   1. {main}() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\recupera_senha.php:0
+[10-Apr-2019 18:11:37 UTC] PHP   2. require_once() C:\wamp64\www\kaleb\Patrimonio_ativo\patrimonio2.0\recupera_senha.php:6

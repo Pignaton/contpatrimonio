@@ -3,16 +3,16 @@ error_reporting(0);
 include('../_conn/conn.php');
 ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" 'lang-pt-br'>
+<html xmlns="http://www.w3.org/1999/xhtml" lang='pt-br'>
 	<head>
 	<noscript><meta http-equiv="refresh" content="1; url=htacess/noscript.html"></noscript>
 	<!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />-->
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="robots" content="noindex, nofollow" />
-	<title> Reports - Patrimônio </title>
+	<title> Patrimônio - <?= $nome_pagina?> </title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap-reboot.min.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">

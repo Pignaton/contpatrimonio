@@ -86,7 +86,7 @@ include("includes/header.php"); ?>
                                             Caracteres aceitáveis:  ! @ # $ % * () _
                                         </div>
 										<div id="btnloading" ></div>
-                                        <button type="submit"  class="btn btn-info btn-fill pull-right btnatualiza"><font>Atualizar perfil</font></button>
+                                        <button type="submit" class="btn btn-info btn-fill pull-right btnatualiza" data-loading-text="<i class='fa fa-spinner fa-spin'></i> Atualizando"><font>Atualizar perfil</font></button>
                                     </form>
                                 </div>
                      

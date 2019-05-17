@@ -26,6 +26,11 @@ $imginotafiscal = $_FILES[ "txtbaimgfiscal" ][ "name" ];
 $imginotafiscal_tmp = $_FILES[ "txtbaimgfiscal" ][ "tmp_name" ];
 $imginotafiscal_size = $_FILES[ "txtbaimgfiscal" ][ "size" ];
 }*/
+//$data_aquisicao = date('01/03/2019');
+$data_aquisicao = explode("/", $data_aquisicao);
+list($dia, $mes, $ano) = $data_aquisicao;
+$data_aquisicao2 = "$ano-$mes-$dia";
+
 $responsavel_novo = $responsavel;
 	if($responsavel_novo == '1'){ $responsavel_novo = "Kaleb Pignaton"; }
 	else if($responsavel_novo  == '2'){ $responsavel_novo = "Andre Santos"; }
@@ -44,7 +49,7 @@ $query_inserir = $patrimonio->prepare($query_inseri);
 		$query_inserir->bindValue( ':placa_patrimonio', $placa_patrimonio);
 		$query_inserir->bindValue( ':data_baixa', $data_baixa);
 		$query_inserir->bindValue( ':hora_baixa', $hora_aquisicao);
-		$query_inserir->bindValue( ':data_aquisicao', $data_aquisicao );
+		$query_inserir->bindValue( ':data_aquisicao', $data_aquisicao2 );
 		$query_inserir->bindValue( ':motivo_baixa', $descricao );
 		$query_inserir->bindValue( ':nome_produto', $nome_produto );
 		$query_inserir->bindValue( ':responsavel', $responsavel_novo);
@@ -64,10 +69,15 @@ $id = $patrimonio->lastInsertId();
 		$query_nota_fiscal->bindValue( ':img_nf_baixa', $imginotafiscal );
 		$query_nota_fiscal->execute();
 
-$query_deleta = "DELETE FROM registro_ativo WHERE id_patrimonio = $id_patrimonio";
-$query_deletar = $patrimonio->prepare($query_deleta);
-$query_deletar->execute();
+$query_deleta = $patrimonio->prepare("DELETE FROM registro_ativo WHERE id_patrimonio = :id_patrimonio");
+$query_deleta->execute(array(
+	':id_patrimonio' => $id_patrimonio
+));
 
+$query_deleta_quant = $patrimonio->prepare("DELETE FROM quantidade_por_ativo WHERE id_patrimonio = :id_patrimonio");
+$query_deleta_quant->execute(array(
+	':id_patrimonio' => $id_patrimonio
+));
 	
 	    require '../../PHPMailer/PHPMailer/src/Exception.php';
         require '../../PHPMailer/PHPMailer/src/PHPMailer.php';
@@ -109,10 +119,10 @@ $query_deletar->execute();
         
         if(!$mail->send()) {
                 echo 'Nao foi possível enviar a mensagem.<br>';
-                echo 'Erro: ' . $mail->ErrorInfo;
+                //echo 'Erro: ' . $mail->ErrorInfo;
             } else {
 				//echo "success";
-				echo "<div class='alert alert-success text-center' role='alert'>Patrimônio despachado para baixa!</div>";
+				echo "<div class='alert alert-success text-center alerta' role='alert'>Patrimônio despachado para baixa!</div>";
 				return true;
                 //echo '<p class="alert alert-success text-white rounded" align="center">Link de recuperaçao de senha foi enviado para seu email</p>';
            }
@@ -120,7 +130,7 @@ $query_deletar->execute();
 
 	} catch ( PDOExcepiton $e ) {
 		//echo 'Error: ' . $e->getMessage();
-		echo "<div class='alert alert-info text-center'>Desculpe, ocorreu um problema. Por favor, volte e tente novamente.</div>";
+		echo "<div class='alert alert-info text-center alerta'>Desculpe, ocorreu um problema. Por favor, volte e tente novamente.</div>";
 	}
 //}
 

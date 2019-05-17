@@ -1,26 +1,34 @@
 <?php 
-error_reporting(0); 
+error_reporting(0);
 session_start();
 
 include('../_conn/conn.php');
 
-if(empty($_SESSION[ 'id_funcionario' ])){
-	header("Location: index.php");
-}
-
 include('includes/info.php');
 include('includes/verificaacesso.php');
+
+    $caminho_diretorio = $_SERVER['PHP_SELF']; 
+	$caminho_diretorio_array = explode('/',$caminho_diretorio);
+	$nome_arquivo = $caminho_diretorio_array[4];
+	
+    $caminho_diretorio = $_SERVER['PHP_SELF']; 
+	$caminho_diretorio_array = explode('/',$caminho_diretorio);
+	$nome_arquivo2 = $caminho_diretorio_array[5];	
+
+if(empty($_SESSION[ 'id_funcionario' ]) && 'recupera_senha.php' != $nome_arquivo && 'recuperarsenha.php' != $nome_arquivo2){
+	header("Location: index.php");
+}
 
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
 	<noscript><meta http-equiv="refresh" content="1; url=htacess/noscript.html"></noscript>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="robots" content="noindex, nofollow" />
-	<title> Reports - Patrimônio </title>
+	<title> Reports - <?=$nome_pagina?> </title>
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
@@ -43,7 +51,7 @@ include('includes/verificaacesso.php');
 	<link rel="stylesheet" href="https://rawgit.com/LeshikJanz/libraries/master/Bootstrap/baguetteBox.min.css">
 	<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/dashboard.css"/>
-	<link rel="stylesheet" href="css/custom.css">
+	<link rel="stylesheet" type="text/css" href="css/custom.css" />
 	<link rel="stylesheet" type="text/css" href="css/cadastro_ativo.css"/>
 	<link rel="stylesheet" type="text/css" href="css/modal_acesso.css">
 </head>
@@ -52,26 +60,18 @@ include('includes/verificaacesso.php');
 <div class="container-superior-user" align="center">
 <?php
 	include_once('../../_conn/conn.php');
-    $caminho_diretorio = $_SERVER['PHP_SELF']; 
-	$caminho_diretorio_array = explode('/',$caminho_diretorio);
-	$nome_arquivo = $caminho_diretorio_array[4];
-	
-    $caminho_diretorio = $_SERVER['PHP_SELF']; 
-	$caminho_diretorio_array = explode('/',$caminho_diretorio);
-	$nome_arquivo2 = $caminho_diretorio_array[5];	
-
 	$nome_usuario = $_SESSION['nome'];
 	$nome_usuario_remove = explode('.',$nome_usuario);
 	$nome_usuario_separa =  implode(" ",$nome_usuario_remove);
 
    /*!= $nome_arquivo && 'trocasenha.php'*/						 
   // Certifique-se de que o usuário esteja logado antes de prosseguir.
-  if (!isset($_SESSION['id_funcionario']) && 'index.php' != $nome_arquivo && 'recupera_senha.php' != $nome_arquivo && 'logout.php' != $nome_arquivo2 && 'noscript.php' != $nome_arquivo2) {
+  if (!isset($_SESSION['id_funcionario']) && 'index.php' != $nome_arquivo && 'recupera_senha.php' != $nome_arquivo && 'logout.php' != $nome_arquivo2 && 'noscript.php' != $nome_arquivo2 && 'recuperarsenha.php' != $nome_arquivo2) {
     echo '<p class="login">Por favor <a href="index.php"> faça o login </a> para acessar essa página.</p>';
      exit();
 
  }
-else if('index.php' != $nome_arquivo && 'recupera_senha.php' != $nome_arquivo && 'trocasenha.php' != $nome_arquivo2 && 'logout.php' != $nome_arquivo2 && 'noscript.php' != $nome_arquivo2) {
+else if('index.php' != $nome_arquivo && 'recupera_senha.php' != $nome_arquivo && 'trocasenha.php' != $nome_arquivo2 && 'logout.php' != $nome_arquivo2 && 'noscript.php' != $nome_arquivo2 && 'recuperarsenha.php' != $nome_arquivo2) {
 
 ?>
 <header class="header">
@@ -80,7 +80,7 @@ else if('index.php' != $nome_arquivo && 'recupera_senha.php' != $nome_arquivo &&
 		</label>
 		<ul class="dropdown-menu dropdown-usermenu pull-right">
 			<li>
-				<a href="perfil.php">&nbsp;<i class="fas fa-user pull-left pt-1"  style="font-size:10px;"></i>
+				<a href="perfil">&nbsp;<i class="fas fa-user pull-left pt-1" style="font-size:10px;"></i>
 					<font>Perfil</font>
 				</a>
 			</li>
@@ -91,13 +91,13 @@ else if('index.php' != $nome_arquivo && 'recupera_senha.php' != $nome_arquivo &&
 			</li>
 			<?php if($acesso == 1){ ?>
 			<li>
-				<a href="acesso.php">&nbsp; <i class="fas fa-door-open pull-left pt-1" style="font-size:10px;"></i>
+				<a href="acesso">&nbsp; <i class="fas fa-door-open pull-left pt-1" style="font-size:10px;"></i>
 					<font>Acesso</font>
 				</a>
 			</li>
 			<?php } ?>
 			<li>
-				<a href="admin_conta.php"> <i class="fas fa-plus-circle pr-1" style="font-size:12px;"></i>
+				<a href="admin-conta"> <i class="fas fa-plus-circle pr-1" style="font-size:12px;"></i>
 					<font class="">Criar Conta</font>
 				</a>
 			</li>
@@ -111,4 +111,7 @@ else if('index.php' != $nome_arquivo && 'recupera_senha.php' != $nome_arquivo &&
 </header>
 <?php } ?>
 </div>	
-<?php include_once('menu.php'); ?>
+<?php
+if( 'recupera_senha.php' != $nome_arquivo)
+	include_once('menu.php'); 
+?>

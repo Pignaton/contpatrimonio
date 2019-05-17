@@ -33,12 +33,11 @@ if ( isset( $_SESSION[ 'id_funcionario' ] ) ) {
 		<!--<h2  class="text-justify text-center font">Group <span class="text-dark">Ane</span>xx<span class="text-dark">A</span></h2>-->
 	</div>
 	<div class="row">
-		<div class="col-sm-3 "></div>
-		<div class="col-sm-6 text-center pt-5 ">
+		<div class="col-md-3 "></div>
+		<div class="col-md-6 text-center pt-5 ">
 			<div class="jumbotron pt-5 form">
 				<form method="post">
 					<div id="erros"></div>
-					<div class="container">
 						<?php
 						// Se a sessão var estiver vazia, mostre qualquer mensagem de erro e o formulário de login; caso contrário, confirme o login
 						if ( empty( $_SESSION[ 'id_funcionario' ] ) ) {
@@ -70,12 +69,11 @@ if ( isset( $_SESSION[ 'id_funcionario' ] ) ) {
 							</div>
 						</div>
 						<div id="loading"></div>
-						<button type="button" name="submit" class="btn-entrar btn btn-primary form-control" id="btn-entrar">Entrar <span class="fas" style="font-size:18px;">&nbsp; &#xf35a;</span></button>
+						<button type="button" name="submit" class="btn-entrar btn btn-primary form-control" id="btn-entrar" data-loading-text="<i class='fa fa-spinner fa-spin'></i> Entrando">Entrar <span class="fas" style="font-size:18px;">&nbsp; &#xf35a;</span></button>
 						<p></p>
 						<div>
-							<a href="recupera_senha.php">Esqueceu a senha ?</a>
+							<a href="recupera_senha.php">Esqueceu a senha?</a>
 						</div>
-					</div>
 				</form>
 				<?php
 				} else {
@@ -85,7 +83,7 @@ if ( isset( $_SESSION[ 'id_funcionario' ] ) ) {
 				?>
 			</div>
 		</div>
-		<div class="col-sm-2"></div>
+		<div class="col-md-3"></div>
 	</div>
 </div>
 <?php include('includes/footer-index.php'); ?>

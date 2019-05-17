@@ -1,4 +1,3 @@
-
 		$(function() {
 			load(1);
 		});
@@ -19,6 +18,8 @@
 				}
 			})
 		}
+$(document).ready(function() {
+
 		$('#editar_ativo').on('show.bs.modal', function (event) {
 		  var button = $(event.relatedTarget) // Button that triggered the modal
 		  var code = button.data('code') 
@@ -112,7 +113,7 @@
 		})
 
 		$( "#edita_ativo" ).submit(function( event ) {
-		  $("#btnAtualizar").hide();
+		  var $botao = $("#btnAtualizar");
 		  var formcada = document.getElementById('edita_ativo');
 		  var formData = new FormData(formcada); 
 			$.ajax({
@@ -121,28 +122,25 @@
 					data: formData,
 					cache: false,
 					processData: false,  
-					contentType: false,	
+					contentType: false,
 					 beforeSend: function(objeto){
-						//$("#resultados").html("Enviando...");
-						$("#btnloading2").html('<button class="btn btn-primary btn-fill pull-right" type="button" disabled><span class="spinner-border spinner-border-md" role="status" aria-hidden="true"></span> Atualizando...</button>');
+					 	$botao.button('loading');
 						$("#resultados").html('<div><img src="ajax/img/processando.gif" height="40px">Enviando...</div>');
 						//$('#editar_ativo').modal('hide');
 					  },
 					success: function(dados){
 					$("#resultados").html(dados);
-					window.setTimeout(function() {$(".alert").fadeTo(500, 0).slideUp(500, function(){$(".alert").remove();});}, 6000);
+					$botao.button('reset');
 					load(1);
-					$("#btnloading2").html("");
-					$("#btnAtualizar").show();
 					$('#editar_ativo').modal('hide');
+
 				  }
 			});
 		  event.preventDefault();
 		});
 		
 		$( "#add_ativo" ).submit(function( event ) {
-		  $(".btncadastrar").hide();
-		  //var parametros = $("#add_ativo").serialize();
+		  var $botao = $("#btncadastrar");
 		  var formcada = document.getElementById('add_ativo');
 		  var formData = new FormData(formcada);
 			$.ajax({
@@ -153,21 +151,19 @@
 					processData: false,  
 					contentType: false,
 					 beforeSend: function(objeto){
-						$("#btnloading3").html('<button class="btn btn-success btn-fill pull-right" type="button" disabled><span class="spinner-border spinner-border-md" role="status" aria-hidden="true"></span> Enviando...</button>');
+					 	$botao.button('loading');
 						$("#resultados").html("Enviando...");
 						$('#adicionar_ativo').modal('hide');
 					  },
 					success: function(dados){
 					$("#resultados").html(dados);
-					window.setTimeout(function() {$(".alert").fadeTo(500, 0).slideUp(500, function(){$(".alert").remove();});}, 6000);
 					load(1);
-					$("#btnloading3").hide();
-					$(".btncadastrar").show();
+					$botao.button('reset');
 					$('#adicionar_ativo').modal('hide');
 					$(':input','#add_ativo')
 			          .not(':button, :submit, :reset, :hidden')
 			          .val('')
-			          .removeAttr('checked')
+			          /*.removeAttr('checked')*/
 			          .removeAttr('selected');
 					  document.getElementById("txtimgfiscal").value = "";
 				  }
@@ -177,18 +173,19 @@
 		});
 
 		$( "#deleta_ativo" ).submit(function( event ) {
-		  var parametros = $(this).serialize();
+		  	var $botao = $("#btnbaixa");
+		  	var parametros = $(this).serialize();
 			$.ajax({
 					type: "POST",
 					url: "ajax/baixa/baixa.php",
 					data: parametros,
 					 beforeSend: function(objeto){
-						$("#resultados").html('<div style="float:left;"><img src="ajax/img/processando.gif" height="40px">Enviando...</div>');
+					 	$botao.button('loading');
 						$('#deletar_ativo').modal('hide');
 					  },
 					success: function(dados){
+				    $botao.button('reset');
 					$("#resultados").html(dados);
-					window.setTimeout(function() {$(".alert").fadeTo(500, 0).slideUp(500, function(){$(".alert").remove();});}, 4000);	
 					load(1);
 					$('#deletar_ativo').modal('hide');
 					$(':input','#deleta_ativo')
@@ -200,8 +197,7 @@
 		});
 			
 		$( "#edita_perfil" ).submit(function(event) {
-		  $(".btnatualiza").hide();
-
+		  var $botao = $("#btnAtualizar");
 		  var parametros = $(this).serialize();
 			$.ajax({
 					type: "POST",
@@ -209,14 +205,11 @@
 					data: parametros,
 					 beforeSend: function(objeto){
 						//$("#resultados").html("Enviando...");
-						$("#btnloading").html('<button class="btn btn-info btn-fill pull-right " type="button" disabled><span class="spinner-border spinner-border-md" role="status" aria-hidden="true"></span> Atualizando...</button>');
-						//$("#resultados").html('<div><img src="ajax/img/processando.gif" height="40px">Enviando...</div>');
+						$botao.button('loading');
 					  },
 					success: function(dados){
 					$("#perfilexibi").html(dados);
-					$("#btnloading").hide();
-				    $(".btnatualiza").show();
-					window.setTimeout(function() {$(".alert").fadeTo(500, 0).slideUp(500, function(){$(".alert").remove();});}, 6000);
+					$botao.button('reset');
 					$("#txtsenha").val("");
 					$("#txtconfirma").val("");
 					load(1);
@@ -224,5 +217,7 @@
 			});
 		  event.preventDefault();
 		});
-
+		window.setTimeout(function() {$(".alerta").fadeTo(500, 0).slideUp(500, function(){$(".alerta").remove();});}, 6000);
+	});
+	
 		 

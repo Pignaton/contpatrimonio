@@ -1,5 +1,5 @@
 <?php 
-header("Content-Type: text/html; charset=latin1");
+header("Content-Type: text/html; charset=uft-8");
 include('../../../_conn/conn.php');
 	$acao = (isset($_REQUEST['acao']) && $_REQUEST['acao'] != NULL)?$_REQUEST['acao']:'';
 if($acao == 'ajax')
@@ -44,10 +44,10 @@ if($acao == 'ajax')
 									<tr>
 										<th>#</th>
 										<th>Nome do Ativo</th>
-										<th>Placa Patrimônio</th>
+										<th>Placa Patrim&ocirc;nio</th>
 										<th>Data da Baixa</th>
 										<th>R$</th>
-										<th>Ação</th>
+										<th>A&ccedil;&atilde;o</th>
 									</tr>
 								</thead>
 								<tbody>

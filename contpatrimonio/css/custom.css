@@ -413,3 +413,12 @@ li ul li font{
 	font-size:9px;
 }
 .fa-file-pdf{color:#F00;}
+
+.titulo-documentacao{
+	/*padding-bottom: 15px;*/
+    background: #5A7CA5;
+    color: #fff;
+    padding: 2px 10px;
+    margin: -15px -20px 5px;
+    border-radius: 3px 3px 0 0;
+}

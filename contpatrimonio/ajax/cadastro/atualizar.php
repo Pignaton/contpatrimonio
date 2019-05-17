@@ -46,14 +46,14 @@ if ( !empty( $_FILES[ "txtimgfiscal2" ]) )
 
 		if ( $sobreescrever == "nao" && file_exists( "$caminho_arquivo/$img_nota_fiscal" ) ) 
 		{
-			echo "<div class='alert alert-danger text-center'>Arquivo ' $img_nota_fiscal' já existe! renomeei o arquivo.<div>";
+			echo "<div class='alert alert-danger text-center alerta'>Arquivo ' $img_nota_fiscal' já existe! renomeei o arquivo.<div>";
 			return false;
 			exit;	
 		}
 		$ext = strrchr( $img_nota_fiscal, '.' );
 		if ( $limitar_ext == "sim" && !in_array( $ext, $tipo_foto ) ) 
 		{
-			echo "<div class='alert alert-danger text-center'>$img_nota_fiscal' não é uma extençao de arquivo .pdf<div>";
+			echo "<div class='alert alert-danger text-center alerta'>$img_nota_fiscal' não é uma extençao de arquivo .pdf<div>";
 			return false;
 			exit;
 
@@ -73,7 +73,7 @@ if ( $placa_patrimonio != $placa_patrimonio_antigo )
 
 	if ( $rows > 0 ) 
 	{
-		echo "<div class='alert alert-danger text-center'>Já existe uma placa de patrimônio registrada com esse digitos!<div>";
+		echo "<div class='alert alert-danger text-center alerta'>Já existe uma placa de patrimônio registrada com esse digitos!<div>";
 		return false;
 		exit;	
 	}
@@ -88,7 +88,7 @@ if($nf_registro != $nf_registro_antigo)
 
 	if ( $rows > 0 ) 
 	{
-		echo "<div class='alert alert-danger text-center'>Já existe uma nota fiscal registrada com esse digitos!<div>";
+		echo "<div class='alert alert-danger text-center alerta'>Já existe uma nota fiscal registrada com esse digitos!<div>";
 		return false;
 		exit;	
 	}
@@ -192,7 +192,7 @@ if ( !$erro )
 
 			unlink($caminho_arquivo.$imgnotafiscal);
 
-			echo "<div class='alert alert-success text-center pt-2'>Ativo atualizado com  sucesso!<div>";
+			echo "<div class='alert alert-success text-center pt-2 alerta'>Ativo atualizado com  sucesso!<div>";
 			return true;
 			exit;
 			
@@ -269,14 +269,14 @@ if ( !$erro )
 			//$query_nota_fiscal->bindValue( ':img_nf_ativo', $img_nota_fiscal );
 			$query_nota_fiscal->execute();
 
-			echo "<div class='alert alert-success text-center'>Ativo atualizado com  sucesso!<div>";
+			echo "<div class='alert alert-success text-center alerta'>Ativo atualizado com  sucesso!<div>";
 			return true;
 			exit;
 		}
 	} 
 	catch ( PDOExcepiton $e ) 
 	{
-		echo "<div class='alert alert-info text-center'>Desculpe, ocorreu um erro. Por favor, volte e tente novamente.</div>";
+		echo "<div class='alert alert-info text-center alerta'>Desculpe, ocorreu um erro. Por favor, volte e tente novamente.</div>";
 		return false;
 		exit;
 		//echo 'Error: ' . $e->getMessage();

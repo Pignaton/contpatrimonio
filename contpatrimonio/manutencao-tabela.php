@@ -2,7 +2,6 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-sm">
-			<?php include_once('includes/menu.php'); ?>
 	        <div class="table-wrapper">
 	            <div class="table-title">
 	                <div class="row">

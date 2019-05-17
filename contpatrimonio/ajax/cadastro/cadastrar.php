@@ -42,14 +42,14 @@ if ( $_FILES[ "txtimgfiscal" ][ "error" ] == UPLOAD_ERR_OK ) {
 
 	if ( $sobreescrever == "nao" && file_exists( "$caminho_arquivo/$img_nota_fiscal" ) ) {
 		
-		echo "<div class='alert alert-danger text-center'>Arquivo ' $img_nota_fiscal' já existe! renomeei o arquivo.</div>";
+		echo "<div class='alert alert-danger text-center alerta'>Arquivo ' $img_nota_fiscal' já existe! renomeei o arquivo.</div>";
 		return false;
 		exit;	
 	}
 	$ext = strrchr( $img_nota_fiscal, '.' );
 	if ( $limitar_ext == "sim" && !in_array( $ext, $tipo_foto ) ) {
 		
-		echo "<div class='alert alert-danger text-center'>'$img_nota_fiscal' é uma extençao de arquivo inválida para upload<p>extensão .pdf é a unica permitida</p></div>";
+		echo "<div class='alert alert-danger text-center alerta'>'$img_nota_fiscal' é uma extençao de arquivo inválida para upload<p>extensão .pdf é a unica permitida</p></div>";
 		return false;
 		exit;	
 
@@ -62,7 +62,7 @@ $query_verificar->execute();
 $rows1 = $query_verificar->rowCount();
 
 if ( $rows1 > 0 ) {
-		echo "<div class='alert alert-danger  text-center'>Já existe uma placa de patrimônio registrada com esse digitos!</div>";
+		echo "<div class='alert alert-danger  text-center alerta'>Já existe uma placa de patrimônio registrada com esse digitos!</div>";
 		return false;
 		exit;	
 
@@ -74,7 +74,7 @@ $query_verificar->execute();
 $rows = $query_verificar->rowCount();
 
 if ( $rows > 0 ) {
-		echo "<div class='alert alert-danger text-center'>Já existe uma nota fiscal registrada com esse digitos!</div>";
+		echo "<div class='alert alert-danger text-center alerta'>Já existe uma nota fiscal registrada com esse digitos!</div>";
 		return false;
 		exit;	
 
@@ -130,11 +130,11 @@ if(!$erro){
 			':departamento' => $departamento
 		));
 		
-		echo "<div class='alert alert-success text-center'>Ativo cadastrado com sucesso!</div>";
+		echo "<div class='alert alert-success text-center alerta'>Ativo cadastrado com sucesso!</div>";
 		return true;
 	
 	}else {
-		echo "<div class='alert alert-info text-center'>Desculpe, o sistema caiu. Por favor, volte e tente novamente.</div>";
+		echo "<div class='alert alert-info text-center alerta'>Desculpe, o sistema caiu. Por favor, volte e tente novamente.</div>";
 		return false;
 		exit;
 }

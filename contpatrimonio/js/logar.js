@@ -1,6 +1,7 @@
    $(document).ready(function () {
 
         $("#btn-entrar").click(function () {
+            var $botao = $(this);
 			if($("#email").val() == ""){
  				$("#erros").html("<p class='alert alert-danger text-center'>Preencha o campo o email</p>");
  				return false;
@@ -19,14 +20,11 @@
                     senha: $("#senha").val()
                 },
                 beforeSend: function(objeto){
-                	$(".btn-entrar").hide();
-					$("#loading").html('<button class="btn btn-entrar" type="button" disabled>&nbsp;<span class="spinner-border " role="status" aria-hidden="true"></span> &nbsp; Entrando...</button>');
+                	$botao.button('loading');
                 },
                 success: function (data) {
                 if(data == "success")
 					{
-					  //$("#loading").hide();
-					  //$("#btn-entrar").show();
 					  window.location.href=" dashboard.php";
 					}
 				else if(data == "trocasenha")
@@ -35,14 +33,13 @@
 					}
 				else if(data == "erro")
 					{
+                      $botao.button('reset');
 					  $("#erros").html('<p class="alert alert-danger text-danger">Usuário ou senha estão incorreto</p>');
-					  $("#btn-entrar").show();
-					  $("#loading").hide();
 					}
 				else if(data == "permissao")
                     {
+                      $botao.button('reset');
 					  $("#erros").html('<p class="alert alert-danger text-center">Usuário sem permissão - contate o administrador</p>');
-					  $("#btn-entrar").show();
 					}
                 }
             });
