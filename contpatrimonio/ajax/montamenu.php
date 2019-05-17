@@ -12,6 +12,11 @@ $query_pagina1->execute();
 $query_pagina = $patrimonio->prepare("SELECT DISTINCT nome_pagina, menu, arquivo, icon FROM pagina WHERE  id_pagina NOT IN (2,10)");
 $query_pagina->execute();
 
+/*Query usada para pegar só a 'home', por isso que repetiu. */
+$query_pagina2 = $patrimonio->prepare("SELECT DISTINCT nome_pagina AS nome_pagina2, menu AS menu2, arquivo AS arquivo2, icon AS icon2 FROM pagina WHERE  id_pagina NOT IN (2,10)");
+$query_pagina2->execute();
+
+
 $query_acesso = $patrimonio->prepare("SELECT * FROM pagina_acesso WHERE  id_pagina NOT IN (2,10)");
 $query_acesso->execute();
 $total_acesso = $query_acesso->fetchAll(PDO::FETCH_ASSOC);
@@ -19,7 +24,7 @@ $total_acesso = $query_acesso->fetchAll(PDO::FETCH_ASSOC);
 $acesso ="
   <div class='page-wrapper chiller-theme toggled'>
     <a id='show-sidebar' class='btn btn-sm btn-dark' href='#'>
-      <i class='fas fa-bars'></i>
+      <i class='fas fa-bars pt-1' style='font-size:15px;'></i>
     </a>
     <nav id='sidebar' class='sidebar-wrapper'>
       <div class='sidebar-content'>
@@ -45,7 +50,23 @@ $acesso ="
 $acesso .= "<li class='header-menu'>
               <span>Geral</span>
             </li>";
+foreach($query_pagina2->fetchAll(PDO::FETCH_ASSOC) AS $pe)
+  {
+  $nome_pagina2 = $pe['nome_pagina2'];
+  $menu2 = $pe['menu2']; 
+  $arquivo2 = $pe['arquivo2'];
+  $icon2 = $pe['icon2'];
+  if ($menu2 == "0" && $nome_pagina2 == 'Home') 
+    { 
 
+    $acesso .=  "<li>
+                <a href='$arquivo2'>
+                  <i class='$icon2'></i>
+                  <span>$nome_pagina2</span>
+                </a>
+              </li>";
+    }
+}
 foreach($query_pagina->fetchAll(PDO::FETCH_ASSOC) AS $p)
   {
   $nome = $p['nome_pagina'];
@@ -53,7 +74,7 @@ foreach($query_pagina->fetchAll(PDO::FETCH_ASSOC) AS $p)
   $arquivo = $p['arquivo'];
   $icon = $p['icon']; 
 
-  if ($menu == "0") 
+  if ($menu == "0" && $nome != 'Home') 
     { 
 
     $acesso .=  "<li>

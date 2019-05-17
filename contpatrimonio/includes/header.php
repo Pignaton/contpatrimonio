@@ -56,7 +56,6 @@ if(empty($_SESSION[ 'id_funcionario' ]) && 'recupera_senha.php' != $nome_arquivo
 	<link rel="stylesheet" type="text/css" href="css/modal_acesso.css">
 </head>
 <body>
-<div class="wrapper">
 <div class="container-superior-user" align="center">
 <?php
 	include_once('../../_conn/conn.php');
@@ -115,3 +114,4 @@ else if('index.php' != $nome_arquivo && 'recupera_senha.php' != $nome_arquivo &&
 if( 'recupera_senha.php' != $nome_arquivo)
 	include_once('menu.php'); 
 ?>
+<div class="page-content">

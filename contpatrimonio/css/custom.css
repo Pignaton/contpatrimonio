@@ -7,6 +7,7 @@
 			font-family: 'Varela Round', sans-serif;
 			font-size: 13px;
 		}
+
 	#bodyindex {  
 	  justify-content: center;
 	  align-items: center;
@@ -18,10 +19,11 @@
 	  );
 	  /*background-repeat:;*/
 	  height: 100vh;
-	  weidth:100wh;
+	  width:100vw;
 	  background-size:128% 128%;
 	  font-family: "Open Sans", sans-serif;
 	}
+
 	label {
 	  font-family: 'Staatliches', cursive;
 	}
@@ -37,9 +39,8 @@
 	/* header e footer */
 	.container-superior-user{font-color:black; font-weight: 500;}
 	.container-rodape{height: 60px;}
-	.wrapper{ min-height: calc(100vh - 80px)}
+	.page-wrapper{ min-height: calc(100vh - 80px)}
 	@media (min-width: 320px) and (max-width: 480px) {
-
 		.container-rodape {font-size:12px; display:;}
 	}
 	/*Style index*/

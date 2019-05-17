@@ -90,6 +90,7 @@ body {
 }
 /*----------------show sidebar button----------------*/
 #show-sidebar {
+  height:36px;
   position: fixed;
   left: 0;
 	top: 0px;
@@ -361,11 +362,12 @@ body {
 .page-wrapper .page-content > div {
   padding: 20px 40px;
 }
-
-.page-wrapper .page-content {
+/*.table-wrapper {
+  overflow-y: hidden;
+}*/
+.page-wrapper, .page-content {
   overflow-x: hidden;
 }
-
 /*------scroll bar---------------------*/
 
 ::-webkit-scrollbar {
